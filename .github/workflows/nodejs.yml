@@ -17,10 +17,10 @@ jobs:
           rsync -e "ssh -o StrictHostKeyChecking=no" \
           ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}}:/var/www/portfolio/portfolio-gatsby/
         
-        - name: Install dependencies
-          run: npm install
+      - name: Install dependencies
+        run: npm install
   
-        - name: Build
-          run: npm run build
-          env:
-            GATSBY_API_URL: "https://api.fredericpaurisse.fr"
+      - name: Build
+        run: npm run build
+        env:
+          GATSBY_API_URL: "https://api.fredericpaurisse.fr"
