@@ -11,7 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Deploy
-      - env: 
+
+        env: 
         GATSBY_API_URL: https://api.fredericpaurisse.fr
         run: |
           npm install
