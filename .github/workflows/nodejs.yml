@@ -1,9 +1,11 @@
 name: Deploy updates
 
 on:
+  push:
+    branches: master
   schedule:
    - cron: "*/5 * * * *"
-
+     
 jobs:
   deploy:
     runs-on: ubuntu-18.04
