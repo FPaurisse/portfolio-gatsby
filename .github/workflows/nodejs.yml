@@ -13,6 +13,7 @@ jobs:
       - name: Deploy
         run: |
           npm install
+          npm run clean
           npm run build
           sshpass -p ${{secrets.SSH_PASS}} \
           rsync -e "ssh -o StrictHostKeyChecking=no" \
