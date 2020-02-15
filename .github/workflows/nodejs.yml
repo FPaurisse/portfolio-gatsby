@@ -10,14 +10,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      - name: Deploy
 
-        env: 
-        GATSBY_API_URL: https://api.fredericpaurisse.fr
+      - name: Deploy
         run: |
-          npm install
-          npm run build
           sshpass -p ${{secrets.SSH_PASS}} \
           rsync -e "ssh -o StrictHostKeyChecking=no" \
-          -av --delete ./public/ ./.cache/ \
           ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}}:/var/www/portfolio/portfolio-gatsby/
+        
+        - name: Install dependencies
+          run: npm install
+  
+        - name: Build
+          run: npm run build
+          env:
+            GATSBY_API_URL: "https://api.fredericpaurisse.fr"
