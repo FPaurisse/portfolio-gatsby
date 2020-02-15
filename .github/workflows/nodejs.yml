@@ -16,6 +16,7 @@ jobs:
           npm run build
           sshpass -p ${{secrets.SSH_PASS}} \
           rsync -e "ssh -o StrictHostKeyChecking=no" \
+          -av --delete . \
           ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}}:/var/www/portfolio/portfolio-gatsby/
         env:
           GATSBY_API_URL: "https://api.fredericpaurisse.fr"
