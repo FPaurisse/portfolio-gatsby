@@ -1,4 +1,5 @@
 .layout {
+    color: var(--color);
     margin: 3rem auto;
     max-width: 600px;
   }

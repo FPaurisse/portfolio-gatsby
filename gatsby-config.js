@@ -1,18 +1,34 @@
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
-    title: `Frédéric Paurisse`,
-    description: `Développeur web full stack`,
-    author: `Frédéric Paurisse`,
+    title: 'Frédéric Paurisse',
+    description: 'Développeur web full stack',
+    author: 'Frédéric Paurisse',
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    {
+      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      options: {
+        fonts: [
+          {
+            family: 'Roboto',
+          },
+          {
+            family: 'Open Sans',
+            variants: ['400', '700'],
+          },
+        ],
+      },
+    },
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-rest-api',
       options: {
         endpoints: [
-          'http://localhost:3001/api/v1/works'
+          `${process.env.GATSBY_API_URL}/api/v1/works`,
         ],
       },
     },
   ],
-}
+};

@@ -1,3 +1,6 @@
+:root { --color: black; }
+
 html {
-    background-color: teal;
+    background-color: darkcyan;
+    font-family: 'Roboto';
   }
