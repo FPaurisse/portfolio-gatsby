@@ -11,9 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Deploy
+      - env: 
+        GATSBY_API_URL: https://api.fredericpaurisse.fr
         run: |
           npm install
-          GATSBY_API_URL=//api.fredericpaurisse.fr npm run build
+          npm run build
           sshpass -p ${{secrets.SSH_PASS}} \
           rsync -e "ssh -o StrictHostKeyChecking=no" \
           -av --delete ./public/ ./.cache/ \
