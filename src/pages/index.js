@@ -13,7 +13,7 @@ export default ({ data }) => (
       )
     </p>
     {data.allRestApiApiV1Works.edges.map(({ node }) => (
-      <div key={node.id}>
+      <div key={node.endpointId}>
         <Link to={node.slug}>
           <h2>{node.title}</h2>
         </Link>
@@ -25,10 +25,10 @@ export default ({ data }) => (
 );
 export const worksQuery = graphql`
   query {
-    allRestApiApiV1Works(sort: {fields: endpointId, order: DESC}) {
+    allRestApiApiV1Works(sort: {fields: createdAt, order: DESC}) {
       edges {
         node {
-          id
+          endpointId
           slug
           title
           context
