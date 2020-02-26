@@ -1,0 +1,36 @@
+.Heading {
+    padding: 40px 30px;
+    color: #3a3837;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Heading__title {
+    font-weight: 800;
+    font-size: 0.9rem;
+}
+
+.Heading__count {
+    color: #33B0CB;
+    margin-right: 3px;
+}
+
+.Heading__filters {
+    font-weight: 400;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.Heading__filter {
+    border-right: 1px solid #d1d6da;
+    padding: 0 5px;
+}
+
+.Heading__filter:last-child {
+    border-right: 0;
+}
+
+.Heading__filterActive {
+    color: #33B0CB;
+}

@@ -1,7 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import layoutStyles from '../styles/layout.module.css';
-
 import Header from './header';
 
 const Layout = ({ children }) => {
@@ -16,11 +15,11 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <div className={layoutStyles.layout}>
+    <div className={layoutStyles.Layout}>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div>
+      <section className={layoutStyles.container}>
         {children}
-      </div>
+      </section>
     </div>
   );
 };
