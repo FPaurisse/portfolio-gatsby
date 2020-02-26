@@ -6,7 +6,9 @@ import headerStyles from '../styles/header.module.css';
 
 const Header = ({ siteTitle }) => (
   <header className={headerStyles.Header}>
-    <div className={headerStyles.logo} title={siteTitle} />
+    <Link to="/">
+      <div className={headerStyles.logo} title={siteTitle} />
+    </Link>
     <nav className={headerStyles.nav}>
       <ul className={headerStyles.list}>
         <li className={headerStyles.item}>
@@ -23,7 +25,7 @@ const Header = ({ siteTitle }) => (
     <div className={headerStyles.social}>
       <div className={headerStyles.text}>Follow me</div>
       <div className={headerStyles.social__wrapper}>
-        <a className={headerStyles.social__link} href="https://www.linkedin.com/in/frederic-paurisse/">
+        <a className={headerStyles.social__link} href="https://www.linkedin.com/in/frederic-paurisse/" rel="noopener noreferrer" target="_blank">
           <FontAwesomeIcon icon={faLinkedinIn} />
         </a>
       </div>

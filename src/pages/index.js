@@ -11,12 +11,12 @@ export default ({ data }) => (
     <Heading />
     <div className={worksStyles.works}>
       {data.allRestApiApiV1Works.edges.map(({ node }) => (
-        <Link to={node.slug} className={worksStyles.work}>
-          <div className={worksStyles.image} style={{ backgroundImage: 'url(\'./images/test4.jpg\')' }} />
-          <div className={worksStyles.back} style={{ backgroundColor: '#DCDCCB' }} />
-          <div className={worksStyles.backGradient} style={{ backgroundImage: 'linear-gradient(45deg, #F26157 15%, #363635 70%)' }} />
-          <h1 className={worksStyles.title} style={{ backgroundImage: 'url(\'./images/test4.jpg\')' }}>Rosebud</h1>
-          <div className={worksStyles.mockup} style={{ backgroundImage: 'url(\'./images/rosebud.jpg\')' }} />
+        <Link key={node.endpointId} to={node.slug} className={worksStyles.work}>
+          <div className={worksStyles.image} style={{ backgroundImage: `url(${node.image})` }} />
+          <div className={worksStyles.back} style={{ backgroundColor: node.optionalColor }} />
+          <div className={worksStyles.backGradient} style={{ backgroundImage: `linear-gradient(45deg, ${node.primaryColor} 15%, ${node.secondaryColor} 70%)` }} />
+          <h1 className={worksStyles.title} style={{ backgroundImage: `url(${node.image})` }}>{node.title}</h1>
+          <div className={worksStyles.mockup} style={{ backgroundImage: `url(${node.mockup})` }} />
         </Link>
       ))}
     </div>
@@ -30,6 +30,11 @@ export const worksQuery = graphql`
           endpointId
           slug
           title
+          image
+          primaryColor
+          secondaryColor
+          optionalColor
+          mockup
           context
           categories
         }
