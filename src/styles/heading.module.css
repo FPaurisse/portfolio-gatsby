@@ -17,20 +17,27 @@
 
 .Heading__filters {
     font-weight: 400;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
 }
 
-.Heading__filter {
+.link {
     border-right: 1px solid #d1d6da;
-    padding: 0 5px;
+    padding: 0 8px;
+    color: #3a3837;
+    text-decoration: none;
+    letter-spacing: 1px;
 }
 
-.Heading__filter:last-child {
+.link:first-child {
+    margin-left: 3px;
+}
+
+.link:last-child {
     border-right: 0;
 }
 
-.Heading__filterActive {
+.activeLink {
     color: #33B0CB;
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 import headingStyles from '../styles/heading.module.css';
 
 const Heading = () => {
@@ -19,9 +19,9 @@ const Heading = () => {
         {`${totalCount > 1 ? 'works' : 'work'} available`}
       </div>
       <div className={headingStyles.Heading__filters}>
-        Show by:
-        <span className={headingStyles.Heading__filterActive}>Web</span>
-        <span className={headingStyles.Heading__filter}>Print</span>
+        Show by :
+        <Link to={'/' || '/web'} activeClassName={headingStyles.activeLink} className={headingStyles.link}>Web</Link>
+        <Link to="/print" activeClassName={headingStyles.activeLink} className={headingStyles.link}>Print</Link>
       </div>
     </div>
   );
