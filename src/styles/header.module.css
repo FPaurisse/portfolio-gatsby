@@ -1,11 +1,10 @@
 .Header {
-    width: 110px;
-    height: 100vh;
+    width: 100%;
     background: #EAEFF2;
     border-right: 1px solid #ededed;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: column-reverse;
+    justify-content: center;
     align-items: center;
 }
 
@@ -15,7 +14,8 @@
     min-height: 70px;
     background: white;
     border-radius: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,7 +24,8 @@
 
 .nav {
     display: flex;
-    transform: rotate(-90deg);
+    background: white;
+    width: 100%;
 }
 
 
@@ -32,7 +33,9 @@
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .item {
@@ -41,10 +44,11 @@
     justify-content: center;
     align-items: center;
     border-right: 1px solid #d1d6da;
-    padding: 0 30px;
+    padding: 10px 30px;
+    width: 100%;
 }
 
-.item:nth-child(1) {
+.item:last-child {
     border-right: none;
 }
 
@@ -64,14 +68,7 @@
 }
 
 .social {
-    background: white;
-    width: 100%;
-    height: auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: none;
 }
 
 .text {
@@ -109,4 +106,57 @@
     padding: 5px;
     text-decoration: none;
     color: #33B0CB;
+}
+
+
+@media screen and (min-width: 640px) {
+
+    .Header {
+        width: 110px;
+        height: 100vh;  
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .logo {
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+
+    .nav {
+        transform: rotate(-90deg);
+        background: none;
+        width: auto;
+    }
+
+    .list {
+        flex-direction: row-reverse;
+        justify-content: initial;
+        width: auto;
+    }
+
+    .item {
+        padding: 0 30px;
+        width: auto;
+    }
+
+    .item:nth-child(1) {
+        border-right: none;
+    }
+
+    .item:last-child {
+        border-right: 1px solid #d1d6da;
+    }
+
+    .social {
+        background: white;
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
 }

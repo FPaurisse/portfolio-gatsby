@@ -1,9 +1,8 @@
 .Layout {
     margin: 0;
-    height: 100vh;
     width: 100%;
     display: flex;
-    overflow: hidden;
+    flex-direction: column;
     font-family: "Open Sans";
     font-weight: 400;
 }
@@ -12,5 +11,18 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    overflow-y: scroll;
+}
+
+@media screen and (min-width: 640px) {
+
+    .Layout {
+        height: 100vh;
+        flex-direction: row;
+        overflow: hidden;
+    }
+
+    .container {
+        overflow-y: scroll;
+    }
+
 }
