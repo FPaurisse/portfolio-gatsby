@@ -18,11 +18,11 @@
 
     .Layout {
         flex-direction: row;
-        overflow: hidden;
     }
 
     .container {
         overflow-y: scroll;
+        height: 100vh;
     }
 
 }

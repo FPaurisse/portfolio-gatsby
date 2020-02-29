@@ -23,7 +23,7 @@ module.exports = {
       resolve: 'gatsby-source-rest-api',
       options: {
         endpoints: [
-          `${process.env.GATSBY_API_URL}/api/v1/works`,
+          `${process.env.GATSBY_API_URL}api/v1/works`,
         ],
       },
     },
