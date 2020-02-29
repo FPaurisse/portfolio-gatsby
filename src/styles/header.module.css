@@ -2,7 +2,7 @@
     height: auto;
     width: 100%;
     background: #EAEFF2;
-    border-right: 1px solid #ededed;
+    border-right: 0;
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
@@ -49,6 +49,10 @@
     width: 100%;
 }
 
+.item:last-child {
+    border-right: 0;
+}
+
 .link {
     font-size: 0.7rem;
     font-weight: 800;
@@ -61,10 +65,6 @@
     justify-content: center;
     align-items: center;
     position: relative;
-}
-
-.item:last-child {
-    border-right: 0;
 }
 
 .linkActive {
@@ -91,7 +91,7 @@
         height: 100vh;  
         flex-direction: column;
         justify-content: space-between;
-        border-right: 0;
+        border-right: 1px solid #ededed;
     }
 
     .logo {
@@ -116,8 +116,8 @@
         width: auto;
     }
 
-    .item:nth-child(1) {
-        border-right: none;
+    .item:first-child {
+        border-right: 0;
     }
 
     .item:last-child {
