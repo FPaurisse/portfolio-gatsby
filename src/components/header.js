@@ -12,13 +12,13 @@ const Header = ({ siteTitle }) => (
     <nav className={headerStyles.nav}>
       <ul className={headerStyles.list}>
         <li className={headerStyles.item}>
-          <Link to="/" activeClassName={headerStyles.active} className={headerStyles.link}>Works</Link>
+          <Link to="/" activeClassName={headerStyles.linkActive} className={headerStyles.link}>Works</Link>
         </li>
         <li className={headerStyles.item}>
-          <Link to="/about" activeClassName={headerStyles.active} className={headerStyles.link}>About</Link>
+          <Link to="/about" activeClassName={headerStyles.linkActive} className={headerStyles.link}>About</Link>
         </li>
         <li className={headerStyles.item}>
-          <Link to="/contact" activeClassName={headerStyles.active} className={headerStyles.link}>Contact</Link>
+          <Link to="/contact" activeClassName={headerStyles.linkActive} className={headerStyles.link}>Contact</Link>
         </li>
       </ul>
     </nav>
