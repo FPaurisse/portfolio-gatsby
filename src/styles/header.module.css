@@ -129,8 +129,28 @@
         line-height: 1.2rem;
     }
 
-    .linkActive {
-        border-bottom: 2px solid #33B0CB;
+    .link:hover {
+        color: #3a3837;
+    }
+
+    .link::after {
+        content: "";
+        width: 0;
+        height: 2px;
+        background-color: #33B0CB;
+        position: absolute;
+        top: 1.2rem;
+        left: 0;
+        transition: 0.3s;
+    }
+
+    .link:hover::after {
+        width: 100%;
+    }
+    
+
+    .linkActive::after {
+        width: 100%;
     }
 
     .linkActive::before {
