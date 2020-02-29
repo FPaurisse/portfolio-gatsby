@@ -91,6 +91,7 @@
         height: 100vh;  
         flex-direction: column;
         justify-content: space-between;
+        border-right: 0;
     }
 
     .logo {
