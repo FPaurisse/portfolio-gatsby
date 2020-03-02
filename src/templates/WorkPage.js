@@ -5,6 +5,7 @@ import SEO from '../components/seo';
 
 export default ({ data }) => {
   const work = data.restApiApiV1Works;
+  console.log(work);
   return (
     <Layout>
       <SEO title={work.title} description={work.context} />
@@ -21,10 +22,10 @@ export default ({ data }) => {
 export const query = graphql`
   query($slug: String!) {
     restApiApiV1Works(slug: {eq: $slug}) {
+          categories
           title
           context
           tools
-          categories
     }
   }
 `;
