@@ -14,8 +14,8 @@ const Work = ({ data }) => (
           : baseURL + data.image})`,
       }}
     />
-    <div className={workStyles.back} style={{ backgroundColor: `#${data.optionalColor}` }} />
-    <div className={workStyles.backGradient} style={{ backgroundImage: `linear-gradient(45deg, #${data.primaryColor} 15%, #${data.secondaryColor} 70%)` }} />
+    <div className={workStyles.back} style={{ backgroundColor: `${data.optionalColor}` }} />
+    <div className={workStyles.backGradient} style={{ backgroundImage: `linear-gradient(45deg, ${data.primaryColor} 15%, ${data.secondaryColor} 70%)` }} />
     <h1
       className={workStyles.title}
       style={{
@@ -33,6 +33,8 @@ const Work = ({ data }) => (
         backgroundImage: `url(${data.mockup.includes(baseURL)
           ? data.mockup
           : baseURL + data.mockup})`,
+        width: `${data.width}%`,
+        height: `${data.height}%`,
       }}
     />
   </Link>

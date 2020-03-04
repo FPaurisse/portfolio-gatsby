@@ -30,6 +30,8 @@ export const worksQuery = graphql`
           primaryColor
           secondaryColor
           optionalColor
+          width
+          height
           mockup
           context
           categories
