@@ -21,23 +21,32 @@
     text-transform: uppercase;
 }
 
-.link {
+.button {
+    outline: none;
+    border-top: 0;
+    border-left: 0;
+    border-bottom:0;
     border-right: 1px solid #d1d6da;
     padding: 0 8px;
+    background-color: transparent;
+    cursor: pointer;
     color: #3a3837;
     text-decoration: none;
+    font-weight: 400;
+    font-size: 0.75rem;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-.link:first-child {
+.button:first-child {
     margin-left: 3px;
 }
 
-.link:last-child {
+.button:last-child {
     border-right: 0;
 }
 
-.activeLink {
+.active {
     color: #33B0CB;
 }
 

@@ -1,27 +1,22 @@
 import React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import cx from 'classnames';
 import headingStyles from '../styles/heading.module.css';
 
-const Heading = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allRestApiApiV1Works {
-        totalCount
-      }
-    }
-  `);
-  const { totalCount } = data.allRestApiApiV1Works;
+const Heading = ({ counter, changeCategory, category }) => {
+  const filterBy = (choice) => {
+    changeCategory(choice);
+  };
 
   return (
     <div className={headingStyles.Heading}>
       <div className={headingStyles.Heading__title}>
-        <span className={headingStyles.Heading__count}>{totalCount}</span>
-        {`${totalCount > 1 ? 'works' : 'work'} available`}
+        <span className={headingStyles.Heading__count}>{counter}</span>
+        {`${counter > 1 ? 'works' : 'work'} available`}
       </div>
       <div className={headingStyles.Heading__filters}>
         Show by :
-        <Link to={'/' || '/web'} activeClassName={headingStyles.activeLink} className={headingStyles.link}>Web</Link>
-        <Link to="/print" activeClassName={headingStyles.activeLink} className={headingStyles.link}>Print</Link>
+        <button onClick={() => filterBy('Web')} type="button" className={category === 'Web' ? cx(headingStyles.active, headingStyles.button) : headingStyles.button}>Web</button>
+        <button onClick={() => filterBy('Print')} type="button" className={category === 'Print' ? cx(headingStyles.active, headingStyles.button) : headingStyles.button}>Print</button>
       </div>
     </div>
   );
