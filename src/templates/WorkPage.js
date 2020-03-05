@@ -21,26 +21,23 @@ export default ({ data, location }) => {
               Back to works
             </Link>
           </div>
-          <div
-            className={s.image}
-            style={{
-              backgroundImage: `url(${work.image.includes(baseURL)
-                ? work.image
-                : baseURL + work.image})`,
-            }}
-          />
+
           <div className={s.back} style={{ backgroundColor: `${work.optionalColor}` }} />
-          <div className={s.backGradient} style={{ backgroundImage: `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }} />
-          <h1
-            className={s.title}
-            style={{
-              backgroundImage: `url(${work.image.includes(baseURL)
-                ? work.image
-                : baseURL + work.image})`,
-            }}
-          >
-            {work.title}
-          </h1>
+          <div className={s.backGradient} style={{ backgroundImage: `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }}>
+            <div
+              className={s.first}
+              style={{
+                backgroundImage: `url(${work.image.includes(baseURL)
+                  ? work.image
+                  : baseURL + work.image})`,
+              }}
+            >
+              <div
+                className={s.second}
+                style={{ backgroundImage: `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }}
+              />
+            </div>
+          </div>
           <div
             className={s.slide}
           >
