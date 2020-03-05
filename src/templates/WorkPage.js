@@ -6,11 +6,11 @@ import s from '../styles/WorkPage.module.css';
 
 const baseURL = process.env.GATSBY_API_URL || '';
 
-export default ({ data }) => {
+export default ({ data, location }) => {
   const work = data.restApiApiV1Works;
   console.log(work);
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO title={work.title} description={work.context} />
       <div className={s.WorkPage}>
         <div className={s.view}>

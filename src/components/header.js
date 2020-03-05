@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import cx from 'classnames';
 import headerStyles from '../styles/header.module.css';
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, location }) => (
   <header className={headerStyles.Header}>
     <Link to="/">
       <div className={headerStyles.logo} title={siteTitle} />
@@ -12,7 +13,7 @@ const Header = ({ siteTitle }) => (
     <nav className={headerStyles.nav}>
       <ul className={headerStyles.list}>
         <li className={headerStyles.item}>
-          <Link to="/" activeClassName={headerStyles.linkActive} className={headerStyles.link}>Works</Link>
+          <Link to="/" activeClassName={headerStyles.linkActive} className={cx(location.pathname.includes('works') && headerStyles.linkActive, headerStyles.link)}>Works</Link>
         </li>
         <li className={headerStyles.item}>
           <Link to="/about" activeClassName={headerStyles.linkActive} className={headerStyles.link}>About</Link>

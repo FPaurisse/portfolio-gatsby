@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import layoutStyles from '../styles/layout.module.css';
 import Header from './header';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className={layoutStyles.Layout}>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header location={location} siteTitle={data.site.siteMetadata.title} />
       <section className={layoutStyles.container}>
         {children}
       </section>
