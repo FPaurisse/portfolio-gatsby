@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons';
+import { faLongArrowAltLeft, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import s from '../styles/WorkPage.module.css';
@@ -15,6 +15,12 @@ export default ({ data, location }) => {
       <SEO title={work.title} description={work.context} />
       <div className={s.WorkPage}>
         <div className={s.view}>
+          <div className={s.backLink}>
+            <Link to="/works" className={s.link}>
+              <FontAwesomeIcon icon={faLongArrowAltLeft} className={s.icon} />
+              Back to works
+            </Link>
+          </div>
           <div
             className={s.image}
             style={{
@@ -34,30 +40,23 @@ export default ({ data, location }) => {
             }}
           >
             {work.title}
-
           </h1>
-          <div className={s.backLink}>
-            <Link to="/works" className={s.link}>
-              <FontAwesomeIcon icon={faLongArrowAltLeft} className={s.icon} />
-              Back to works
-            </Link>
-          </div>
           <div
-            className={s.mockup}
-            style={{
-              backgroundImage: `url(${work.mockup.includes(baseURL)
+            className={s.slide}
+          >
+            <img
+              alt="mockup"
+              className={s.mockup}
+              src={work.mockup.includes(baseURL)
                 ? work.mockup
-                : baseURL + work.mockup})`,
-              width: `${work.width}%`,
-              height: `${work.height}%`,
-            }}
-          />
-        </div>
-        <div className={s.wrapper}>
-          <h1>{work.title}</h1>
-          <p>{work.context}</p>
-          <div>{work.tools.map((tool) => <h4>{tool}</h4>)}</div>
-          <div>{work.categories.map((category) => <h5>{category}</h5>)}</div>
+                : baseURL + work.mockup}
+            />
+            <button type="button" className={s.down}>
+              <span className={s.circle}>
+                <FontAwesomeIcon icon={faChevronDown} />
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </Layout>
