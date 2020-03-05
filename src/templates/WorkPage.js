@@ -1,5 +1,7 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import s from '../styles/WorkPage.module.css';
@@ -8,7 +10,6 @@ const baseURL = process.env.GATSBY_API_URL || '';
 
 export default ({ data, location }) => {
   const work = data.restApiApiV1Works;
-  console.log(work);
   return (
     <Layout location={location}>
       <SEO title={work.title} description={work.context} />
@@ -35,6 +36,12 @@ export default ({ data, location }) => {
             {work.title}
 
           </h1>
+          <div className={s.backLink}>
+            <Link to="/works" className={s.link}>
+              <FontAwesomeIcon icon={faLongArrowAltLeft} className={s.icon} />
+              Back to works
+            </Link>
+          </div>
           <div
             className={s.mockup}
             style={{
@@ -46,10 +53,12 @@ export default ({ data, location }) => {
             }}
           />
         </div>
-        <h1>{work.title}</h1>
-        <p>{work.context}</p>
-        <div>{work.tools.map((tool) => <h4>{tool}</h4>)}</div>
-        <div>{work.categories.map((category) => <h5>{category}</h5>)}</div>
+        <div className={s.wrapper}>
+          <h1>{work.title}</h1>
+          <p>{work.context}</p>
+          <div>{work.tools.map((tool) => <h4>{tool}</h4>)}</div>
+          <div>{work.categories.map((category) => <h5>{category}</h5>)}</div>
+        </div>
       </div>
     </Layout>
   );
