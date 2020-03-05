@@ -25,7 +25,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const WorkPage = path.resolve('src/templates/WorkPage.js');
   result.data.allRestApiApiV1Works.edges.forEach(({ node }) => {
     createPage({
-      path: node.slug,
+      path: `works/${node.slug}`,
       component: WorkPage,
       context: {
         slug: node.slug,

@@ -5,7 +5,7 @@ import workStyles from '../styles/work.module.css';
 const baseURL = process.env.GATSBY_API_URL || '';
 
 const Work = ({ data }) => (
-  <Link key={data.endpointId} to={data.slug} className={workStyles.Work}>
+  <Link key={data.endpointId} to={`/works/${data.slug}`} className={workStyles.Work}>
     <div
       className={workStyles.image}
       style={{
