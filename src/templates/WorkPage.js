@@ -14,44 +14,40 @@ export default ({ data, location }) => {
     <Layout location={location}>
       <SEO title={work.title} description={work.context} />
       <div className={s.WorkPage}>
-        <div className={s.view}>
+        <div
+          className={s.workSlide}
+          style={{
+            backgroundImage: `linear-gradient(black, black), url(${work.image.includes(baseURL)
+              ? work.image
+              : baseURL + work.image})`,
+          }}
+        >
           <div className={s.backLink}>
             <Link to="/works" className={s.link}>
               <FontAwesomeIcon icon={faLongArrowAltLeft} className={s.icon} />
               Back to works
             </Link>
           </div>
-
-          <div className={s.back} style={{ backgroundColor: `${work.optionalColor}` }} />
-          <div className={s.backGradient} style={{ backgroundImage: `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }}>
-            <div
-              className={s.first}
-              style={{
-                backgroundImage: `url(${work.image.includes(baseURL)
-                  ? work.image
-                  : baseURL + work.image})`,
-              }}
-            >
-              <div
-                className={s.second}
-                style={{ backgroundImage: `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }}
-              />
+          <div className={s.wrapper} style={{ borderImageSource: `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }}>
+            <div className={s.optionalBack} style={{ backgroundColor: `${work.optionalColor}` }}>
+              <div className={s.backGradient} style={{ backgroundImage: `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }} />
             </div>
           </div>
-          <div
-            className={s.slide}
-          >
-            <img
-              alt="mockup"
-              className={s.mockup}
-              src={work.mockup.includes(baseURL)
-                ? work.mockup
-                : baseURL + work.mockup}
-            />
+          <div className={s.view}>
+            <div className={s.content}>
+              <div
+                className={s.mockup}
+                style={{
+                  backgroundImage: `url(${work.mockup.includes(baseURL)
+                    ? work.mockup
+                    : baseURL + work.mockup})`,
+                }}
+              />
+            </div>
             <button type="button" className={s.down}>
-              <span className={s.circle}>
+              <div className={s.circle}>
                 <FontAwesomeIcon icon={faChevronDown} />
-              </span>
+              </div>
             </button>
           </div>
         </div>
