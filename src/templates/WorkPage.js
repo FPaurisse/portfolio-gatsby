@@ -11,7 +11,8 @@ const baseURL = process.env.GATSBY_API_URL || '';
 export default ({ data, location }) => {
   const work = data.restApiApiV1Works;
   const worksData = useData();
-  const dataFilter = worksData.edges.filter((x) => x.node.categories.includes(work.categories[0]));
+  const currentCategory = work.categories[0];
+  const dataFilter = worksData.edges.filter((x) => x.node.categories.includes(currentCategory));
   const currentIndex = dataFilter
     .map((item, index) => item.node.slug === work.slug && index)
     .filter((x) => x !== false)[0];
@@ -26,7 +27,7 @@ export default ({ data, location }) => {
       <SEO title={work.title} description={work.context} />
       <div className={s.WorkPage}>
         <div className={s.backLink}>
-          <Link to="/works" className={s.link}>
+          <Link to="/works" state={{ currentCategory }} className={s.link}>
             Works
           </Link>
         </div>
