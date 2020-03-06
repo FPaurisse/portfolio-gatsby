@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight, faChevronLeft, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import cx from 'classnames';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -45,11 +45,6 @@ export default ({ data, location }) => {
                 }}
               />
             </div>
-            <button type="button" className={s.down}>
-              <div className={s.circle}>
-                <FontAwesomeIcon icon={faChevronDown} />
-              </div>
-            </button>
           </div>
           <button aria-label="Next" className={cx(s.navButton, s.navRight)} type="button" />
         </div>
