@@ -72,14 +72,14 @@
     left: 0;
     border-top: 30px solid transparent;
     border-bottom: 30px solid transparent;
-    border-left: 30px solid #EAEFF2;
+    border-left: 30px solid #ffffff;
 }
 
 .navRight {
     right: 0;
     border-top: 30px solid transparent;
     border-bottom: 30px solid transparent;
-    border-right: 30px solid #EAEFF2;
+    border-right: 30px solid #ffffff;
 }
 
 .wrapper {
