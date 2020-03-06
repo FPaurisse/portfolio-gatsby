@@ -53,6 +53,8 @@ export default ({ data, location }) => {
                   backgroundImage: `url(${work.mockup.includes(baseURL)
                     ? work.mockup
                     : baseURL + work.mockup})`,
+                  width: `${work.width}%`,
+                  height: `${work.height}%`,
                 }}
               />
             </div>
