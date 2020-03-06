@@ -7,10 +7,9 @@ import SEO from '../components/seo';
 import useData from '../useData';
 
 const Works = ({ location }) => {
-  const { state = {} } = location;
-  const { currentCategory } = state;
   const { edges } = useData();
-  const [category, setCategory] = useState(currentCategory || 'Web');
+  const currentCategory = location.state && location.state.currentCategory ? location.state.currentCategory : 'Web';
+  const [category, setCategory] = useState(currentCategory);
   const data = edges.filter((work) => work.node.categories.includes(`${category}`));
   return (
     <Layout location={location}>
