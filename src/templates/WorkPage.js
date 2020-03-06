@@ -12,13 +12,15 @@ export default ({ data, location }) => {
   const work = data.restApiApiV1Works;
   const worksData = useData();
   const currentSlug = location.pathname.replace('/works/', '');
-  const currentIndex = worksData.edges
+  const dataFilter = worksData.edges.filter((x) => x.node.categories.includes(work.categories[0]));
+  const currentIndex = dataFilter
     .map((item, index) => item.node.slug === currentSlug && index)
     .filter((x) => x !== false)[0];
-  const nextSlug = currentIndex + 1 < worksData.edges.length
-    && worksData.edges[currentIndex + 1].node.slug;
+  const nextSlug = currentIndex + 1 < dataFilter.length
+    && dataFilter[currentIndex + 1].node.slug;
   const prevSlug = currentIndex - 1 >= 0
-    && worksData.edges[currentIndex - 1].node.slug;
+    && dataFilter[currentIndex - 1].node.slug;
+
 
   return (
     <Layout location={location}>
