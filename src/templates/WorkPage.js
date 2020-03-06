@@ -11,10 +11,9 @@ const baseURL = process.env.GATSBY_API_URL || '';
 export default ({ data, location }) => {
   const work = data.restApiApiV1Works;
   const worksData = useData();
-  const currentSlug = location.pathname.replace('/works/', '');
   const dataFilter = worksData.edges.filter((x) => x.node.categories.includes(work.categories[0]));
   const currentIndex = dataFilter
-    .map((item, index) => item.node.slug === currentSlug && index)
+    .map((item, index) => item.node.slug === work.slug && index)
     .filter((x) => x !== false)[0];
   const nextSlug = currentIndex + 1 < dataFilter.length
     && dataFilter[currentIndex + 1].node.slug;
@@ -69,6 +68,7 @@ export const query = graphql`
     restApiApiV1Works(slug: {eq: $slug}) {
       endpointId
       title
+      slug
       context
       tools
       categories
