@@ -28,7 +28,7 @@ export default ({ data, location }) => {
       <div className={s.WorkPage}>
         <div className={s.backLink}>
           <Link to="/works" state={{ currentCategory }} className={s.link}>
-            Works
+            {`Works // ${currentCategory}`}
           </Link>
         </div>
         <div
