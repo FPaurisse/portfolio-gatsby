@@ -1,7 +1,8 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLongArrowAltLeft, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faChevronLeft, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import cx from 'classnames';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import s from '../styles/WorkPage.module.css';
@@ -14,6 +15,11 @@ export default ({ data, location }) => {
     <Layout location={location}>
       <SEO title={work.title} description={work.context} />
       <div className={s.WorkPage}>
+        <div className={s.backLink}>
+          <Link to="/works" className={s.link}>
+            Works
+          </Link>
+        </div>
         <div
           className={s.workSlide}
           style={{
@@ -22,12 +28,7 @@ export default ({ data, location }) => {
               : baseURL + work.image})`,
           }}
         >
-          <div className={s.backLink}>
-            <Link to="/works" className={s.link}>
-              <FontAwesomeIcon icon={faLongArrowAltLeft} className={s.icon} />
-              Back to works
-            </Link>
-          </div>
+          <button aria-label="Previous" className={cx(s.navButton, s.navLeft)} type="button" />
           <div className={s.wrapper} style={{ borderImageSource: `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }}>
             <div className={s.optionalBack} style={{ backgroundColor: `${work.optionalColor}` }}>
               <div className={s.backGradient} style={{ backgroundImage: `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }} />
@@ -50,6 +51,7 @@ export default ({ data, location }) => {
               </div>
             </button>
           </div>
+          <button aria-label="Next" className={cx(s.navButton, s.navRight)} type="button" />
         </div>
       </div>
     </Layout>
