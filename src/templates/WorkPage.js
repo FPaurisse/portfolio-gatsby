@@ -1,16 +1,25 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import cx from 'classnames';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import s from '../styles/WorkPage.module.css';
+import useData from '../useData';
 
 const baseURL = process.env.GATSBY_API_URL || '';
 
 export default ({ data, location }) => {
   const work = data.restApiApiV1Works;
+  const worksData = useData();
+  const currentSlug = location.pathname.replace('/works/', '');
+  const currentIndex = worksData.edges
+    .map((item, index) => item.node.slug === currentSlug && index)
+    .filter((x) => x !== false)[0];
+  const nextSlug = currentIndex + 1 < worksData.edges.length
+    && worksData.edges[currentIndex + 1].node.slug;
+  const prevSlug = currentIndex - 1 >= 0
+    && worksData.edges[currentIndex - 1].node.slug;
+
   return (
     <Layout location={location}>
       <SEO title={work.title} description={work.context} />
@@ -28,7 +37,7 @@ export default ({ data, location }) => {
               : baseURL + work.image})`,
           }}
         >
-          <button aria-label="Previous" className={cx(s.navButton, s.navLeft)} type="button" />
+          {prevSlug && <Link to={`/works/${prevSlug}`} aria-label="Previous" className={cx(s.navButton, s.navLeft)} />}
           <div className={s.wrapper} style={{ borderImageSource: `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }}>
             <div className={s.optionalBack} style={{ backgroundColor: `${work.optionalColor}` }}>
               <div className={s.backGradient} style={{ backgroundImage: `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }} />
@@ -46,7 +55,7 @@ export default ({ data, location }) => {
               />
             </div>
           </div>
-          <button aria-label="Next" className={cx(s.navButton, s.navRight)} type="button" />
+          {nextSlug && <Link to={`/works/${nextSlug}`} aria-label="Next" className={cx(s.navButton, s.navRight)} />}
         </div>
       </div>
     </Layout>
