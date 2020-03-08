@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby';
 import cx from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faTools, faInfoCircle, faChevronLeft, faChevronRight, faExpand,
+  faTag, faInfoCircle, faChevronLeft, faChevronRight, faExpand, faToolbox, faBullseye,
 } from '@fortawesome/free-solid-svg-icons';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -87,14 +87,13 @@ export default ({ data, location }) => {
         </div>
         <div className={cx(!fullPage && s.detailsReduce, s.details)}>
           <div className={s.detail}>
-            <h2 className={s.heading}>Project</h2>
-            <p className={s.title}>{work.title}</p>
-          </div>
-          <div className={s.detail}>
             <h2 className={s.heading}>Tools</h2>
-            <p className={s.tools}>
-              {work.tools.map((tool) => <p className={s.tool}>{tool}</p>)}
-            </p>
+            {work.tools.map((tool) => (
+              <p className={s.tool}>
+                <FontAwesomeIcon className={s.iconTag} icon={faTag} />
+                {tool}
+              </p>
+            ))}
           </div>
         </div>
       </div>
