@@ -157,15 +157,6 @@
     display: flex;
 }
 
-.detailsReduce {
-    width: 0;
-    padding: 0;
-    border-right:0;
-    overflow: hidden;
-    transition: 0.2s;
-    background-color: transparent;
-}
-
 .details {
     width: 35%;
     height: 100vh;
@@ -180,6 +171,15 @@
     overflow: hidden;
     color: #3a3837;
     transition: 0.2s;
+}
+
+.detailsReduce {
+    width: 0;
+    padding: 0;
+    border-right:0;
+    overflow: hidden;
+    transition: 0.2s;
+    background-color: transparent;
 }
 
 .detailsReduce > * {
