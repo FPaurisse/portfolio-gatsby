@@ -1,4 +1,9 @@
-.close {
+.WorkPage {
+    display: flex;
+    flex-direction: row;
+}
+
+.show {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -8,7 +13,7 @@
     z-index: 10;
 }
 
-.closeButton {
+.showButton {
     outline: none;
     border: 0;
     cursor: pointer;
@@ -25,14 +30,14 @@
     height: 60px;
 }
 
-.iconCloseButton {
-    color: #d1d6da;
-    font-size: 28px;
+.iconShowButton {
+    color: #8e8e8e;
+    font-size: 24px;
     position: absolute;
 }
 
 .workSlide {
-    width: 100%;
+    width: 75%;
     height: 100vh;
     transition: 0.2s;
     margin: 0;
@@ -42,11 +47,13 @@
     background-blend-mode: saturation;
     position: relative;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
 .workSlideReduce {
-    height: 60vh;
+    width: 100%;
     transition: 0.2s;
 }
 
@@ -54,8 +61,8 @@
     position: absolute;
     z-index: 1;
     background-color: #ffffff;
-    width: 50px; 
-    height: 50px;
+    width: 42px; 
+    height: 42px;
     transition: 0.2s;
     transform: rotate(45deg);
     display: flex;
@@ -65,16 +72,16 @@
 
 .iconNavigation {
     transform: rotate(-45deg);
-    color: #d1d6da;
+    color: #8e8e8e;
     font-size: 18px;
 }
 
 .navLeft {
-    left: -25px;
+    left: -21px;
 }
 
 .navRight {
-    right: -25px;
+    right: -21px;
 }
 
 .wrapper {
@@ -86,11 +93,6 @@
     padding: 15px;
     position: relative;
     transition: 0.2s;
-}
-
-.wrapperReduce {
-    transition: 0.2s;
-    border-width: 30px;
 }
 
 .optionalBack {
@@ -111,16 +113,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 65px;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-}
-
-.viewReduce {
-    padding: 20px;
-    transition: 0.2s;
 }
 
 .content {
@@ -130,12 +127,103 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color: #ffffff;
     padding: 15px;
+    height: 100%;
+    position: relative;
 }
 
 .mockup {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
+    display: flex;
+}
+
+.details {
+    width: 35%;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: #EAEFF2;
+    border: 30px solid #ffffff; 
+    border-left: 0;
+    overflow: hidden;
+    color: #3a3837;
+    transition: 0.2s;
+}
+
+.detailsReduce {
+    width: 0;
+    padding: 0;
+    border-right:0;
+    overflow: hidden;
+    transition: 0.2s;
+    background-color: transparent;
+}
+
+.iconDetails {
+    color: #33B0CB;
+    margin-right: 10px;
+}
+
+.iconSubDetails {
+    color: #33B0CB;
+    margin-right: 10px;
+}
+
+.detailsReduce > * {
+    display: none;
+}
+
+.title {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.context {
+    font-size: 13px;
+}
+
+.tagsTitle {
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.tagsList {
+    margin-top: 15px;
+}
+
+.tag {
+    outline: none;
+    border: 0;
+    background-color: #ffffff;
+    text-transform: uppercase;
+    font-size: 11px;
+    padding: 10px 15px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.close {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    z-index: 1;
+}
+
+.closeButton {
+    color: #ffffff;
+    font-size: 11px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px;
     display: flex;
 }

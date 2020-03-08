@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby';
 import cx from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faExpand, faInfoCircle, faTimesCircle, faChevronLeft, faChevronRight,
+  faTools, faInfoCircle, faChevronLeft, faChevronRight, faExpand,
 } from '@fortawesome/free-solid-svg-icons';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -31,7 +31,6 @@ export default ({ data, location }) => {
     <Layout location={location}>
       <SEO title={work.title} description={work.context} />
       <div className={s.WorkPage}>
-
         <div
           className={cx(!fullPage && s.workSlideReduce, s.workSlide)}
           style={{
@@ -40,12 +39,10 @@ export default ({ data, location }) => {
               : baseURL + work.image})`,
           }}
         >
-          <div className={s.close}>
-            <Link to="/works" state={{ currentCategory }} className={cx(s.closeButton)}>
-              <div className={s.iconCloseButton}>
-                <FontAwesomeIcon icon={faTimesCircle} />
-              </div>
-            </Link>
+          <div className={s.show}>
+            <button className={cx(s.showButton)} type="button" onClick={() => setFullPage(!fullPage)}>
+              <FontAwesomeIcon className={cx(s.iconShowButton)} icon={fullPage ? faExpand : faInfoCircle} />
+            </button>
           </div>
 
           {prevSlug
@@ -78,6 +75,31 @@ export default ({ data, location }) => {
             <FontAwesomeIcon className={s.iconNavigation} icon={faChevronRight} />
           </Link>
           )}
+          <div className={s.close}>
+            <Link to="/works" state={{ currentCategory }} className={cx(s.closeButton)}>
+              <div className={s.iconCloseButton}>
+                ⟵ Works /
+                {' '}
+                {currentCategory}
+              </div>
+            </Link>
+          </div>
+        </div>
+        <div className={cx(!fullPage && s.detailsReduce, s.details)}>
+          <h1 className={s.title}>
+            <FontAwesomeIcon className={s.iconDetails} icon={faInfoCircle} />
+            {work.title}
+          </h1>
+          <p className={s.context}>{work.context}</p>
+          <div className={s.tags}>
+            <h2 className={s.tagsTitle}>
+              <FontAwesomeIcon className={s.iconSubDetails} icon={faTools} />
+              Tools
+            </h2>
+            <div className={s.tagsList}>
+              {work.tools.map((tool) => <button className={s.tag} type="button">{tool}</button>)}
+            </div>
+          </div>
         </div>
       </div>
     </Layout>
