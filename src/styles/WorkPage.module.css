@@ -139,36 +139,3 @@
     background-repeat: no-repeat;
     display: flex;
 }
-
-.showMore {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    align-items: flex-end;
-    position: absolute;
-    z-index: 10;
-    bottom: 0px;
-}
-
-.showButton {
-    outline: none;
-    border: 0;
-    cursor: pointer;
-    background-color: #ffffff;
-    border-radius: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    top: 30px;
-    right: -30px;
-    width: 60px; 
-    height: 60px;
-}
-
-.iconShowButton {
-    color: #d1d6da;
-    font-size: 28px;
-    position: absolute;
-}

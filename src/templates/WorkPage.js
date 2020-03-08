@@ -72,13 +72,6 @@ export default ({ data, location }) => {
                 }}
               />
             </div>
-            <div className={cx(!fullPage && s.showMoreReduce, s.showMore)}>
-              <button className={cx(s.showButton)} type="button" onClick={() => setFullPage(!fullPage)}>
-                <div className={cx(s.iconShowButton)}>
-                  <FontAwesomeIcon icon={!fullPage ? faExpand : faInfoCircle} />
-                </div>
-              </button>
-            </div>
           </div>
           {nextSlug && (
           <Link to={`/works/${nextSlug}`} aria-label="Next" className={cx(!fullPage && s.navButtonReduce, s.navButton, s.navRight)}>
