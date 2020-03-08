@@ -85,7 +85,18 @@ export default ({ data, location }) => {
             </Link>
           </div>
         </div>
-        <div className={cx(!fullPage && s.detailsReduce, s.details)} />
+        <div className={cx(!fullPage && s.detailsReduce, s.details)}>
+          <div className={s.detail}>
+            <h2 className={s.heading}>Project</h2>
+            <p className={s.title}>{work.title}</p>
+          </div>
+          <div className={s.detail}>
+            <h2 className={s.heading}>Tools</h2>
+            <p className={s.tools}>
+              {work.tools.map((tool) => <p className={s.tool}>{tool}</p>)}
+            </p>
+          </div>
+        </div>
       </div>
     </Layout>
   );
