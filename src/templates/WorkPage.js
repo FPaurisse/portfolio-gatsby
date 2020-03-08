@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { graphql, Link } from 'gatsby';
 import cx from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faChevronUp, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import {
+  faExpand, faInfoCircle, faTimesCircle, faChevronLeft, faChevronRight,
+} from '@fortawesome/free-solid-svg-icons';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import s from '../styles/WorkPage.module.css';
@@ -39,14 +41,19 @@ export default ({ data, location }) => {
           }}
         >
           <div className={s.close}>
-            <Link to="/works" state={{ currentCategory }} className={s.closeButton}>
+            <Link to="/works" state={{ currentCategory }} className={cx(s.closeButton)}>
               <div className={s.iconCloseButton}>
                 <FontAwesomeIcon icon={faTimesCircle} />
               </div>
             </Link>
           </div>
 
-          {prevSlug && <Link to={`/works/${prevSlug}`} aria-label="Previous" className={cx(!fullPage && s.navButtonReduce, s.navButton, s.navLeft)} />}
+          {prevSlug
+            && (
+            <Link to={`/works/${prevSlug}`} aria-label="Previous" className={cx(!fullPage && s.navButtonReduce, s.navButton, s.navLeft)}>
+              <FontAwesomeIcon className={s.iconNavigation} icon={faChevronLeft} />
+            </Link>
+            )}
           <div className={cx(!fullPage && s.wrapperReduce, s.wrapper)} style={{ borderImageSource: `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }}>
             <div className={s.optionalBack} style={{ backgroundColor: `${work.optionalColor}` }}>
               <div className={s.backGradient} style={{ backgroundImage: `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }} />
@@ -66,14 +73,18 @@ export default ({ data, location }) => {
               />
             </div>
             <div className={cx(!fullPage && s.showMoreReduce, s.showMore)}>
-              <button className={s.showButton} type="button" onClick={() => setFullPage(!fullPage)}>
-                <div className={s.iconShowButton}>
-                  <FontAwesomeIcon icon={!fullPage ? faChevronDown : faChevronUp} />
+              <button className={cx(s.showButton)} type="button" onClick={() => setFullPage(!fullPage)}>
+                <div className={cx(s.iconShowButton)}>
+                  <FontAwesomeIcon icon={!fullPage ? faExpand : faInfoCircle} />
                 </div>
               </button>
             </div>
           </div>
-          {nextSlug && <Link to={`/works/${nextSlug}`} aria-label="Next" className={cx(!fullPage && s.navButtonReduce, s.navButton, s.navRight)} />}
+          {nextSlug && (
+          <Link to={`/works/${nextSlug}`} aria-label="Next" className={cx(!fullPage && s.navButtonReduce, s.navButton, s.navRight)}>
+            <FontAwesomeIcon className={s.iconNavigation} icon={faChevronRight} />
+          </Link>
+          )}
         </div>
       </div>
     </Layout>
