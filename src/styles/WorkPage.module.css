@@ -90,6 +90,7 @@
 
 .wrapperReduce {
     transition: 0.2s;
+    border-width: 30px;
 }
 
 .optionalBack {
