@@ -85,22 +85,7 @@ export default ({ data, location }) => {
             </Link>
           </div>
         </div>
-        <div className={cx(!fullPage && s.detailsReduce, s.details)}>
-          <h1 className={s.title}>
-            <FontAwesomeIcon className={s.iconDetails} icon={faInfoCircle} />
-            {work.title}
-          </h1>
-          <p className={s.context}>{work.context}</p>
-          <div className={s.tags}>
-            <h2 className={s.tagsTitle}>
-              <FontAwesomeIcon className={s.iconSubDetails} icon={faTools} />
-              Tools
-            </h2>
-            <div className={s.tagsList}>
-              {work.tools.map((tool) => <button className={s.tag} type="button">{tool}</button>)}
-            </div>
-          </div>
-        </div>
+        <div className={cx(!fullPage && s.detailsReduce, s.details)} />
       </div>
     </Layout>
   );
