@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby';
 import cx from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faTag, faInfoCircle, faChevronLeft, faChevronRight, faTimesCircle, faTags,
+  faTag, faInfoCircle, faChevronLeft, faChevronRight, faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -48,7 +48,7 @@ export default ({ data, location }) => {
 
           {prevSlug
             && (
-            <Link to={`/works/${prevSlug}`} aria-label="Previous" className={cx(!fullPage && s.navButtonReduce, s.navButton, s.navLeft)}>
+            <Link to={`/works/${prevSlug}`} state={{ fullPage }} aria-label="Previous" className={cx(!fullPage && s.navButtonReduce, s.navButton, s.navLeft)}>
               <FontAwesomeIcon className={s.iconNavigation} icon={faChevronLeft} />
             </Link>
             )}
@@ -74,7 +74,7 @@ export default ({ data, location }) => {
           </div>
 
           {nextSlug && (
-          <Link to={`/works/${nextSlug}`} aria-label="Next" className={cx(!fullPage && s.navButtonReduce, s.navButton, s.navRight)}>
+          <Link to={`/works/${nextSlug}`} state={{ fullPage }} aria-label="Next" className={cx(!fullPage && s.navButtonReduce, s.navButton, s.navRight)}>
             <FontAwesomeIcon className={s.iconNavigation} icon={faChevronRight} />
           </Link>
           )}
