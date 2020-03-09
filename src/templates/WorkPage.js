@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby';
 import cx from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faTag, faInfoCircle, faChevronLeft, faChevronRight, faTimesCircle, faToolbox, faBullseye,
+  faTag, faInfoCircle, faChevronLeft, faChevronRight, faTimesCircle, faTags,
 } from '@fortawesome/free-solid-svg-icons';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -13,7 +13,7 @@ import useData from '../useData';
 const baseURL = process.env.GATSBY_API_URL || '';
 
 export default ({ data, location }) => {
-  const [fullPage, setFullPage] = useState(false);
+  const [fullPage, setFullPage] = useState(true);
 
   const work = data.restApiApiV1Works;
   const worksData = useData();
@@ -39,10 +39,11 @@ export default ({ data, location }) => {
               : baseURL + work.image})`,
           }}
         >
-          <div className={s.show}>
-            <button className={cx(s.showButton)} type="button" onClick={() => setFullPage(!fullPage)}>
-              <FontAwesomeIcon className={cx(s.iconShowButton)} icon={fullPage ? faTimesCircle : faInfoCircle} />
-            </button>
+
+          <div className={cx(s.button, s.buttonTop)}>
+            <Link to="/works" state={{ currentCategory }} className={cx(s.actionButton, s.actionButtonTop)}>
+              <FontAwesomeIcon className={cx(s.iconActionButton)} icon={faTimesCircle} />
+            </Link>
           </div>
 
           {prevSlug
@@ -51,6 +52,7 @@ export default ({ data, location }) => {
               <FontAwesomeIcon className={s.iconNavigation} icon={faChevronLeft} />
             </Link>
             )}
+
           <div className={cx(!fullPage && s.wrapperReduce, s.wrapper)} style={{ borderImageSource: `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }}>
             <div className={s.optionalBack} style={{ backgroundColor: `${work.optionalColor}` }}>
               <div className={s.backGradient} style={{ backgroundImage: `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }} />
@@ -70,33 +72,28 @@ export default ({ data, location }) => {
               />
             </div>
           </div>
+
           {nextSlug && (
           <Link to={`/works/${nextSlug}`} aria-label="Next" className={cx(!fullPage && s.navButtonReduce, s.navButton, s.navRight)}>
             <FontAwesomeIcon className={s.iconNavigation} icon={faChevronRight} />
           </Link>
           )}
-          <div className={s.close}>
-            <Link to="/works" state={{ currentCategory }} className={cx(s.closeButton)}>
-              <div className={s.iconCloseButton}>
-                ⟵ Works /
-                {' '}
-                {currentCategory}
-              </div>
-            </Link>
+
+          <div className={cx(s.button, s.buttonBottom)}>
+            <button className={cx(s.actionButton, s.actionButtonBottom)} type="button" onClick={() => setFullPage(!fullPage)}>
+              <FontAwesomeIcon className={cx(s.iconActionButton)} icon={!fullPage ? faTimesCircle : faInfoCircle} />
+            </button>
           </div>
+
         </div>
-        <div className={cx(!fullPage && s.detailsReduce, s.details)}>
-          <div className={s.detail}>
-            <h2 className={s.heading}>Client</h2>
-            <p className={s.response}>{work.title}</p>
-          </div>
-          <div className={s.detail}>
-            <h2 className={s.heading}>Context</h2>
-            <p className={s.response}>{work.context}</p>
-          </div>
-          <div className={s.detail}>
-            <h2 className={s.heading}>Tools</h2>
-            <p className={s.response}>{work.tools.map((tool) => tool).join(', ')}</p>
+        <div className={cx(fullPage && s.detailsReduce, s.details)}>
+          <div className={s.tools}>
+            {work.tools.map((tool) => (
+              <p className={s.tool}>
+                <FontAwesomeIcon className={s.iconTag} icon={faTag} />
+                {tool}
+              </p>
+            ))}
           </div>
         </div>
       </div>

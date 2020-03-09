@@ -1,19 +1,26 @@
 .WorkPage {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
-.show {
+.button {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: flex-end;
     position: absolute;
-    top: 0px;
     z-index: 10;
 }
 
-.showButton {
+.buttonTop {
+    top: 0px
+}
+
+.buttonBottom {
+    bottom: 0px;
+}
+
+.actionButton {
     outline: none;
     border: 0;
     cursor: pointer;
@@ -24,20 +31,27 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    top: -25px;
     right: -25px;
     width: 50px; 
     height: 50px;
 }
 
-.iconShowButton {
+.actionButtonTop {
+    top: -25px;
+}
+
+.actionButtonBottom {
+    bottom: -25px;
+}
+
+.iconActionButton {
     color: #8e8e8e;
     font-size: 28px;
     position: absolute;
 }
 
 .workSlide {
-    width: 80%;
+    width: 100%;
     height: 100vh;
     transition: 0.2s;
     margin: 0;
@@ -53,7 +67,7 @@
 }
 
 .workSlideReduce {
-    width: 100%;
+    height: 90vh;
     transition: 0.2s;
 }
 
@@ -158,44 +172,45 @@
 }
 
 .details {
-    width: 20%;
-    height: 100vh;
+    width: 100%;
+    height: 10vh;
     margin: 0;
     position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border: 30px solid #ffffff; 
-    border-left: 0;
     overflow: hidden;
     transition: 0.2s;
+    padding:0 30px 30px 30px;
 }
 
 .detailsReduce {
-    width: 0;
+    height: 0;
     padding: 0;
-    border-right:0;
-    overflow: hidden;
     transition: 0.2s;
-    background-color: transparent;
 }
 
-.detailsReduce > * {
-    display: none;
+
+.tools {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
-.detail {
-    background-color: #ffffff;
-    padding: 0px;
-    margin-bottom: 30px;
-}
-
-.heading {
+.tool {
     margin: 0;
-    font-size: 16px;
+    background-color: #EAEFF2;
+    color: #8e8e8e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 11px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    margin-right: 5px;
 }
 
-.response {
-    margin: 5px 0 0 0;
-    font-size: 13px;
+.iconTag {
+    margin-right: 10px;
 }
