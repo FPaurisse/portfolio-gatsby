@@ -3,7 +3,7 @@ import { graphql, Link } from 'gatsby';
 import cx from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faTag, faInfoCircle, faChevronLeft, faChevronRight, faExpand, faToolbox, faBullseye,
+  faTag, faInfoCircle, faChevronLeft, faChevronRight, faTimesCircle, faToolbox, faBullseye,
 } from '@fortawesome/free-solid-svg-icons';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -13,7 +13,7 @@ import useData from '../useData';
 const baseURL = process.env.GATSBY_API_URL || '';
 
 export default ({ data, location }) => {
-  const [fullPage, setFullPage] = useState(true);
+  const [fullPage, setFullPage] = useState(false);
 
   const work = data.restApiApiV1Works;
   const worksData = useData();
@@ -41,7 +41,7 @@ export default ({ data, location }) => {
         >
           <div className={s.show}>
             <button className={cx(s.showButton)} type="button" onClick={() => setFullPage(!fullPage)}>
-              <FontAwesomeIcon className={cx(s.iconShowButton)} icon={fullPage ? faExpand : faInfoCircle} />
+              <FontAwesomeIcon className={cx(s.iconShowButton)} icon={fullPage ? faTimesCircle : faInfoCircle} />
             </button>
           </div>
 
@@ -87,13 +87,16 @@ export default ({ data, location }) => {
         </div>
         <div className={cx(!fullPage && s.detailsReduce, s.details)}>
           <div className={s.detail}>
+            <h2 className={s.heading}>Client</h2>
+            <p className={s.response}>{work.title}</p>
+          </div>
+          <div className={s.detail}>
+            <h2 className={s.heading}>Context</h2>
+            <p className={s.response}>{work.context}</p>
+          </div>
+          <div className={s.detail}>
             <h2 className={s.heading}>Tools</h2>
-            {work.tools.map((tool) => (
-              <p className={s.tool}>
-                <FontAwesomeIcon className={s.iconTag} icon={faTag} />
-                {tool}
-              </p>
-            ))}
+            <p className={s.response}>{work.tools.map((tool) => tool).join(', ')}</p>
           </div>
         </div>
       </div>

@@ -24,15 +24,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    top: -30px;
-    right: -30px;
-    width: 60px; 
-    height: 60px;
+    top: -25px;
+    right: -25px;
+    width: 50px; 
+    height: 50px;
 }
 
 .iconShowButton {
     color: #8e8e8e;
-    font-size: 24px;
+    font-size: 28px;
     position: absolute;
 }
 
@@ -164,12 +164,10 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 30px;
-    background-color: #EAEFF2;
+    justify-content: center;
     border: 30px solid #ffffff; 
     border-left: 0;
     overflow: hidden;
-    overflow-y: scroll;
     transition: 0.2s;
 }
 
@@ -186,43 +184,18 @@
     display: none;
 }
 
-.contentDetail{
-    display: flex;
-    flex-direction: column;
+.detail {
+    background-color: #ffffff;
+    padding: 0px;
+    margin-bottom: 30px;
 }
 
 .heading {
-    text-transform: uppercase;
-    font-size: 14px;
-    margin: 0 0 20px 0;
-    color: #3a3837;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: transparent;
-}
-
-.title {
     margin: 0;
-    font-size: 14px;
-    color: #8e8e8e;
+    font-size: 16px;
 }
 
-.tools {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.tool {
-    margin: 0 5px 5px 0;
-    font-size: 12px;
-    padding: 10px 15px;
-    background-color: #ffffff;
-    color: #8e8e8e;
-    width: 100%;
-}
-
-.iconTag {
-    margin-right: 10px;
-    color: #8e8e8e;
+.response {
+    margin: 5px 0 0 0;
+    font-size: 13px;
 }
