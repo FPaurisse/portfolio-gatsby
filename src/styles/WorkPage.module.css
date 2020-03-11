@@ -176,27 +176,26 @@
 
 .details {
     width: 100%;
-    height: auto;
     margin: 0;
     position: relative;
     display: flex;
-    overflow: hidden;
     transition: 0.2s;
-    padding:0 15px 15px 15px;
+    padding:0 15px 10px 15px;
 }
 
 .detailsReduce {
     height: 0;
     padding: 0;
     transition: 0.2s;
+    overflow: hidden;
 }
 
 
 .tools {
     display: flex;
     justify-content: flex-start;
+    flex-wrap: wrap;
     width: 100%;
-    height: 100%;
     overflow: hidden;
 }
 
@@ -212,6 +211,7 @@
     text-transform: uppercase;
     border-radius: 3px;
     margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 .iconTag {
@@ -237,7 +237,11 @@
     }
 
     .details {
-        padding:0 30px 30px 30px;
+        padding:0 30px 25px 30px;
+    }
+
+    .detailsReduce {
+        padding: 0;
     }
 
 }
