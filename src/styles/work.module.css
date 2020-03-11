@@ -73,7 +73,7 @@
     background-repeat: no-repeat;
 }
 
-@media screen and (min-width: 640px) {
+@media (min-width: 640px) and (min-height: 560px) {
     
     .Work {
         width: 50%;

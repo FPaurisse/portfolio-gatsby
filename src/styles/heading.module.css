@@ -50,7 +50,7 @@
     color: #33B0CB;
 }
 
-@media screen and (min-width: 640px) {
+@media (min-width: 640px) and (min-height: 560px) {
 
     .Heading {
         justify-content: space-between;

@@ -218,7 +218,11 @@
     margin-right: 10px;
 }
 
-@media screen and (min-width: 640px) {
+@media (min-width: 640px) and (min-height: 560px) {
+
+    .WorkPage {
+        height: 100vh;
+    }
     
     .workSlide {
         border: 30px solid #ffffff;
