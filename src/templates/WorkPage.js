@@ -88,8 +88,9 @@ export default ({ data, location }) => {
         </div>
         <div className={cx(fullPage && s.detailsReduce, s.details)}>
           <div className={s.tools}>
-            {work.tools.map((tool) => (
-              <p className={s.tool}>
+            {work.tools.map((tool, index) => (
+              // eslint-disable-next-line react/no-array-index-key
+              <p key={index} className={s.tool}>
                 <FontAwesomeIcon className={s.iconTag} icon={faTag} />
                 {tool}
               </p>
