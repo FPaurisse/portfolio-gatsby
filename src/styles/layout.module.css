@@ -5,7 +5,7 @@
     flex-direction: column;
     font-family: "Open Sans";
     font-weight: 400;
-    height: 100vh;
+    height: auto;
 }
 
 .container {
@@ -19,6 +19,7 @@
 
     .Layout {
         flex-direction: row;
+        height: 100vh;
     }
 
     .container {
