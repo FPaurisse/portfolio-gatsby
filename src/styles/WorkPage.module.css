@@ -3,6 +3,7 @@
     flex-direction: column;
     position: relative;
     height: 100vh;
+    overflow: hidden;
 }
 
 .button {
@@ -33,17 +34,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    right: -25px;
+    right: -20px;
     width: 50px; 
     height: 50px;
 }
 
 .actionButtonTop {
-    top: -25px;
+    top: -20px;
 }
 
 .actionButtonBottom {
-    bottom: -25px;
+    bottom: -20px;
 }
 
 .iconActionButton {
@@ -57,7 +58,7 @@
     height: 100%;
     transition: 0.2s;
     margin: 0;
-    border: 30px solid #ffffff;
+    border: 20px solid #ffffff;
     background-size: cover;
     background-position: center center;
     background-blend-mode: saturation;
@@ -219,8 +220,20 @@
 
 @media screen and (min-width: 640px) {
     
-}
+    .workSlide {
+        border: 30px solid #ffffff;
+    }
 
-@media screen and (min-width: 1024px) { 
+    .actionButton {
+        right: -25px;
+    }
+
+    .actionButtonTop {
+        top: -25px;
+    }
+
+    .actionButtonBottom {
+        bottom: -25px;
+    }
 
 }
