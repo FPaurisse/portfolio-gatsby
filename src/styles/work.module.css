@@ -74,6 +74,17 @@
 }
 
 @media screen and (min-width: 640px) {
+    
+    .Work {
+        width: 50%;
+        border-bottom: 30px solid white;
+        border-left: 15px solid white;
+        border-right: 15px solid white;
+    }
+    
+}
+
+@media screen and (min-width: 1024px) { 
 
     .Work {
         width: 33.33%;
