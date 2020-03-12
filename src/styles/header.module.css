@@ -1,5 +1,6 @@
 .Header {
     height: auto;
+    min-height: 175px;
     width: 100%;
     background: #EAEFF2;
     border-right: 0;
