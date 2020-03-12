@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { graphql, Link } from 'gatsby';
 import cx from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,7 +14,6 @@ const baseURL = process.env.GATSBY_API_URL || '';
 
 export default ({ data, location }) => {
   const [fullPage, setFullPage] = useState(true);
-  const [isLoading, setIsLoading] = useState(true);
 
   const work = data.restApiApiV1Works;
   const worksData = useData();
