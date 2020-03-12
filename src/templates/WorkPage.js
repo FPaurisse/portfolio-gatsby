@@ -9,7 +9,6 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import s from '../styles/WorkPage.module.css';
 import useData from '../useData';
-import Loader from '../images/loader.gif';
 
 const baseURL = process.env.GATSBY_API_URL || '';
 
@@ -28,15 +27,6 @@ export default ({ data, location }) => {
     && dataFilter[currentIndex + 1].node.slug;
   const prevSlug = currentIndex - 1 >= 0
     && dataFilter[currentIndex - 1].node.slug;
-
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 500);
-    if (!isLoading) {
-      document.body.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
-    }
-  }, [isLoading]);
 
   return (
     <Layout location={location}>
@@ -72,18 +62,16 @@ export default ({ data, location }) => {
           <div className={cx(!fullPage && s.viewReduce, s.view)}>
             <div className={s.content}>
 
-              {!isLoading && (
-                <div
-                  className={cx(!fullPage && s.mockupReduce, s.mockup)}
-                  style={{
-                    backgroundImage: `url(${work.mockup.includes(baseURL)
-                      ? work.mockup
-                      : baseURL + work.mockup})`,
-                    width: `${work.width}%`,
-                    height: `${work.height}%`,
-                  }}
-                />
-              )}
+              <div
+                className={cx(!fullPage && s.mockupReduce, s.mockup)}
+                style={{
+                  backgroundImage: `url(${work.mockup.includes(baseURL)
+                    ? work.mockup
+                    : baseURL + work.mockup})`,
+                  width: `${work.width}%`,
+                  height: `${work.height}%`,
+                }}
+              />
 
             </div>
           </div>
