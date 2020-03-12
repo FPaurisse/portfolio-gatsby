@@ -123,6 +123,7 @@
     .Header {
         width: 110px;
         height: 100vh;  
+        min-height: auto;
         flex-direction: column;
         justify-content: space-between;
         border-right: 1px solid #ededed;
