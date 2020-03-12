@@ -9,6 +9,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import s from '../styles/WorkPage.module.css';
 import useData from '../useData';
+import Loader from '../images/loader.gif';
 
 const baseURL = process.env.GATSBY_API_URL || '';
 
@@ -40,37 +41,38 @@ export default ({ data, location }) => {
   return (
     <Layout location={location}>
       <SEO title={work.title} description={work.context} />
-      {isLoading ? 'loading' : (
-        <div className={s.WorkPage}>
-          <div
-            className={cx(!fullPage && s.workSlideReduce, s.workSlide)}
-            style={{
-              backgroundImage: `linear-gradient(black, black), url(${work.image.includes(baseURL)
-                ? work.image
-                : baseURL + work.image})`,
-            }}
-          >
+      <div className={s.WorkPage}>
+        <div
+          className={cx(!fullPage && s.workSlideReduce, s.workSlide)}
+          style={{
+            backgroundImage: `linear-gradient(black, black), url(${work.image.includes(baseURL)
+              ? work.image
+              : baseURL + work.image})`,
+          }}
+        >
 
-            <div className={cx(s.button, s.buttonTop)}>
-              <Link to="/works" state={{ currentCategory }} className={cx(s.actionButton, s.actionButtonTop)}>
-                <FontAwesomeIcon className={cx(s.iconActionButton)} icon={faTimesCircle} />
-              </Link>
-            </div>
+          <div className={cx(s.button, s.buttonTop)}>
+            <Link to="/works" state={{ currentCategory }} className={cx(s.actionButton, s.actionButtonTop)}>
+              <FontAwesomeIcon className={cx(s.iconActionButton)} icon={faTimesCircle} />
+            </Link>
+          </div>
 
-            {prevSlug
+          {prevSlug
             && (
             <Link to={`/works/${prevSlug}`} state={{ fullPage }} aria-label="Previous" className={cx(!fullPage && s.navButtonReduce, s.navButton, s.navLeft)}>
               <FontAwesomeIcon className={s.iconNavigation} icon={faChevronLeft} />
             </Link>
             )}
 
-            <div className={cx(!fullPage && s.wrapperReduce, s.wrapper)} style={{ borderImageSource: `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }}>
-              <div className={s.optionalBack} style={{ backgroundColor: `${work.optionalColor}` }}>
-                <div className={s.backGradient} style={{ backgroundImage: `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }} />
-              </div>
+          <div className={cx(!fullPage && s.wrapperReduce, s.wrapper)} style={{ borderImageSource: `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }}>
+            <div className={s.optionalBack} style={{ backgroundColor: `${work.optionalColor}` }}>
+              <div className={s.backGradient} style={{ backgroundImage: `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }} />
             </div>
-            <div className={cx(!fullPage && s.viewReduce, s.view)}>
-              <div className={s.content}>
+          </div>
+          <div className={cx(!fullPage && s.viewReduce, s.view)}>
+            <div className={s.content}>
+
+              {!isLoading && (
                 <div
                   className={cx(!fullPage && s.mockupReduce, s.mockup)}
                   style={{
@@ -81,38 +83,40 @@ export default ({ data, location }) => {
                     height: `${work.height}%`,
                   }}
                 />
-              </div>
-            </div>
+              )}
 
-            {nextSlug && (
+            </div>
+          </div>
+
+
+          {nextSlug && (
             <Link to={`/works/${nextSlug}`} state={{ fullPage }} aria-label="Next" className={cx(!fullPage && s.navButtonReduce, s.navButton, s.navRight)}>
               <FontAwesomeIcon className={s.iconNavigation} icon={faChevronRight} />
             </Link>
-            )}
+          )}
 
-            <div className={cx(s.button, s.buttonBottom)}>
-              <button className={cx(s.actionButton, s.actionButtonBottom)} type="button" onClick={() => setFullPage(!fullPage)}>
-                <FontAwesomeIcon
-                  className={cx(s.iconActionButton)}
-                  icon={!fullPage ? faTimesCircle : faInfoCircle}
-                />
-              </button>
-            </div>
-
+          <div className={cx(s.button, s.buttonBottom)}>
+            <button className={cx(s.actionButton, s.actionButtonBottom)} type="button" onClick={() => setFullPage(!fullPage)}>
+              <FontAwesomeIcon
+                className={cx(s.iconActionButton)}
+                icon={!fullPage ? faTimesCircle : faInfoCircle}
+              />
+            </button>
           </div>
-          <div className={cx(fullPage && s.detailsReduce, s.details)}>
-            <div className={s.tools}>
-              {work.tools.map((tool, index) => (
+
+        </div>
+        <div className={cx(fullPage && s.detailsReduce, s.details)}>
+          <div className={s.tools}>
+            {work.tools.map((tool, index) => (
               // eslint-disable-next-line react/no-array-index-key
-                <p key={index} className={s.tool}>
-                  <FontAwesomeIcon className={s.iconTag} icon={faTag} />
-                  {tool}
-                </p>
-              ))}
-            </div>
+              <p key={index} className={s.tool}>
+                <FontAwesomeIcon className={s.iconTag} icon={faTag} />
+                {tool}
+              </p>
+            ))}
           </div>
         </div>
-      )}
+      </div>
     </Layout>
   );
 };
