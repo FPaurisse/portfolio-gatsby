@@ -1,11 +1,11 @@
 .Layout {
     margin: 0;
     width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: "Open Sans";
     font-weight: 400;
-    height: auto;
 }
 
 .container {
@@ -13,6 +13,14 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
+}
+
+@media screen and (max-height: 450px) {
+
+    .Layout {
+        height: auto;
+    }
+
 }
 
 @media (min-width: 640px) and (min-height: 560px) {
