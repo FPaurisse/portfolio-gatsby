@@ -3,7 +3,7 @@ import axios from 'axios';
 import cx from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faComments, faPaperPlane,
+  faPaperPlane, faEnvelopeOpenText,
 } from '@fortawesome/free-solid-svg-icons';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -33,8 +33,11 @@ const Contact = ({ location }) => (
         <form
           className={s.form}
         >
-          <h1 className={s.title}>Contact</h1>
-          <p className={s.text}>hello@fredericpaurisse.fr</p>
+          <h1 className={s.title}>Contact me</h1>
+          <p className={s.text}>
+            <FontAwesomeIcon className={s.icontText} icon={faEnvelopeOpenText} />
+            hello@fredericpaurisse.fr
+          </p>
           <div className={s.inputGroup}>
             <input required className={s.input} type="text" placeholder="Firstname" />
             <input required className={s.input} type="text" placeholder="Lastname" />
