@@ -13,7 +13,10 @@ const Works = ({ location }) => {
   const data = edges.filter((work) => work.node.categories.includes(`${category}`));
   return (
     <Layout location={location}>
-      <SEO title="cc" />
+      <SEO
+        title={category}
+        description="Developpeur web et webdesigner freelance à Tours (37), je développe pour vous tout type de projet web et print : sites internet, applications web, identités visuelles et chartes graphiques."
+      />
       <Heading
         counter={data.length}
         changeCategory={(choice) => setCategory(choice)}

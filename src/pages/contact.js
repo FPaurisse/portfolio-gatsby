@@ -5,7 +5,10 @@ import s from '../styles/page.module.css';
 
 const Contact = ({ location }) => (
   <Layout location={location}>
-    <SEO title="Contact me" />
+    <SEO
+      title="Contact"
+      description="Developpeur web et webdesigner freelance à Tours (37), je développe pour vous tout type de projet web et print : sites internet, applications web, identités visuelles et chartes graphiques."
+    />
     <div className={s.Page}>
       <p>Coming soon...</p>
       <a href="mailto:contact@fredericpaurisse.fr">contact@fredericpaurisse.fr</a>
