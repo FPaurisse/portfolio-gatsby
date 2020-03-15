@@ -111,13 +111,14 @@
     background-color: #33B0CB;
     color: #ffffff;
     font-weight: 800;
-    margin:5px 5px 0 auto;
+    margin: 10px 5px;
     outline: none;
     cursor: pointer;
     border: 0;
     border-radius: 2px;
     padding: 10px 15px;
     font-size: 12px;
+    width: 100%;
 }
 
 .iconButton {
