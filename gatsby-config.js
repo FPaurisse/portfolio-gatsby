@@ -3,7 +3,7 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: 'Frédéric Paurisse',
-    description: 'Développeur web full stack',
+    description: "Vous recherchez un développeur web indépendant à Tours (37) ? Avec de l'expérience et une expertise full stack ? vous tombez très bien.",
     author: 'Frédéric Paurisse',
   },
   plugins: [

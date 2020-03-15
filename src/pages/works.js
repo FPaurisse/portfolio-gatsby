@@ -13,7 +13,7 @@ const Works = ({ location }) => {
   const data = edges.filter((work) => work.node.categories.includes(`${category}`));
   return (
     <Layout location={location}>
-      <SEO title={category} />
+      <SEO title="cc" />
       <Heading
         counter={data.length}
         changeCategory={(choice) => setCategory(choice)}
