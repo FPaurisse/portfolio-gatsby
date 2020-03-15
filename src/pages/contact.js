@@ -34,10 +34,12 @@ const Contact = ({ location }) => (
           className={s.form}
         >
           <h1 className={s.title}>Contact me</h1>
-          <p className={s.text}>
-            <FontAwesomeIcon className={s.icontText} icon={faEnvelopeOpenText} />
-            hello@fredericpaurisse.fr
-          </p>
+          <div className={s.infos}>
+            <p className={s.text}>
+              <FontAwesomeIcon className={s.icontText} icon={faEnvelopeOpenText} />
+              hello@fredericpaurisse.fr
+            </p>
+          </div>
           <div className={s.inputGroup}>
             <input required className={s.input} type="text" placeholder="Firstname" />
             <input required className={s.input} type="text" placeholder="Lastname" />

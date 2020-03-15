@@ -67,12 +67,16 @@
 }
 
 .text {
-    margin: 0 10px 10px 10px;
+    margin: 0 0px 10px 0px;
     font-size: 0.8rem;
     color: #3a3837;
-    border-bottom: 1px dashed #d1d6da;
-    padding-bottom: 15px;
     display: flex;
+}
+
+.infos {
+    border-bottom: 1px dashed #d1d6da;
+    margin: 0 10px 5px 10px;
+    padding-bottom: 5px;
 }
 
 .icontText {
