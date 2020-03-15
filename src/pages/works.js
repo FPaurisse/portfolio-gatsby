@@ -15,7 +15,7 @@ const Works = ({ location }) => {
     <Layout location={location}>
       <SEO
         title={category}
-        description="Developpeur web et webdesigner freelance à Tours (37), je développe pour vous tout type de projet web et print : sites internet, applications web, identités visuelles et chartes graphiques."
+        description="Développeur web et webdesigner freelance à Tours (37), je développe pour vous tout type de projets web et print : sites internet, applications web, identités visuelles et chartes graphiques."
       />
       <Heading
         counter={data.length}
