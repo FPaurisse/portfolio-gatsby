@@ -70,7 +70,7 @@
     display: flex;
     flex-direction: column;
     width: auto;
-    background-color: #ffffff;
+    background-color: #EAEFF2;
     padding: 10px;
     font-size: 12px;
     margin:5px 5px 0 5px;
@@ -108,6 +108,10 @@
     .form {
         background-color: #EAEFF2;
         width: 40%;
+    }
+
+    .input {
+        background-color: #ffffff;
     }
 
     .media {
