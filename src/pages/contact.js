@@ -35,20 +35,23 @@ const Contact = ({ location }) => (
         >
           <h1 className={s.title}>Contact me</h1>
           <div className={s.infos}>
-            <p className={s.text}>
+            <a href="mailto:hello@fredericpaurisse.fr" className={s.text}>
               <FontAwesomeIcon className={s.icontText} icon={faEnvelopeOpenText} />
               hello@fredericpaurisse.fr
-            </p>
+            </a>
           </div>
           <div className={s.inputGroup}>
             <input required className={s.input} type="text" placeholder="Firstname" />
             <input required className={s.input} type="text" placeholder="Lastname" />
           </div>
           <div className={s.inputSimple}>
-            <input required className={s.input} type="text" placeholder="Email" />
+            <input required className={s.input} type="text" placeholder="Subject" />
           </div>
           <div className={s.inputSimple}>
             <textarea required className={s.input} cols="30" rows="10" placeholder="Message" />
+          </div>
+          <div className={s.inputSimple}>
+            <input required className={s.input} type="text" placeholder="Email" />
           </div>
           <div className={s.inputSimple}>
             <button className={cx(s.button)} type="submit">
