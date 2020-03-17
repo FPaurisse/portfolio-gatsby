@@ -17,6 +17,7 @@
 
 .containerReduce {
     display: none;
+    z-index: 1;
 }
 
 @media screen and (max-height: 450px) {
@@ -42,6 +43,7 @@
     .containerReduce {
         display: flex;
         width: 50%;
+        transition: 0.2s;
     }
 
 }
@@ -50,6 +52,7 @@
 
     .containerReduce {
         width: 65%;
+        transition: 0.2s;
     }
 
 }

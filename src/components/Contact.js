@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import cx from 'classnames';
+import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faPaperPlane,
 } from '@fortawesome/free-solid-svg-icons';
 import s from '../styles/contact.module.css';
 
-const Contact = () => (
-  <div className={s.Contact}>
+import { toggleContact } from '../state/app';
+
+const Contact = ({ isContact, dispatch }) => (
+  <div className={cx({ [s.Contact]: isContact, [s.Contact__hide]: !isContact })}>
     <form
       className={s.form}
     >
@@ -35,4 +38,6 @@ const Contact = () => (
   </div>
 );
 
-export default Contact;
+export default connect((state) => ({
+  isContact: state.app.isContact,
+}), null)(Contact);

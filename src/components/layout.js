@@ -28,7 +28,7 @@ const Layout = ({ children, location, isContact }) => {
       <section className={cx(s.container, { [s.containerReduce]: isContact })}>
         {children}
       </section>
-      {isContact && <Contact />}
+      <Contact />
     </div>
   );
 };

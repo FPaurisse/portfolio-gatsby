@@ -4,12 +4,10 @@ import { connect } from 'react-redux';
 import cx from 'classnames';
 import s from '../styles/work.module.css';
 
-import { toggleContact } from '../state/app';
-
 const baseURL = process.env.GATSBY_API_URL || '';
 
-const Work = ({ data, isContact, dispatch }) => (
-  <Link key={data.endpointId} onClick={() => dispatch(toggleContact(false))} to={`/works/${data.slug}`} className={cx(s.Work, { [s.WorkReduce]: isContact })}>
+const Work = ({ data, isContact }) => (
+  <Link key={data.endpointId} to={`/works/${data.slug}`} className={cx(s.Work, { [s.WorkReduce]: isContact })}>
     <div
       className={s.image}
       style={{
