@@ -2,12 +2,16 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import { faHatCowboy } from '@fortawesome/free-solid-svg-icons';
+import { connect } from 'react-redux';
 import cx from 'classnames';
 import s from '../styles/header.module.css';
 import Logo from './logo';
 
-const Header = ({ siteTitle, location }) => (
+import { toggleContact } from '../state/app';
+
+const Header = ({
+  isContact, dispatch, siteTitle, location,
+}) => (
   <header className={s.Header}>
     <Link className={s.logoWrapper} to="/">
       <div className={s.logo} title={siteTitle}>
@@ -20,10 +24,10 @@ const Header = ({ siteTitle, location }) => (
     <nav className={s.nav}>
       <ul className={s.list}>
         <li className={s.item}>
-          <Link to="/" activeClassName={s.linkActive} className={cx(location.pathname.includes('works') && s.linkActive, s.link)}>Works</Link>
+          <Link to="/" onClick={() => dispatch(toggleContact(false))} className={cx(s.link, { [s.linkActive]: !isContact })}>Works</Link>
         </li>
         <li className={s.item}>
-          <Link to="/contact" activeClassName={s.linkActive} className={s.link}>Contact</Link>
+          <button type="button" onClick={() => dispatch(toggleContact(!isContact))} className={cx(s.link, { [s.linkActive]: isContact })}>Contact</button>
         </li>
       </ul>
     </nav>
@@ -38,4 +42,6 @@ const Header = ({ siteTitle, location }) => (
   </header>
 );
 
-export default Header;
+export default connect((state) => ({
+  isContact: state.app.isContact,
+}), null)(Header);
