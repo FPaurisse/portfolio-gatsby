@@ -15,6 +15,10 @@
     height: 100%;
 }
 
+.containerReduce {
+    display: none;
+}
+
 @media screen and (max-height: 450px) {
 
     .Layout {
@@ -33,6 +37,19 @@
     .container {
         overflow-y: scroll;
         height: 100vh;
+    }
+
+    .containerReduce {
+        display: flex;
+        width: 50%;
+    }
+
+}
+
+@media screen and (min-width: 1024px) { 
+
+    .containerReduce {
+        width: 65%;
     }
 
 }

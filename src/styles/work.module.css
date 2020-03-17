@@ -81,6 +81,10 @@
         border-left: 15px solid white;
         border-right: 15px solid white;
     }
+
+    .WorkReduce {
+        width: 100%;
+    }
     
 }
 
@@ -91,6 +95,10 @@
         border-bottom: 30px solid white;
         border-left: 15px solid white;
         border-right: 15px solid white;
+    }
+
+    .WorkReduce {
+        width: 50%;
     }
 
 }

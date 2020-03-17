@@ -1,23 +1,27 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import workStyles from '../styles/work.module.css';
+import { connect } from 'react-redux';
+import cx from 'classnames';
+import s from '../styles/work.module.css';
+
+import { toggleContact } from '../state/app';
 
 const baseURL = process.env.GATSBY_API_URL || '';
 
-const Work = ({ data }) => (
-  <Link key={data.endpointId} to={`/works/${data.slug}`} className={workStyles.Work}>
+const Work = ({ data, isContact, dispatch }) => (
+  <Link key={data.endpointId} onClick={() => dispatch(toggleContact(false))} to={`/works/${data.slug}`} className={cx(s.Work, { [s.WorkReduce]: isContact })}>
     <div
-      className={workStyles.image}
+      className={s.image}
       style={{
         backgroundImage: `url(${data.image.includes(baseURL)
           ? data.image
           : baseURL + data.image})`,
       }}
     />
-    <div className={workStyles.back} style={{ backgroundColor: `${data.optionalColor}` }} />
-    <div className={workStyles.backGradient} style={{ backgroundImage: `linear-gradient(45deg, ${data.primaryColor} 15%, ${data.secondaryColor} 70%)` }} />
+    <div className={s.back} style={{ backgroundColor: `${data.optionalColor}` }} />
+    <div className={s.backGradient} style={{ backgroundImage: `linear-gradient(45deg, ${data.primaryColor} 15%, ${data.secondaryColor} 70%)` }} />
     <h1
-      className={workStyles.title}
+      className={s.title}
       style={{
         backgroundImage: `url(${data.image.includes(baseURL)
           ? data.image
@@ -28,7 +32,7 @@ const Work = ({ data }) => (
 
     </h1>
     <div
-      className={workStyles.mockup}
+      className={s.mockup}
       style={{
         backgroundImage: `url(${data.mockup.includes(baseURL)
           ? data.mockup
@@ -40,4 +44,6 @@ const Work = ({ data }) => (
   </Link>
 );
 
-export default Work;
+export default connect((state) => ({
+  isContact: state.app.isContact,
+}), null)(Work);

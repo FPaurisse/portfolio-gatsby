@@ -6,57 +6,12 @@
     position: relative;
 }
 
-.wrapper {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff;
-    position: relative;
-    overflow: hidden;
-}
-
-.media {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 200px;
-    position: relative;
-    border: 20px solid #ffffff;
-    background-size: cover;
-    background-position: center center;
-    background-blend-mode: saturation;
-}
-
-.mediaWrapper {
-    width: 100%;
-    height: 100%;
-    border: 30px solid;
-    border-image-slice: 1;
-    opacity: 0.8;
-    padding: 10px;
-    position: relative;
-    transition: 0.2s;
-}
-
-.optionalBack {
-    opacity: 0.8;
-    width: 100%;
-    height: 100%;
-}
-
-.backGradient{
-    opacity: 0.8;
-    width: 100%;
-    height: 100%;
-}
-
 .form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: #ffffff;
+    border-left: 5px dashed #ffffff;
     width: 100%;
     height: 100%;
     position: relative;
@@ -133,38 +88,28 @@
     margin-right: 10px;
 }
 
-
 @media (min-width: 640px) and (min-height: 560px) {
 
     .Contact {
         height: 100vh;
-    }
-
-    .wrapper {
-        flex-direction: row;
-    }
-
-    .media {
-        width: 60%;
-        height: 100%;
-        border: 30px solid #ffffff;
-    }
-
-
-    .mediaWrapper {
-        border: 40px solid;
-        border-image-slice: 1;
-        padding: 15px;
+        width: 50%;
     }
 
     .form {
         background-color: #EAEFF2;
-        width: 40%;
         padding: 30px 25px;
     }
 
     .input {
         background-color: #ffffff;
+    }
+
+}
+
+@media screen and (min-width: 1024px) { 
+
+    .Contact {
+        width: 35%;
     }
 
 }

@@ -10,7 +10,7 @@ import Logo from './logo';
 import { toggleContact } from '../state/app';
 
 const Header = ({
-  isContact, dispatch, siteTitle, location,
+  isContact, dispatch, siteTitle,
 }) => (
   <header className={s.Header}>
     <Link className={s.logoWrapper} to="/">

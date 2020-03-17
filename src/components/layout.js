@@ -1,11 +1,14 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import layoutStyles from '../styles/layout.module.css';
+import { connect } from 'react-redux';
+import cx from 'classnames';
+import s from '../styles/layout.module.css';
 import Header from './header';
+import Contact from './Contact';
 import favicon from '../images/favicon.ico';
 
-const Layout = ({ children, location }) => {
+const Layout = ({ children, location, isContact }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -17,16 +20,19 @@ const Layout = ({ children, location }) => {
   `);
 
   return (
-    <div className={layoutStyles.Layout}>
+    <div className={s.Layout}>
       <Helmet>
         <link rel="icon" href={favicon} />
       </Helmet>
       <Header location={location} siteTitle={data.site.siteMetadata.title} />
-      <section className={layoutStyles.container}>
+      <section className={cx(s.container, { [s.containerReduce]: isContact })}>
         {children}
       </section>
+      {isContact && <Contact />}
     </div>
   );
 };
 
-export default Layout;
+export default connect((state) => ({
+  isContact: state.app.isContact,
+}), null)(Layout);
