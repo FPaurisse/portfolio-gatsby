@@ -20,9 +20,7 @@ const Contact = ({ isContact, isTerms, dispatch }) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const jsonObject = {};
-    for (const [key, value] of formData.entries()) {
-      jsonObject[key] = value;
-    }
+    formData.forEach((value, key) => { jsonObject[key] = value; });
     api.post('send', jsonObject).then((response) => {
       if (response.data.status === 'success') {
         dispatch(showAlert({ status: 'success', statusText: "Thank you, I'll get back to you quickly" }));
