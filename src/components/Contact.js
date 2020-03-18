@@ -117,15 +117,15 @@ const Contact = ({ isContact, isTerms, dispatch }) => {
         </>
       )}
       <div className={s.social}>
-        <div className={s.socialWrapper}>
+        <a href="https://m.me/frederic.paurisse" rel="noopener noreferrer" target="_blank" className={s.socialWrapper}>
           <FontAwesomeIcon className={s.socialIcon} icon={faFacebookMessenger} />
-        </div>
-        <div className={s.socialWrapper}>
+        </a>
+        <a href="https://discordapp.com/users/676800306306351144" rel="noopener noreferrer" target="_blank" className={s.socialWrapper}>
           <FontAwesomeIcon className={s.socialIcon} icon={faDiscord} />
-        </div>
-        <div className={s.socialWrapper}>
+        </a>
+        <a href="mailto:contact@fredericpaurisse.fr" rel="noopener noreferrer" target="_blank" className={s.socialWrapper}>
           <FontAwesomeIcon className={s.socialIcon} icon={faAt} />
-        </div>
+        </a>
       </div>
     </div>
   );
