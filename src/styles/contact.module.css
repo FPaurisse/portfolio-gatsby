@@ -16,14 +16,13 @@
 }
 
 .closeContact {
-    display: flex;
+    display: none;
     justify-content: flex-end;
     align-items: center;
     width: 100%;
     padding: 0px 15px 15px 0;   
     outline: none;
     border: 0;
-    border-bottom: 1px dashed #d1d6da;
     background-color: transparent; 
     cursor: pointer;
     font-size: 13px;
@@ -150,6 +149,10 @@
         transition: 0.2s;
         border-left: 5px dashed #ffffff;
         background-color: #EAEFF2;
+    }
+
+    .closeContact {
+        display: flex;
     }
 
     .input {
