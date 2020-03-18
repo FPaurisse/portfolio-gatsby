@@ -9,6 +9,7 @@
 
 .Contact__hide {
     width: 0;
+    height: 0;
     overflow: hidden;
     transition: 0.2s;
 }
