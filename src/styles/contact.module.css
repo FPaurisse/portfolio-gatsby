@@ -98,12 +98,14 @@
     justify-content: space-between;
     width: 100%;
     padding:5px 0 0 0;
+    position: relative;
 }
 
 .inputSimple {
     display: flex;
     width: 100%;
     padding:5px 0 0 0;
+    position: relative;
 }
 
 .label {
@@ -222,7 +224,7 @@
 
 }
 
-@media screen and (max-height: 450px) {
+@media screen and (max-height: 560px) {
 
     .Contact {
         width: 100%;
