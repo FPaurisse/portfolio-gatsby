@@ -2,25 +2,6 @@
     box-sizing: border-box;
 }
 
-.alert {
-    position: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 2px;
-    font-size: 12px;
-    padding: 15px 20px;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
-    width: 100%;
-}
-
-.alertIcon {
-    margin-right: 10px;
-    font-size: 14px;
-}
-
 .success {
     color: #155724;
     background-color: #d4edda;
@@ -37,14 +18,6 @@
 
     body {
         overflow: hidden;
-    }
-
-    .alert {
-        position: absolute;
-        right: 30px;
-        left: auto;
-        bottom: 30px;
-        width: auto;
     }
 
 }

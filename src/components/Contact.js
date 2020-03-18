@@ -24,13 +24,13 @@ const Contact = ({ isContact, isTerms, dispatch }) => {
       data: formData,
     }).then((response) => {
       if (response.data.status === 'success') {
-        dispatch(showAlert({ status: 'success', statusText: 'Thank you for your message !' }));
+        dispatch(showAlert({ status: 'success', statusText: "Thank you, I'll get back to you quickly" }));
         dispatch(toggleContact(false));
         setInterval(() => {
           dispatch(showAlert({ status: null, statusText: null }));
         }, 5000);
       } else if (response.data.status === 'fail') {
-        dispatch(showAlert({ status: 'fail', statusText: "Oups… something wasn't right, retry please" }));
+        dispatch(showAlert({ status: 'fail', statusText: "Oups… something wasn't right, try again please" }));
         dispatch(toggleContact(true));
       }
     });

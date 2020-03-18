@@ -1,15 +1,12 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import cx from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faCheck, faBug,
-} from '@fortawesome/free-solid-svg-icons';
 import s from '../styles/layout.module.css';
 import Header from './header';
 import Contact from './Contact';
+import Alert from './Alert';
 import favicon from '../images/favicon.ico';
 
 const Layout = ({
@@ -25,17 +22,6 @@ const Layout = ({
     }
   `);
 
-  const switchAlert = () => {
-    switch (alert.status) {
-      case 'success':
-        return <FontAwesomeIcon className="alertIcon" icon={faCheck} />;
-      case 'fail':
-        return <FontAwesomeIcon className="alertIcon" icon={faBug} />;
-      default:
-        break;
-    }
-  };
-
   return (
     <div className={s.Layout}>
       <Helmet>
@@ -45,10 +31,7 @@ const Layout = ({
       <section className={cx(s.container, { [s.containerReduce]: isContact })}>
         {children}
         {alert.status && (
-          <div className={cx('alert', alert.status)}>
-            {switchAlert()}
-            {alert.statusText}
-          </div>
+          <Alert status={alert.status} statusText={alert.statusText} />
         )}
       </section>
       <Contact />
