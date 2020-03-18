@@ -108,14 +108,14 @@
 }
 
 .label {
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: auto;
     color: #3a3837;
     font-size: 12px;
     margin:0px 5px 5px 5px;
     padding:0;
     width: 100%;
-    outline: none;
 }
 
 .labelText {
