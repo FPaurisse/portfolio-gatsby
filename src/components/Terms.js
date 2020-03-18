@@ -3,7 +3,7 @@ import s from '../styles/terms.module.css';
 
 const Terms = () => (
   <div className={s.Terms}>
-    <h1>Terms and Conditions</h1>
+    <h1 className={s.title}>Terms and Conditions</h1>
 
     <h2>Introduction</h2>
 
