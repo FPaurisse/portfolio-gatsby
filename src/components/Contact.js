@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import axios from 'axios';
 import cx from 'classnames';
 import { connect } from 'react-redux';
@@ -9,6 +9,7 @@ import {
 import {
   faFacebookMessenger, faDiscord,
 } from '@fortawesome/free-brands-svg-icons';
+import { api } from '../api';
 import s from '../styles/contact.module.css';
 import Terms from './Terms';
 
@@ -18,11 +19,11 @@ const Contact = ({ isContact, isTerms, dispatch }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    axios({
-      method: 'POST',
-      url: `${process.env.GATSBY_API_URL}send`,
-      data: formData,
-    }).then((response) => {
+    const jsonObject = {};
+    for (const [key, value] of formData.entries()) {
+      jsonObject[key] = value;
+    }
+    api.post('send', jsonObject).then((response) => {
       if (response.data.status === 'success') {
         dispatch(showAlert({ status: 'success', statusText: "Thank you, I'll get back to you quickly" }));
         dispatch(toggleContact(false));
@@ -32,7 +33,7 @@ const Contact = ({ isContact, isTerms, dispatch }) => {
       }
       setInterval(() => {
         dispatch(showAlert({ status: null, statusText: null }));
-      }, 5000);
+      }, 10000);
     });
   };
 
