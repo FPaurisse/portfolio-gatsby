@@ -195,7 +195,7 @@
         overflow-y: scroll;
         border-left: 5px dashed var(--background-secondary-light);
         background-color: var(--background-primary-light);
-        background-image: linear-gradient(90deg, rgb(227, 232, 235) 3%, var(--background-primary-light) 70%);
+        background-image: linear-gradient(90deg, var(--background-primary-shadow-light) 3%, var(--background-primary-light) 70%);
     }
 
     .closeContact {

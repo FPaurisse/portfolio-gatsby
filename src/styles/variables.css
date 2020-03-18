@@ -5,5 +5,15 @@
     --optional-light: #8e8e8e;
     --lighter-light: #d1d6da;
     --background-primary-light: #EAEFF2;
+    --background-primary-shadow-light: rgb(227, 232, 235);
     --background-secondary-light: #ffffff;
+
+    /* DARK MODE */
+    --primary-dark: #33B0CB;
+    --secondary-dark: #dedede;
+    --optional-dark: #AAB7C2;
+    --lighter-dark: #262626;
+    --background-primary-dark: #2C2C2F;
+    --background-primary-shadow-dark: rgb(39, 39, 41);
+    --background-secondary-dark: #3E3F44;
 }
