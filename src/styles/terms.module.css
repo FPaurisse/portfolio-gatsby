@@ -4,14 +4,13 @@
     height: auto;
     color: #3a3837;
     font-size: 0.8rem;
-    padding-right: 15px;
-    margin-top: 30px;
+    padding: 0 30px 0 30px;
     margin-bottom: 30px;
 }
 
 .title {
     font-size: 1.3rem;
-    margin: 0 0 10px 0;
+    margin: 30px 0 10px 0;
     border-bottom: 1px dashed #d1d6da;
     padding-bottom: 15px;
 }
@@ -21,7 +20,7 @@
     margin: 10px 0;
 }
 
-.Terms p {
+.text {
     margin: 5px 0;
 }
 
@@ -30,6 +29,10 @@
     .Terms {
         height: 100%;
         overflow-y: scroll;
+    }
+
+    .title {
+        margin: 0px 5px 15px 5px;
     }
 
 }
