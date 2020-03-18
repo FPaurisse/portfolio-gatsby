@@ -40,7 +40,8 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    padding: 15px 15px 0 15px;
+    padding: 30px 15px 30px 15px;
+    margin-top: 15px;
 }
 
 .socialWrapper {
@@ -163,10 +164,15 @@
     margin-right: 5px;
 }
 
-.linkTerms {
+.buttonTerms {
     color: #33B0CB;
     margin-left: 5px;
     text-decoration: none;
+    outline: none;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 @media (min-width: 640px) and (min-height: 560px) {
@@ -186,6 +192,11 @@
 
     .input {
         background-color: #ffffff;
+    }
+
+    .social {
+        padding: 15px 15px 0 15px;
+        margin-top: 0px;
     }
 
 }

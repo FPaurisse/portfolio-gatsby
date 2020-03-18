@@ -1,0 +1,32 @@
+.Terms {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    color: #3a3837;
+    font-size: 0.8rem;
+    padding-right: 15px;
+    margin-bottom: 15px;
+}
+
+.Terms h1 {
+    font-size: 1.3rem;
+    margin: 15px 0;
+}
+
+.Terms h2 {
+    font-size: 0.9rem;
+    margin: 10px 0;
+}
+
+.Terms p {
+    margin: 5px 0;
+}
+
+@media (min-width: 640px) and (min-height: 560px) {
+
+    .Terms {
+        height: 100%;
+        overflow-y: scroll;
+    }
+
+}
