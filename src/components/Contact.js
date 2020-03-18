@@ -14,98 +14,127 @@ import Terms from './Terms';
 
 import { toggleContact, toggleTerms } from '../state/app';
 
-const Contact = ({ isContact, isTerms, dispatch }) => (
-  <div className={cx({ [s.Contact]: isContact, [s.Contact__hide]: !isContact })}>
-    {!isTerms ? (
-      <>
-        <button type="button" className={s.closeContact} onClick={() => dispatch(toggleContact(false))}>
-          <FontAwesomeIcon className={s.iconCloseContact} icon={faCaretSquareLeft} />
-          Return
-        </button>
-        <form
-          className={s.form}
-        >
-          <h1 className={s.title}>Contact</h1>
-          <div className={s.inputGroup}>
-            <label className={s.label} htmlFor="firstname">
-              <p className={s.labelText}>
-                Firstname
-                <span className={s.required}>*</span>
-              </p>
-              <input placeholder="…" required className={s.input} type="text" id="firstname" />
-            </label>
-            <label className={s.label} htmlFor="lastname">
-              <p className={s.labelText}>
-                Lastname
-                <span className={s.required}>*</span>
-              </p>
-              <input placeholder="…" required className={s.input} type="text" id="lastname" />
-            </label>
-          </div>
-          <div className={s.inputSimple}>
-            <label className={s.label} htmlFor="subject">
-              <p className={s.labelText}>
-                Subject
-                <span className={s.required}>*</span>
-              </p>
-              <input placeholder="…" required className={s.input} type="text" id="subject" />
-            </label>
-          </div>
-          <div className={s.inputSimple}>
-            <label className={s.label} htmlFor="message">
-              <p className={s.labelText}>
-                Message
-                <span className={s.required}>*</span>
-              </p>
-              <textarea placeholder="…" required className={s.input} cols="30" rows="10" id="message" />
-            </label>
-          </div>
-          <div className={s.inputSimple}>
-            <label className={s.label} htmlFor="email">
-              <p className={s.labelText}>
-                Email
-                <span className={s.required}>*</span>
-              </p>
-              <input placeholder="…" required className={s.input} type="text" id="email" />
-            </label>
-          </div>
-          <div className="inputSimple">
-            <label className={s.labelCheckbox} htmlFor="checkTerms">
-              <input required className={s.checkbox} type="checkbox" id="checkTerms" />
-              I accept the
-              <button type="button" className={s.buttonTerms} onClick={() => dispatch(toggleTerms(true))}>{' Terms & Conditions'}</button>
-            </label>
-          </div>
-          <div className={s.inputSimple}>
-            <button className={cx(s.button)} type="submit">
-              <FontAwesomeIcon className={s.iconButton} icon={faPaperPlane} />
-              Send
-            </button>
-          </div>
-        </form>
-      </>
-    ) : (
-      <>
-        <button type="button" className={s.closeContact} onClick={() => dispatch(toggleTerms(false))}>
-          <FontAwesomeIcon className={s.iconCloseContact} icon={faCaretSquareLeft} />
-          Return
-        </button>
-        <Terms />
-      </>
-    )}
-    <div className={s.social}>
-      <div className={s.socialWrapper}>
-        <FontAwesomeIcon className={s.socialIcon} icon={faFacebookMessenger} />
-      </div>
-      <div className={s.socialWrapper}>
-        <FontAwesomeIcon className={s.socialIcon} icon={faDiscord} />
-      </div>
-      <div className={s.socialWrapper}>
-        <FontAwesomeIcon className={s.socialIcon} icon={faAt} />
+const Contact = ({ isContact, isTerms, dispatch }) => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const resetForm = () => {
+    setName('');
+    setEmail('');
+    setMessage('');
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios({
+      method: 'POST',
+      url: `${process.env.GATSBY_API_URL}send`,
+      data: { name, email, message },
+    }).then((response) => {
+      if (response.data.status === 'success') {
+        alert('Message Sent.');
+        resetForm();
+      } else if (response.data.status === 'fail') {
+        alert('Message failed to send.');
+      }
+    });
+  };
+
+  return (
+    <div className={cx({ [s.Contact]: isContact, [s.Contact__hide]: !isContact })}>
+      {!isTerms ? (
+        <>
+          <button type="button" className={s.closeContact} onClick={() => dispatch(toggleContact(false))}>
+            <FontAwesomeIcon className={s.iconCloseContact} icon={faCaretSquareLeft} />
+            Return
+          </button>
+          <form
+            className={s.form}
+            onSubmit={handleSubmit}
+          >
+            <h1 className={s.title}>Contact</h1>
+            <div className={s.inputGroup}>
+              <label className={s.label} htmlFor="firstname">
+                <p className={s.labelText}>
+                  Firstname
+                  <span className={s.required}>*</span>
+                </p>
+                <input placeholder="…" required className={s.input} type="text" id="firstname" />
+              </label>
+              <label className={s.label} htmlFor="lastname">
+                <p className={s.labelText}>
+                  Lastname
+                  <span className={s.required}>*</span>
+                </p>
+                <input placeholder="…" required className={s.input} type="text" id="lastname" />
+              </label>
+            </div>
+            <div className={s.inputSimple}>
+              <label className={s.label} htmlFor="subject">
+                <p className={s.labelText}>
+                  Subject
+                  <span className={s.required}>*</span>
+                </p>
+                <input placeholder="…" required className={s.input} type="text" id="subject" />
+              </label>
+            </div>
+            <div className={s.inputSimple}>
+              <label className={s.label} htmlFor="message">
+                <p className={s.labelText}>
+                  Message
+                  <span className={s.required}>*</span>
+                </p>
+                <textarea placeholder="…" required className={s.input} cols="30" rows="10" id="message" />
+              </label>
+            </div>
+            <div className={s.inputSimple}>
+              <label className={s.label} htmlFor="email">
+                <p className={s.labelText}>
+                  Email
+                  <span className={s.required}>*</span>
+                </p>
+                <input placeholder="…" required className={s.input} type="text" id="email" />
+              </label>
+            </div>
+            <div className="inputSimple">
+              <label className={s.labelCheckbox} htmlFor="checkTerms">
+                <input required className={s.checkbox} type="checkbox" id="checkTerms" />
+                I accept the
+                <button type="button" className={s.buttonTerms} onClick={() => dispatch(toggleTerms(true))}>{' Terms & Conditions'}</button>
+              </label>
+            </div>
+            <div className={s.inputSimple}>
+              <button className={cx(s.button)} type="submit">
+                <FontAwesomeIcon className={s.iconButton} icon={faPaperPlane} />
+                Send
+              </button>
+            </div>
+          </form>
+        </>
+      ) : (
+        <>
+          <button type="button" className={s.closeContact} onClick={() => dispatch(toggleTerms(false))}>
+            <FontAwesomeIcon className={s.iconCloseContact} icon={faCaretSquareLeft} />
+            Return
+          </button>
+          <Terms />
+        </>
+      )}
+      <div className={s.social}>
+        <div className={s.socialWrapper}>
+          <FontAwesomeIcon className={s.socialIcon} icon={faFacebookMessenger} />
+        </div>
+        <div className={s.socialWrapper}>
+          <FontAwesomeIcon className={s.socialIcon} icon={faDiscord} />
+        </div>
+        <div className={s.socialWrapper}>
+          <FontAwesomeIcon className={s.socialIcon} icon={faAt} />
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default connect((state) => ({
   isContact: state.app.isContact,
