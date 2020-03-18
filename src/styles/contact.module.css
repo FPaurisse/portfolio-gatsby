@@ -7,7 +7,7 @@
     align-items: center;
     position: relative;
     transition: width .8s;
-    background-color: #ffffff;
+    background-color: var(--background-secondary-light);
 }
 
 .Contact__hide {
@@ -27,14 +27,14 @@
     position: relative;
     padding: 0;
     margin: 20px 30px 0px auto;
-    color: #8e8e8e;
+    color: var(--optional-light);
     font-size: 10px;
     text-transform: uppercase;
     transition: 0.2s;
 }
 
 .closeContact:hover {
-    color: #3a3837;
+    color: var(--secondary-light);
     transition: 0.2s;
 }
 
@@ -52,7 +52,7 @@
 
 .socialWrapper {
     margin: 0 4px;
-    background-color: #3a3837;
+    background-color: var(--secondary-light);
     padding: 10px;
     border-radius: 100%;
     width: 33px;
@@ -66,12 +66,12 @@
 }
 
 .socialWrapper:hover {
-    background-color: #8e8e8e;
+    background-color: var(--optional-light);
     transition: 0.2s;
 }
 
 .socialIcon {
-    color: #ffffff;
+    color: var(--background-secondary-light);
     font-size: 15px;
 }
 
@@ -82,14 +82,14 @@
     border-left: 0;
     width: 100%;
     padding: 0 25px;
-    color: #3a3837;
+    color: var(--secondary-light);
     height: auto;
 }
 
 .title {
     font-size: 1.3rem;
     margin: 30px 5px 15px 5px;
-    border-bottom: 1px dashed #d1d6da;
+    border-bottom: 1px dashed var(--lighter-light);
     padding-bottom: 15px;
 }
 
@@ -113,7 +113,7 @@
     flex-direction: column;
     justify-content: center;
     width: auto;
-    color: #3a3837;
+    color: var(--secondary-light);
     font-size: 12px;
     margin:0px 5px 5px 5px;
     padding:0;
@@ -122,33 +122,33 @@
 
 .labelText {
     margin: 0 0 5px 0;
-    color: #8e8e8e;
+    color: var(--optional-light);
 }
 
 .required {
     margin:0 3px;
-    color: #33B0CB;
+    color: var(--primary-light);
 }
 
 .input {
     display: flex;
     flex-direction: column;
     width: auto;
-    color: #3a3837;
-    background-color: #EAEFF2;
+    color: var(--secondary-light);
+    background-color: var(--background-primary-light);
     padding: 10px;
     font-size: 12px;
     margin: 0;
     flex:1 1 auto;
     width: 100%;
     outline: none;
-    border: 1px solid #d1d6da;
+    border: 1px solid var(--lighter-light);
     border-radius: 2px;
 }
 
 .button {
-    background-color: #33B0CB;
-    color: #ffffff;
+    background-color: var(--primary-light);
+    color: var(--background-secondary-light);
     font-weight: 800;
     margin: 0px 5px 10px 5px;
     outline: none;
@@ -169,7 +169,7 @@
     margin: 0 5px;
     padding: 10px 0;
     font-size: 12px;
-    color: #8e8e8e;
+    color: var(--optional-light);
 }
 
 .checkbox {
@@ -177,7 +177,7 @@
 }
 
 .buttonTerms {
-    color: #33B0CB;
+    color: var(--primary-light);
     margin-left: 5px;
     text-decoration: none;
     outline: none;
@@ -193,9 +193,9 @@
         height: 100vh;
         width: 50%;
         overflow-y: scroll;
-        border-left: 5px dashed #ffffff;
-        background-color: #EAEFF2;
-        background-image: linear-gradient(90deg, rgb(227, 232, 235) 3%, #EAEFF2 70%);
+        border-left: 5px dashed var(--background-secondary-light);
+        background-color: var(--background-primary-light);
+        background-image: linear-gradient(90deg, rgb(227, 232, 235) 3%, var(--background-primary-light) 70%);
     }
 
     .closeContact {
@@ -211,7 +211,7 @@
     }
 
     .input {
-        background-color: #ffffff;
+        background-color: var(--background-secondary-light);
     }
 
 }

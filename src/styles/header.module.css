@@ -2,7 +2,7 @@
     height: auto;
     min-height: 175px;
     width: 100%;
-    background: #EAEFF2;
+    background: var(--background-primary-light);
     border-right: 0;
     display: flex;
     flex-direction: column-reverse;
@@ -24,7 +24,6 @@
     width: 70px;
     height: 70px;
     min-height: 70px;
-    background: #ffffff;
     border-radius: 100%;
     margin-top: 15px;
     margin-bottom: 10px;
@@ -36,8 +35,7 @@
 }
 
 .iconLogo {
-    background-color: #ffffff;
-    color: #33B0CB;
+    background-color: var(--background-secondary-light);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,14 +50,14 @@
     font-size: 0.7rem;
     font-weight: 800;
     text-transform: uppercase;
-    color: #3a3837;
+    color: var(--secondary-light);
     margin-top: 5px;
     margin-bottom: 15px;
 }
 
 .nav {
     display: flex;
-    background: white;
+    background: var(--background-secondary-light);
     width: 100%;
 }
 
@@ -78,7 +76,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-right: 1px solid #d1d6da;
+    border-right: 1px solid var(--lighter-light);
     padding: 10px auto;
     width: 100%;
 }
@@ -93,7 +91,7 @@
     text-transform: uppercase;
     text-decoration: none;
     transition: color .5s ease;
-    color: #8e8e8e;
+    color: var(--optional-light);
     line-height: 3rem;
     display: flex;
     justify-content: center;
@@ -108,14 +106,14 @@
 }
 
 .linkActive {
-    color: #3a3837;
+    color: var(--secondary-light);
 }
 
 .linkActive::before {
     content: "";
     width: 0.3rem;
     height: 0.3rem;
-    background-color: #33B0CB;
+    background-color: var(--primary-light);
     border-radius: 100%;
     margin-right: 0.3rem;
 }
@@ -132,7 +130,7 @@
         min-height: auto;
         flex-direction: column;
         justify-content: space-between;
-        border-right: 1px solid #ededed;
+        border-right: 1px solid var(--lighter-light);
     }
 
     .logo {
@@ -167,7 +165,7 @@
     }
 
     .item:last-child {
-        border-right: 1px solid #d1d6da;
+        border-right: 1px solid var(--lighter-light);
     }
 
     .link {
@@ -175,14 +173,14 @@
     }
 
     .link:hover {
-        color: #3a3837;
+        color: var(--secondary-light);
     }
 
     .link::after {
         content: "";
         width: 0;
         height: 2px;
-        background-color: #33B0CB;
+        background-color: var(--primary-light);
         position: absolute;
         top: 1.2rem;
         left: 0;
@@ -203,7 +201,7 @@
     }
 
     .social {
-        background: white;
+        background: var(--background-secondary-light);
         width: 100%;
         height: auto;
         padding: 20px;
@@ -220,7 +218,7 @@
         font-weight: 400;
         text-transform: uppercase;
         transition: color .5s ease;
-        color: #8e8e8e;
+        color: var(--optional-light);
         transform: rotate(-90deg);
         white-space: nowrap;
     }
@@ -240,14 +238,14 @@
         content: "";
         height: 20px;
         width: 1px;
-        background: #d1d6da;
+        background: var(--lighter-light);
         margin-bottom: 10px;
     }
 
     .social__link {
         padding: 5px;
         text-decoration: none;
-        color: #33B0CB;
+        color: var(--primary-light);
     }
 
 }

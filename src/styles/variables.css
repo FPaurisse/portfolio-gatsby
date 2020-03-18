@@ -1,0 +1,9 @@
+:root {
+    /* LIGHT MODE */
+    --primary-light: #33B0CB;
+    --secondary-light: #3a3837;
+    --optional-light: #8e8e8e;
+    --lighter-light: #d1d6da;
+    --background-primary-light: #EAEFF2;
+    --background-secondary-light: #ffffff;
+}

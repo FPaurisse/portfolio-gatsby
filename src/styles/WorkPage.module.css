@@ -27,7 +27,7 @@
     outline: none;
     border: 0;
     cursor: pointer;
-    background-color: #ffffff;
+    background-color: var(--background-secondary-light);
     border-radius: 100%;
     position: relative;
     display: flex;
@@ -48,7 +48,7 @@
 }
 
 .iconActionButton {
-    color: #8e8e8e;
+    color: var(--optional-light);
     font-size: 28px;
     position: absolute;
 }
@@ -58,7 +58,7 @@
     height: 100%;
     transition: 0.2s;
     margin: 0;
-    border: 20px solid #ffffff;
+    border: 20px solid var(--background-secondary-light);
     background-size: cover;
     background-position: center center;
     background-blend-mode: saturation;
@@ -77,7 +77,7 @@
 .navButton {
     position: absolute;
     z-index: 1;
-    background-color: #ffffff;
+    background-color: var(--background-secondary-light);
     width: 42px; 
     height: 42px;
     transition: 0.2s;
@@ -89,7 +89,7 @@
 
 .iconNavigation {
     transform: rotate(-45deg);
-    color: #8e8e8e;
+    color: var(--optional-light);
     font-size: 18px;
 }
 
@@ -144,7 +144,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #ffffff;
+    color: var(--background-secondary-light);
     padding: 30px;
     height: 100%;
     position: relative;
@@ -166,7 +166,7 @@
 }
 
 .closeButton {
-    color: #ffffff;
+    color: var(--background-secondary-light);
     font-size: 11px;
     text-transform: uppercase;
     text-decoration: none;
@@ -201,8 +201,8 @@
 
 .tool {
     margin: 0;
-    background-color: #EAEFF2;
-    color: #8e8e8e;
+    background-color: var(--background-primary-light);
+    color: var(--optional-light);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -233,7 +233,7 @@
     }
     
     .workSlide {
-        border: 30px solid #ffffff;
+        border: 30px solid var(--background-secondary-light);
     }
 
     .actionButton {

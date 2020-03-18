@@ -11,5 +11,5 @@
 }
 
 .Page a {
-    color: #33B0CB;
+    color: var(--primary-light);
 }
