@@ -45,11 +45,11 @@
 
 .socialWrapper {
     margin: 0 4px;
-    background-color: #3a3837;
+    background-color: #8e8e8e;
     padding: 10px;
     border-radius: 100%;
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -59,7 +59,7 @@
 
 .socialIcon {
     color: #ffffff;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .form {
