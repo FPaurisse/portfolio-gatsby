@@ -8,7 +8,7 @@
     position: relative;
     transition: 0.2s;
     background-color: #ffffff;
-    padding: 25px;
+    padding: 0 25px;
 }
 
 .Contact__hide {
@@ -20,6 +20,7 @@
     justify-content: flex-end;
     align-items: center;
     width: 100%;
+    margin-top: 30px;
     padding: 0px 15px 15px 0;   
     outline: none;
     border: 0;
@@ -40,8 +41,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    padding: 30px 15px 30px 15px;
-    margin-top: 15px;
+    margin-bottom: 30px;
 }
 
 .socialWrapper {
@@ -70,6 +70,8 @@
     border-left: 0;
     width: 100%;
     position: relative;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .title {
@@ -183,20 +185,19 @@
         transition: 0.2s;
         border-left: 5px dashed #ffffff;
         background-color: #EAEFF2;
-        background-image: linear-gradient(90deg, rgb(227, 232, 235) 3%, #EAEFF2 70%)
+        background-image: linear-gradient(90deg, rgb(227, 232, 235) 3%, #EAEFF2 70%);
     }
 
     .closeContact {
         display: flex;
     }
 
-    .input {
-        background-color: #ffffff;
+    .form {
+        margin-top: 0;
     }
 
-    .social {
-        padding: 15px 15px 0 15px;
-        margin-top: 0px;
+    .input {
+        background-color: #ffffff;
     }
 
 }
