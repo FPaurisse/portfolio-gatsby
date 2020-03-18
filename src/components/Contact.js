@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import cx from 'classnames';
+import { Link } from 'gatsby';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -23,17 +24,54 @@ const Contact = ({ isContact, dispatch }) => (
       className={s.form}
     >
       <div className={s.inputGroup}>
-        <input required className={s.input} type="text" placeholder="Firstname *" />
-        <input required className={s.input} type="text" placeholder="Lastname *" />
+        <label className={s.label} htmlFor="firstname">
+          <p className={s.labelText}>
+            Firstname
+            <span className={s.required}>*</span>
+          </p>
+          <input placeholder="…" required className={s.input} type="text" id="firstname" />
+        </label>
+        <label className={s.label} htmlFor="lastname">
+          <p className={s.labelText}>
+            Lastname
+            <span className={s.required}>*</span>
+          </p>
+          <input placeholder="…" required className={s.input} type="text" id="lastname" />
+        </label>
       </div>
       <div className={s.inputSimple}>
-        <input required className={s.input} type="text" placeholder="Subject *" />
+        <label className={s.label} htmlFor="subject">
+          <p className={s.labelText}>
+            Subject
+            <span className={s.required}>*</span>
+          </p>
+          <input placeholder="…" required className={s.input} type="text" id="subject" />
+        </label>
       </div>
       <div className={s.inputSimple}>
-        <textarea required className={s.input} cols="30" rows="10" placeholder="Message *" />
+        <label className={s.label} htmlFor="message">
+          <p className={s.labelText}>
+            Message
+            <span className={s.required}>*</span>
+          </p>
+          <textarea placeholder="…" required className={s.input} cols="30" rows="10" id="message" />
+        </label>
       </div>
       <div className={s.inputSimple}>
-        <input required className={s.input} type="text" placeholder="Email *" />
+        <label className={s.label} htmlFor="email">
+          <p className={s.labelText}>
+            Email
+            <span className={s.required}>*</span>
+          </p>
+          <input placeholder="…" required className={s.input} type="text" id="email" />
+        </label>
+      </div>
+      <div className="inputSimple">
+        <label className={s.labelCheckbox} htmlFor="checkTerms">
+          <input required className={s.checkbox} type="checkbox" id="checkTerms" />
+          I accept
+          <Link className={s.linkTerms} to="/ddl">{' the Terms & Conditions'}</Link>
+        </label>
       </div>
       <div className={s.inputSimple}>
         <button className={cx(s.button)} type="submit">
