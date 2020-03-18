@@ -6,7 +6,7 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
-    transition: 0.2s;
+    transition: width .8s;
     background-color: #ffffff;
 }
 
@@ -192,7 +192,6 @@
         height: 100vh;
         width: 50%;
         overflow-y: scroll;
-        transition: 0.2s;
         border-left: 5px dashed #ffffff;
         background-color: #EAEFF2;
         background-image: linear-gradient(90deg, rgb(227, 232, 235) 3%, #EAEFF2 70%);
@@ -220,7 +219,6 @@
 
     .Contact {
         width: 35%;
-        transition: 0.2s;
     }
 
 }

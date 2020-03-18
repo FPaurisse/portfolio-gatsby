@@ -12,12 +12,12 @@
     justify-content: center;
     align-items: center;
     filter: grayscale(100%);
-    transition: 0.8s;
+    transition: width .8s, filter .8s;
 }
 
 .Work:hover {
     filter: grayscale(0);
-    transition: 0.8s;
+    transition: width .8s, filter .8s;
 }
 
 .image {
