@@ -46,6 +46,7 @@ const Contact = ({ isContact, isTerms, dispatch }) => {
             className={s.form}
             onSubmit={handleSubmit}
             encType="multipart/form-data"
+            autoComplete="off"
           >
             <h1 className={s.title}>Contact</h1>
             <div className={s.inputGroup}>
