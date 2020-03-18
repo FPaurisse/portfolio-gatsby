@@ -23,17 +23,17 @@ const Contact = ({ isContact, dispatch }) => (
       className={s.form}
     >
       <div className={s.inputGroup}>
-        <input required className={s.input} type="text" placeholder="Firstname" />
-        <input required className={s.input} type="text" placeholder="Lastname" />
+        <input required className={s.input} type="text" placeholder="Firstname *" />
+        <input required className={s.input} type="text" placeholder="Lastname *" />
       </div>
       <div className={s.inputSimple}>
-        <input required className={s.input} type="text" placeholder="Subject" />
+        <input required className={s.input} type="text" placeholder="Subject *" />
       </div>
       <div className={s.inputSimple}>
-        <textarea required className={s.input} cols="30" rows="10" placeholder="Message" />
+        <textarea required className={s.input} cols="30" rows="10" placeholder="Message *" />
       </div>
       <div className={s.inputSimple}>
-        <input required className={s.input} type="text" placeholder="Email" />
+        <input required className={s.input} type="text" placeholder="Email *" />
       </div>
       <div className={s.inputSimple}>
         <button className={cx(s.button)} type="submit">
