@@ -40,7 +40,7 @@ const Contact = ({ isContact, isTerms, dispatch }) => {
         <>
           <button type="button" className={s.closeContact} onClick={() => dispatch(toggleContact(false))}>
             <FontAwesomeIcon className={s.iconCloseContact} icon={faCaretSquareLeft} />
-            Return
+            Close
           </button>
           <form
             className={s.form}

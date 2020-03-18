@@ -80,7 +80,7 @@
         border-bottom: 30px solid white;
         border-left: 15px solid white;
         border-right: 15px solid white;
-        transition: width .4s, filter .8s;
+        transition: width 0s, filter .8s;
     }
 
     .WorkReduce {
@@ -97,7 +97,7 @@
         border-bottom: 30px solid white;
         border-left: 15px solid white;
         border-right: 15px solid white;
-        transition: width .4s, filter .8s;
+        transition: width 0s, filter .8s;
     }
 
     .WorkReduce {
