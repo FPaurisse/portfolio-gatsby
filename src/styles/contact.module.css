@@ -108,7 +108,10 @@
 }
 
 .label {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
     width: auto;
     color: #3a3837;
     font-size: 12px;
@@ -118,7 +121,7 @@
 }
 
 .labelText {
-    margin: 0 0 5px 0;
+    margin: 5px 0 5px 0;
     color: #8e8e8e;
 }
 
