@@ -1,7 +1,7 @@
 const initialState = {
   isContact: false,
   isTerms: false,
-  alert: { status: 'success', statusText: "Thank you, I'll get back to you quickly" },
+  alert: { status: null, statusText: null },
 };
 
 const TOGGLE_CONTACT = 'TOGGLE_CONTACT';
