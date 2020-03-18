@@ -108,8 +108,7 @@
 }
 
 .label {
-    display: flex;
-    flex-direction: column;
+    display: inline-block;
     width: auto;
     color: #3a3837;
     font-size: 12px;
