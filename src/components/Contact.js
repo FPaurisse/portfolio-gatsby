@@ -4,7 +4,7 @@ import cx from 'classnames';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faPaperPlane, faAt, faOutdent,
+  faPaperPlane, faAt, faCaretSquareLeft,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faFacebookMessenger, faDiscord,
@@ -19,7 +19,7 @@ const Contact = ({ isContact, isTerms, dispatch }) => (
     {!isTerms ? (
       <>
         <button type="button" className={s.closeContact} onClick={() => dispatch(toggleContact(false))}>
-          <FontAwesomeIcon className={s.iconCloseContact} icon={faOutdent} />
+          <FontAwesomeIcon className={s.iconCloseContact} icon={faCaretSquareLeft} />
           Return
         </button>
         <form
@@ -87,7 +87,7 @@ const Contact = ({ isContact, isTerms, dispatch }) => (
     ) : (
       <>
         <button type="button" className={s.closeContact} onClick={() => dispatch(toggleTerms(false))}>
-          <FontAwesomeIcon className={s.iconCloseContact} icon={faOutdent} />
+          <FontAwesomeIcon className={s.iconCloseContact} icon={faCaretSquareLeft} />
           Return
         </button>
         <Terms />
