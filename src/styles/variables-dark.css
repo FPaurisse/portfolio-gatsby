@@ -1,0 +1,10 @@
+:root {
+    /* DARK MODE */
+    --primary-light: #33B0CB;
+    --secondary-light: #dedede;
+    --optional-light: #AAB7C2;
+    --lighter-light: #262626;
+    --background-primary-light: #2C2C2F;
+    --background-primary-shadow-light: rgb(39, 39, 41);
+    --background-secondary-light: #3E3F44;
+}
