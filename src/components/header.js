@@ -13,7 +13,7 @@ const Header = ({
   isContact, dispatch, siteTitle,
 }) => (
   <header className={s.Header}>
-    <Link className={s.logoWrapper} to="/">
+    <Link className={s.logoWrapper} to="/" onClick={() => dispatch(toggleContact(false))}>
       <div className={s.logo} title={siteTitle}>
         <div className={s.iconLogo}>
           <Logo />
