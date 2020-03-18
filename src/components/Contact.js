@@ -117,13 +117,13 @@ const Contact = ({ isContact, isTerms, dispatch }) => {
         </>
       )}
       <div className={s.social}>
-        <a href="https://m.me/frederic.paurisse" rel="noopener noreferrer" target="_blank" className={s.socialWrapper}>
+        <a aria-label="Messenger" title="Messenger" href="https://m.me/frederic.paurisse" rel="noopener noreferrer" target="_blank" className={s.socialWrapper}>
           <FontAwesomeIcon className={s.socialIcon} icon={faFacebookMessenger} />
         </a>
-        <a href="https://discordapp.com/users/676800306306351144" rel="noopener noreferrer" target="_blank" className={s.socialWrapper}>
+        <a aria-label="Discord" title="Discord" href="https://discordapp.com/users/676800306306351144" rel="noopener noreferrer" target="_blank" className={s.socialWrapper}>
           <FontAwesomeIcon className={s.socialIcon} icon={faDiscord} />
         </a>
-        <a href="mailto:contact@fredericpaurisse.fr" rel="noopener noreferrer" target="_blank" className={s.socialWrapper}>
+        <a aria-label="Email" title="Email" href="mailto:contact@fredericpaurisse.fr" rel="noopener noreferrer" target="_blank" className={s.socialWrapper}>
           <FontAwesomeIcon className={s.socialIcon} icon={faAt} />
         </a>
       </div>
