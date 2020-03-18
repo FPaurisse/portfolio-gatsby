@@ -18,6 +18,7 @@
 .containerReduce {
     display: none;
     z-index: 1;
+    position: relative;
 }
 
 @media screen and (max-height: 450px) {

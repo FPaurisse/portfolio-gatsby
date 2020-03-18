@@ -12,31 +12,26 @@ import {
 import s from '../styles/contact.module.css';
 import Terms from './Terms';
 
-import { toggleContact, toggleTerms } from '../state/app';
+import { toggleContact, toggleTerms, showAlert } from '../state/app';
 
 const Contact = ({ isContact, isTerms, dispatch }) => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-
-  const resetForm = () => {
-    setName('');
-    setEmail('');
-    setMessage('');
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
+    const formData = new FormData(e.target);
     axios({
       method: 'POST',
       url: `${process.env.GATSBY_API_URL}send`,
-      data: { name, email, message },
+      data: formData,
     }).then((response) => {
       if (response.data.status === 'success') {
-        alert('Message Sent.');
-        resetForm();
+        dispatch(showAlert({ status: 'success', statusText: 'Thank you for your message !' }));
+        dispatch(toggleContact(false));
+        setInterval(() => {
+          dispatch(showAlert({ status: null, statusText: null }));
+        }, 5000);
       } else if (response.data.status === 'fail') {
-        alert('Message failed to send.');
+        dispatch(showAlert({ status: 'fail', statusText: "Oups… something wasn't right, retry please" }));
+        dispatch(toggleContact(true));
       }
     });
   };
@@ -52,6 +47,7 @@ const Contact = ({ isContact, isTerms, dispatch }) => {
           <form
             className={s.form}
             onSubmit={handleSubmit}
+            encType="multipart/form-data"
           >
             <h1 className={s.title}>Contact</h1>
             <div className={s.inputGroup}>
@@ -60,14 +56,14 @@ const Contact = ({ isContact, isTerms, dispatch }) => {
                   Firstname
                   <span className={s.required}>*</span>
                 </p>
-                <input placeholder="…" required className={s.input} type="text" id="firstname" />
+                <input placeholder="…" required className={s.input} type="text" id="firstname" name="firstname" />
               </label>
               <label className={s.label} htmlFor="lastname">
                 <p className={s.labelText}>
                   Lastname
                   <span className={s.required}>*</span>
                 </p>
-                <input placeholder="…" required className={s.input} type="text" id="lastname" />
+                <input placeholder="…" required className={s.input} type="text" id="lastname" name="lastname" />
               </label>
             </div>
             <div className={s.inputSimple}>
@@ -76,7 +72,7 @@ const Contact = ({ isContact, isTerms, dispatch }) => {
                   Subject
                   <span className={s.required}>*</span>
                 </p>
-                <input placeholder="…" required className={s.input} type="text" id="subject" />
+                <input placeholder="…" required className={s.input} type="text" id="subject" name="subject" />
               </label>
             </div>
             <div className={s.inputSimple}>
@@ -85,7 +81,7 @@ const Contact = ({ isContact, isTerms, dispatch }) => {
                   Message
                   <span className={s.required}>*</span>
                 </p>
-                <textarea placeholder="…" required className={s.input} cols="30" rows="10" id="message" />
+                <textarea placeholder="…" required className={s.input} cols="30" rows="10" id="message" name="message" />
               </label>
             </div>
             <div className={s.inputSimple}>
@@ -94,7 +90,7 @@ const Contact = ({ isContact, isTerms, dispatch }) => {
                   Email
                   <span className={s.required}>*</span>
                 </p>
-                <input placeholder="…" required className={s.input} type="text" id="email" />
+                <input placeholder="…" required className={s.input} type="text" id="email" name="email" />
               </label>
             </div>
             <div className="inputSimple">
