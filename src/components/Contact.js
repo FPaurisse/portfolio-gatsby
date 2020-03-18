@@ -88,7 +88,7 @@ const Contact = ({ isContact, isTerms, dispatch }) => (
       <>
         <button type="button" className={s.closeContact} onClick={() => dispatch(toggleTerms(false))}>
           <FontAwesomeIcon className={s.iconCloseContact} icon={faTimesCircle} />
-          Close terms
+          Close
         </button>
         <Terms />
       </>
