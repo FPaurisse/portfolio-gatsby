@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import cx from 'classnames';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -31,7 +30,7 @@ const Contact = ({ isContact, isTerms, dispatch }) => {
       }
       setInterval(() => {
         dispatch(showAlert({ status: null, statusText: null }));
-      }, 10000);
+      }, 6000);
     });
   };
 
