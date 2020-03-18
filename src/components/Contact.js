@@ -25,6 +25,7 @@ const Contact = ({ isContact, isTerms, dispatch }) => (
         <form
           className={s.form}
         >
+          <h1 className={s.title}>Contact</h1>
           <div className={s.inputGroup}>
             <label className={s.label} htmlFor="firstname">
               <p className={s.labelText}>

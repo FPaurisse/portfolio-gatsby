@@ -72,6 +72,14 @@
     position: relative;
     margin-top: 30px;
     margin-bottom: 30px;
+    color: #3a3837;
+}
+
+.title {
+    font-size: 1.3rem;
+    margin: 0 5px 15px 5px;
+    border-bottom: 1px dashed #d1d6da;
+    padding-bottom: 15px;
 }
 
 .inputGroup {

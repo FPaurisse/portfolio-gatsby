@@ -11,10 +11,12 @@
 
 .title {
     font-size: 1.3rem;
-    margin: 0 0 15px 0;
+    margin: 0 0 10px 0;
+    border-bottom: 1px dashed #d1d6da;
+    padding-bottom: 15px;
 }
 
-.Terms h2 {
+.subTitle {
     font-size: 0.9rem;
     margin: 10px 0;
 }
