@@ -23,7 +23,7 @@ const Layout = ({
   `);
 
   return (
-    <div className={s.Layout}>
+    <div className={cx(s.Layout, { [s.Layout__contact]: isContact })}>
       <Helmet>
         <link rel="icon" href={favicon} />
       </Helmet>

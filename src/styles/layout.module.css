@@ -1,10 +1,15 @@
 .Layout {
     margin: 0;
     width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: "Open Sans";
     font-weight: 400;
+}
+
+.Layout__contact {
+    height: auto;
 }
 
 .container {
@@ -12,7 +17,6 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
-    height: 100vh;
 }
 
 .containerReduce {
