@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import worksStyles from '../styles/works.module.css';
+import React, { useState, useEffect } from 'react';
+import cx from 'classnames';
+import s from '../styles/works.module.css';
 import Layout from '../components/layout';
 import Heading from '../components/heading';
 import Work from '../components/work';
@@ -11,6 +12,14 @@ const Works = ({ location }) => {
   const currentCategory = location.state && location.state.currentCategory ? location.state.currentCategory : 'Web';
   const [category, setCategory] = useState(currentCategory);
   const data = edges.filter((work) => work.node.categories.includes(`${category}`));
+  const [isLoad, setIsLoad] = useState(true);
+
+  useEffect(() => {
+    setInterval(() => {
+      setIsLoad(false);
+    }, 2000);
+  }, []);
+
   return (
     <Layout location={location}>
       <SEO
@@ -22,10 +31,10 @@ const Works = ({ location }) => {
         changeCategory={(choice) => setCategory(choice)}
         category={category}
       />
-      <div className={worksStyles.works}>
+      <div className={cx(s.works)}>
         {data
           .map(({ node }) => (
-            <Work key={node.id} data={node} />
+            <Work key={node.id} data={node} isLoad={isLoad} />
           ))}
       </div>
     </Layout>
