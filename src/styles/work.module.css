@@ -16,7 +16,8 @@
 }
 
 .Work__load {
-    background-color: var(--lighter-light);
+    background-color: var(--background-primary-light);
+    opacity: 0.8;
 }
 
 .workItem {
