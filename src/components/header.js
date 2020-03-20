@@ -7,12 +7,15 @@ import cx from 'classnames';
 import s from '../styles/header.module.css';
 import Logo from './logo';
 
-import { toggleContact, toggleTerms } from '../state/app';
+import { toggleContact, toggleTerms, toggleLoad } from '../state/app';
 
 const Header = ({ isContact, dispatch, siteTitle }) => {
   const closeModal = () => {
     dispatch(toggleContact(false));
     dispatch(toggleTerms(false));
+    if (!isContact) {
+      dispatch(toggleLoad(true));
+    }
   };
   const handleContact = () => {
     dispatch(toggleContact(!isContact));
