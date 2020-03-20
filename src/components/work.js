@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { connect } from 'react-redux';
 import cx from 'classnames';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faArrowRight,
+} from '@fortawesome/free-solid-svg-icons';
 import s from '../styles/work.module.css';
 
 const baseURL = process.env.GATSBY_API_URL || '';
@@ -40,6 +44,9 @@ const Work = ({ data, isContact, isLoad }) => (
           height: `${data.height}%`,
         }}
       />
+    </div>
+    <div className={s.link}>
+      <FontAwesomeIcon className={s.iconlink} icon={faArrowRight} />
     </div>
   </Link>
 );

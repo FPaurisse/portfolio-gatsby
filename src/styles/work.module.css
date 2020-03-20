@@ -15,6 +15,7 @@
     transition: width 0s, filter .8s;
 }
 
+
 .Work__load {
     background-color: var(--background-primary-light);
     opacity: 0.8;
@@ -34,6 +35,36 @@
       opacity: .5;
     }
   }
+
+.link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-left-width: 40px;
+    border-bottom: 40px solid var(--background-secondary-light);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.iconlink {
+    position: absolute;
+    top: 20px;
+    right: 0px;
+    font-size: 12px;
+    color: var(--optional-light);
+    transition: 0.2s;
+}
+
+.Work:hover .iconlink {
+    right: 5px;
+    transition: 0.2s;
+}
+
 
 .workItem {
     opacity: 1;
