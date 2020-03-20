@@ -1,25 +1,33 @@
 import React from 'react';
 import cx from 'classnames';
-import headingStyles from '../styles/heading.module.css';
+import { connect } from 'react-redux';
+import s from '../styles/heading.module.css';
 
-const Heading = ({ counter, changeCategory, category }) => {
+import { toggleLoad } from '../state/app';
+
+const Heading = ({
+  counter, changeCategory, category, isLoad, dispatch,
+}) => {
   const filterBy = (choice) => {
     changeCategory(choice);
+    dispatch(toggleLoad(true));
   };
 
   return (
-    <div className={headingStyles.Heading}>
-      <div className={headingStyles.Heading__title}>
-        <span className={headingStyles.Heading__count}>{counter}</span>
+    <div className={s.Heading}>
+      <div className={cx(s.HeadingTitle, { [s.HeadingTitle__load]: isLoad })}>
+        <span className={s.HeadingCount}>{counter}</span>
         {`${counter > 1 ? 'works' : 'work'} available`}
       </div>
-      <div className={headingStyles.Heading__filters}>
+      <div className={s.HeadingFilters}>
         Show by :
-        <button onClick={() => filterBy('Web')} type="button" className={category === 'Web' ? cx(headingStyles.active, headingStyles.button) : headingStyles.button}>Web</button>
-        <button onClick={() => filterBy('Print')} type="button" className={category === 'Print' ? cx(headingStyles.active, headingStyles.button) : headingStyles.button}>Print</button>
+        <button onClick={() => filterBy('Web')} type="button" className={category === 'Web' ? cx(s.active, s.button) : s.button}>Web</button>
+        <button onClick={() => filterBy('Print')} type="button" className={category === 'Print' ? cx(s.active, s.button) : s.button}>Print</button>
       </div>
     </div>
   );
 };
 
-export default Heading;
+export default connect((state) => ({
+  isLoad: state.app.isLoad,
+}), null)(Heading);

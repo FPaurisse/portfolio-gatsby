@@ -6,16 +6,16 @@
     align-items: center;
 }
 
-.Heading__title {
+.HeadingTitle {
     display: none;
 }
 
-.Heading__count {
+.HeadingCount {
     color: var(--primary-light);
     margin-right: 5px;
 }
 
-.Heading__filters {
+.HeadingFilters {
     font-weight: 400;
     font-size: 0.75rem;
     text-transform: uppercase;
@@ -56,7 +56,7 @@
         justify-content: space-between;
     }
 
-    .Heading__title {
+    .HeadingTitle {
         display: block;
         font-weight: 800;
         font-size: 0.9rem;
