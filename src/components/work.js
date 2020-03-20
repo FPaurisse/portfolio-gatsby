@@ -46,11 +46,15 @@ const Work = ({ data, isContact, isLoad }) => (
       />
     </div>
     <div className={s.link}>
-      <FontAwesomeIcon className={cx(s.iconlink, { [s.iconlink__load]: isLoad })} icon={faArrowRight} />
+      <FontAwesomeIcon
+        className={cx(s.iconlink, { [s.iconlink__load]: isLoad })}
+        icon={faArrowRight}
+      />
     </div>
   </Link>
 );
 
 export default connect((state) => ({
+  isLoad: state.app.isLoad,
   isContact: state.app.isContact,
 }), null)(Work);

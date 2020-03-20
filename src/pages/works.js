@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
+import { connect } from 'react-redux';
 import s from '../styles/works.module.css';
 import Layout from '../components/layout';
 import Heading from '../components/heading';
@@ -7,18 +8,19 @@ import Work from '../components/work';
 import SEO from '../components/seo';
 import useData from '../useData';
 
-const Works = ({ location }) => {
+import { toggleLoad } from '../state/app';
+
+const Works = ({ location, isLoad, dispatch }) => {
   const { edges } = useData();
   const currentCategory = location.state && location.state.currentCategory ? location.state.currentCategory : 'Web';
   const [category, setCategory] = useState(currentCategory);
   const data = edges.filter((work) => work.node.categories.includes(`${category}`));
-  const [isLoad, setIsLoad] = useState(true);
 
   useEffect(() => {
     setInterval(() => {
-      setIsLoad(false);
+      dispatch(toggleLoad(false));
     }, 1500);
-  }, []);
+  }, [dispatch]);
 
   return (
     <Layout location={location}>
@@ -34,11 +36,13 @@ const Works = ({ location }) => {
       <div className={cx(s.works)}>
         {data
           .map(({ node }) => (
-            <Work key={node.id} data={node} isLoad={isLoad} />
+            <Work key={node.id} data={node} />
           ))}
       </div>
     </Layout>
   );
 };
 
-export default Works;
+export default connect((state) => ({
+  isLoad: state.app.isLoad,
+}), null)(Works);
