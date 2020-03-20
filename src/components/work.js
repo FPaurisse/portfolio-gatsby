@@ -8,10 +8,14 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import s from '../styles/work.module.css';
 
+import { toggleLoad } from '../state/app';
+
 const baseURL = process.env.GATSBY_API_URL || '';
 
-const Work = ({ data, isContact, isLoad }) => (
-  <Link key={data.endpointId} to={`/works/${data.slug}`} className={cx(s.Work, { [s.WorkReduce]: isContact, [s.Work__load]: isLoad })}>
+const Work = ({
+  data, isContact, isLoad, dispatch,
+}) => (
+  <Link onClick={() => dispatch(toggleLoad(true))} key={data.endpointId} to={`/works/${data.slug}`} className={cx(s.Work, { [s.WorkReduce]: isContact, [s.Work__load]: isLoad })}>
     <div className={cx(s.workItem, { [s.workItem__load]: isLoad })}>
       <div
         className={s.image}

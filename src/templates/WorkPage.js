@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { graphql, Link } from 'gatsby';
 import cx from 'classnames';
+import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faTag, faInfoCircle, faChevronLeft, faChevronRight, faTimesCircle,
@@ -12,7 +13,7 @@ import useData from '../useData';
 
 const baseURL = process.env.GATSBY_API_URL || '';
 
-export default ({ data, location }) => {
+const WorkPage = ({ data, location, isLoad }) => {
   const [fullPage, setFullPage] = useState(true);
 
   const work = data.restApiApiV1Works;
@@ -32,7 +33,9 @@ export default ({ data, location }) => {
       <SEO title={work.title} description={work.context} />
       <div className={s.WorkPage}>
         <div
-          className={cx(!fullPage && s.workSlideReduce, s.workSlide)}
+          className={
+            cx(s.workSlide, { [s.workSlide__load]: isLoad, [s.workSlideReduce]: !fullPage })
+          }
           style={{
             backgroundImage: `linear-gradient(black, black), url(${work.image.includes(baseURL)
               ? work.image
@@ -42,25 +45,29 @@ export default ({ data, location }) => {
 
           <div className={cx(s.button, s.buttonTop)}>
             <Link to="/works" state={{ currentCategory }} className={cx(s.actionButton, s.actionButtonTop)}>
-              <FontAwesomeIcon className={cx(s.iconActionButton)} icon={faTimesCircle} />
+              <FontAwesomeIcon
+                className={cx(s.iconActionButton, { [s.icon__load]: isLoad })}
+                icon={faTimesCircle}
+              />
             </Link>
           </div>
 
           {prevSlug
             && (
             <Link to={`/works/${prevSlug}`} state={{ fullPage }} aria-label="Previous" className={cx(!fullPage && s.navButtonReduce, s.navButton, s.navLeft)}>
-              <FontAwesomeIcon className={s.iconNavigation} icon={faChevronLeft} />
+              <FontAwesomeIcon
+                className={cx(s.iconNavigation, { [s.icon__load]: isLoad })}
+                icon={faChevronLeft}
+              />
             </Link>
             )}
-
-          <div className={cx(!fullPage && s.wrapperReduce, s.wrapper)} style={{ borderImageSource: `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }}>
+          <div className={cx(s.wrapper, { [s.wrapper__load]: isLoad, [s.wrapperReduce]: !fullPage })} style={{ borderImageSource: `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }}>
             <div className={s.optionalBack} style={{ backgroundColor: `${work.optionalColor}` }}>
               <div className={s.backGradient} style={{ backgroundImage: `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }} />
             </div>
           </div>
-          <div className={cx(!fullPage && s.viewReduce, s.view)}>
+          <div className={cx(s.view, { [s.view__load]: isLoad, [s.viewReduce]: !fullPage })}>
             <div className={s.content}>
-
               <div
                 className={cx(!fullPage && s.mockupReduce, s.mockup)}
                 style={{
@@ -71,21 +78,23 @@ export default ({ data, location }) => {
                   height: `${work.height}%`,
                 }}
               />
-
             </div>
           </div>
 
 
           {nextSlug && (
             <Link to={`/works/${nextSlug}`} state={{ fullPage }} aria-label="Next" className={cx(!fullPage && s.navButtonReduce, s.navButton, s.navRight)}>
-              <FontAwesomeIcon className={s.iconNavigation} icon={faChevronRight} />
+              <FontAwesomeIcon
+                className={cx(s.iconNavigation, { [s.icon__load]: isLoad })}
+                icon={faChevronRight}
+              />
             </Link>
           )}
 
           <div className={cx(s.button, s.buttonBottom)}>
             <button className={cx(s.actionButton, s.actionButtonBottom)} type="button" onClick={() => setFullPage(!fullPage)}>
               <FontAwesomeIcon
-                className={cx(s.iconActionButton)}
+                className={cx(s.iconActionButton, { [s.icon__load]: isLoad })}
                 icon={!fullPage ? faTimesCircle : faInfoCircle}
               />
             </button>
@@ -107,6 +116,10 @@ export default ({ data, location }) => {
     </Layout>
   );
 };
+
+export default connect((state) => ({
+  isLoad: state.app.isLoad,
+}), null)(WorkPage);
 
 export const query = graphql`
   query($slug: String!) {

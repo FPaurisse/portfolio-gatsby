@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
@@ -9,8 +9,10 @@ import Contact from './Contact';
 import Alert from './Alert';
 import favicon from '../images/favicon.ico';
 
+import { toggleLoad } from '../state/app';
+
 const Layout = ({
-  children, location, isContact, alert,
+  children, location, isContact, alert, dispatch,
 }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -21,6 +23,12 @@ const Layout = ({
       }
     }
   `);
+
+  useEffect(() => {
+    setInterval(() => {
+      dispatch(toggleLoad(false));
+    }, 1500);
+  }, [dispatch]);
 
   return (
     <div className={cx(s.Layout, { [s.Layout__contact]: isContact })}>
@@ -40,6 +48,7 @@ const Layout = ({
 };
 
 export default connect((state) => ({
+  isLoad: state.app.isLoad,
   isContact: state.app.isContact,
   alert: state.app.alert,
 }), null)(Layout);

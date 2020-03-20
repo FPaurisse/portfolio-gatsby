@@ -15,7 +15,6 @@
     transition: width 0s, filter .8s;
 }
 
-
 .Work__load {
     background-color: var(--background-primary-light);
     opacity: 0.8;
