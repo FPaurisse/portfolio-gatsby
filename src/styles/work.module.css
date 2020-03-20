@@ -60,6 +60,10 @@
     transition: 0.2s;
 }
 
+.iconlink__load {
+    color: transparent;
+}
+
 .Work:hover .iconlink {
     right: 5px;
     transition: 0.2s;

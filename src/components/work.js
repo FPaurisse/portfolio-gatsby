@@ -46,7 +46,7 @@ const Work = ({ data, isContact, isLoad }) => (
       />
     </div>
     <div className={s.link}>
-      <FontAwesomeIcon className={s.iconlink} icon={faArrowRight} />
+      <FontAwesomeIcon className={cx(s.iconlink, { [s.iconlink__load]: isLoad })} icon={faArrowRight} />
     </div>
   </Link>
 );
