@@ -37,7 +37,7 @@ const WorkPage = ({ data, location, isLoad }) => {
             cx(s.workSlide, { [s.workSlide__load]: isLoad, [s.workSlideReduce]: !fullPage })
           }
           style={{
-            backgroundImage: `linear-gradient(black, black), url(${work.image.includes(baseURL)
+            backgroundImage: !isLoad && `linear-gradient(black, black), url(${work.image.includes(baseURL)
               ? work.image
               : baseURL + work.image})`,
           }}
@@ -62,7 +62,7 @@ const WorkPage = ({ data, location, isLoad }) => {
             </Link>
             )}
           <div className={cx(s.wrapper, { [s.wrapper__load]: isLoad, [s.wrapperReduce]: !fullPage })} style={{ borderImageSource: !isLoad && `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }}>
-            <div className={cx(s.optionalBack, { [s.optionalBack__load]: isLoad })} style={{ backgroundColor: `${work.optionalColor}` }}>
+            <div className={cx(s.optionalBack, { [s.optionalBack__load]: isLoad })} style={{ backgroundColor: !isLoad && `${work.optionalColor}` }}>
               <div className={cx(s.backGradient, { [s.optionalBack__load]: isLoad })} style={{ backgroundImage: !isLoad && `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }} />
             </div>
           </div>
