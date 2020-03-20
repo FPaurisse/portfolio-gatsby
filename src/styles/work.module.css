@@ -18,7 +18,22 @@
 .Work__load {
     background-color: var(--background-primary-light);
     opacity: 0.8;
+    animation: fading 1s infinite;
 }
+
+@keyframes fading {
+    0% {
+      opacity: .5;
+    }
+    
+    50% {
+      opacity: .8;
+    }
+    
+    100% {
+      opacity: .5;
+    }
+  }
 
 .workItem {
     opacity: 1;
