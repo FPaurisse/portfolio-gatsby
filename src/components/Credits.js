@@ -52,6 +52,10 @@ const Credits = ({ dispatch, isCredits }) => (
           <a className={s.link} target="_blank" rel="noopener noreferrer" href="https://www.mongodb.com/fr">https://www.mongodb.com/fr</a>
         </li>
         <li className={s.item}>
+          Nodemailer
+          <a className={s.link} target="_blank" rel="noopener noreferrer" href="https://nodemailer.com/">https://nodemailer.com/</a>
+        </li>
+        <li className={s.item}>
           Certbot
           <a className={s.link} target="_blank" rel="noopener noreferrer" href="https://certbot.eff.org/">https://certbot.eff.org/</a>
         </li>
