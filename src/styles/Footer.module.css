@@ -30,7 +30,8 @@
 
 .buttonIcon {
     color: var(--primary-light);
-    font-size: 12px;
+    font-size: 13px;
     margin-left: 7px;
     margin-right: 2px;
+    margin-top: -2px;
 }

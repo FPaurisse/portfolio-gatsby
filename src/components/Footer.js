@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faArrowRight,
+  faHandPointRight,
 } from '@fortawesome/free-solid-svg-icons';
 import s from '../styles/Footer.module.css';
 
@@ -26,7 +26,7 @@ const Footer = ({ isCredits, dispatch }) => {
           Built with
           <FontAwesomeIcon
             className={cx(s.buttonIcon)}
-            icon={faArrowRight}
+            icon={faHandPointRight}
           />
         </button>
       </p>
