@@ -50,6 +50,9 @@ const Header = ({
       </nav>
 
       <div className={s.headerBottom}>
+        <button type="button" className={s.switchThemeButton} onClick={() => dispatch(toggleDarkMode(!darkMode))}>
+          <FontAwesomeIcon className={s.switchThemeIcon} icon={darkMode ? faLightbulb : faMoon} />
+        </button>
         <div className={s.Linkedin}>
           <div className={s.LinkedinText}>Follow me</div>
           <div className={s.LinkedinWrapper}>
@@ -58,9 +61,6 @@ const Header = ({
             </button>
           </div>
         </div>
-        <button type="button" className={s.switchThemeButton} onClick={() => dispatch(toggleDarkMode(!darkMode))}>
-          <FontAwesomeIcon className={s.switchThemeIcon} icon={darkMode ? faLightbulb : faMoon} />
-        </button>
       </div>
     </header>
   );
