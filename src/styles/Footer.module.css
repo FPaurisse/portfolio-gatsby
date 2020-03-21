@@ -4,6 +4,7 @@
     justify-content: flex-end;
     margin: 0;
     padding: 30px;
+    background-color: var(--background-secondary);
 }
 
 .text {
