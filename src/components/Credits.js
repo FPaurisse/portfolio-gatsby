@@ -71,7 +71,7 @@ const Credits = ({ dispatch, isCredits }) => (
           <a className={s.link} target="_blank" rel="noopener noreferrer" href="https://www.nginx.com/">https://www.nginx.com/</a>
         </li>
       </ul>
-      <h2 className={s.subTitle}>Icons</h2>
+      <h2 className={s.subTitle}>Others</h2>
       <ul className={s.list}>
         <li className={s.item}>
           Font Awesome
