@@ -280,6 +280,12 @@
     .switchThemeIcon {
         color: var(--optional);
         font-size: 0.9rem;
+        transition: 0.2s;
+    }
+
+    .switchThemeIcon__dark {
+        transform: rotate(180deg);
+        transition: 0.2s;
     }
 
 }

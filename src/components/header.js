@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import { faMoon, faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import { faAdjust, faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import cx from 'classnames';
 import s from '../styles/header.module.css';
@@ -59,7 +59,7 @@ const Header = ({
           </div>
         </div>
         <button type="button" className={s.switchThemeButton} onClick={() => dispatch(toggleDarkMode(!darkMode))}>
-          <FontAwesomeIcon className={s.switchThemeIcon} icon={darkMode ? faLightbulb : faMoon} />
+          <FontAwesomeIcon className={cx(s.switchThemeIcon, { [s.switchThemeIcon__dark]: darkMode })} icon={faAdjust} />
         </button>
       </div>
     </header>
