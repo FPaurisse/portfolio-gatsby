@@ -14,10 +14,10 @@
     --primary: #33B0CB;
     --secondary: #dedede;
     --optional: #AAB7C2;
-    --lighter: #262626;
+    --lighter: #000000;
     --background-primary: #2C2C2F;
     --background-primary-shadow: rgb(39, 39, 41);
-    --background-secondary: #3E3F44;
+    --background-secondary: #222222;
 }
 
 /* DARK MODE DEFAULT */

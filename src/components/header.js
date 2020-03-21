@@ -2,17 +2,18 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { faMoon, faLightbulb } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import cx from 'classnames';
 import s from '../styles/header.module.css';
 import Logo from './logo';
 
 import {
-  toggleContact, toggleTerms, toggleLoad, toggleCredits,
+  toggleContact, toggleTerms, toggleLoad, toggleDarkMode, toggleCredits,
 } from '../state/app';
 
 const Header = ({
-  isContact, dispatch, siteTitle,
+  isContact, darkMode, dispatch, siteTitle,
 }) => {
   const closeModal = () => {
     dispatch(toggleContact(false));
@@ -47,13 +48,19 @@ const Header = ({
           </li>
         </ul>
       </nav>
-      <div className={s.social}>
-        <div className={s.text}>Follow me</div>
-        <div className={s.social__wrapper}>
-          <a className={s.social__link} href="https://www.linkedin.com/in/frederic-paurisse/" rel="noopener noreferrer" target="_blank">
-            <FontAwesomeIcon icon={faLinkedinIn} />
-          </a>
+
+      <div className={s.headerBottom}>
+        <div className={s.Linkedin}>
+          <div className={s.LinkedinText}>Follow me</div>
+          <div className={s.LinkedinWrapper}>
+            <button className={s.LinkedinButton} type="button" onClick={() => dispatch(toggleDarkMode(!darkMode))}>
+              <FontAwesomeIcon icon={faLinkedinIn} />
+            </button>
+          </div>
         </div>
+        <button type="button" className={s.switchThemeButton} onClick={() => dispatch(toggleDarkMode(!darkMode))}>
+          <FontAwesomeIcon className={s.switchThemeIcon} icon={darkMode ? faLightbulb : faMoon} />
+        </button>
       </div>
     </header>
   );
@@ -61,4 +68,5 @@ const Header = ({
 
 export default connect((state) => ({
   isContact: state.app.isContact,
+  darkMode: state.app.darkMode,
 }), null)(Header);
