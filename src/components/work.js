@@ -13,9 +13,9 @@ import { toggleLoad } from '../state/app';
 const baseURL = process.env.GATSBY_API_URL || '';
 
 const Work = ({
-  data, isContact, isLoad, dispatch,
+  data, isContact, isCredits, isLoad, dispatch,
 }) => (
-  <Link onClick={() => dispatch(toggleLoad(true))} key={data.endpointId} to={`/works/${data.slug}`} className={cx(s.Work, { [s.WorkReduce]: isContact, [s.Work__load]: isLoad })}>
+  <Link onClick={() => dispatch(toggleLoad(true))} key={data.endpointId} to={`/works/${data.slug}`} className={cx(s.Work, { [s.WorkReduce]: isContact || isCredits, [s.Work__load]: isLoad })}>
     <div className={cx(s.workItem, { [s.workItem__load]: isLoad })}>
       <div
         className={s.image}
@@ -61,4 +61,5 @@ const Work = ({
 export default connect((state) => ({
   isLoad: state.app.isLoad,
   isContact: state.app.isContact,
+  isCredits: state.app.isCredits,
 }), null)(Work);

@@ -11,10 +11,22 @@
     font-size: 0.7rem;
     margin: 0;
     text-transform: uppercase;
+    display: flex;
 }
 
-.link {
+.button {
     color: var(--primary-light);
-    font-weight: 800;
-    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    outline: none;
+    background-color: transparent;
+    padding: 0 0 0 10px;
+    cursor: pointer;
+}
+
+.buttonIcon {
+    font-size: 12px;
 }

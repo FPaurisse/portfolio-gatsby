@@ -2,12 +2,14 @@ const initialState = {
   isLoad: true,
   isContact: false,
   isTerms: false,
+  isCredits: false,
   alert: { status: null, statusText: null },
 };
 
 const TOGGLE_LOAD = 'TOGGLE_LOAD';
 const TOGGLE_CONTACT = 'TOGGLE_CONTACT';
 const TOGGLE_TERMS = 'TOGGLE_TERMS';
+const TOGGLE_CREDITS = 'TOGGLE_CREDITS';
 const SHOW_ALERT = 'SHOW_ALERT';
 
 export const toggleLoad = (isLoad) => ({
@@ -20,6 +22,10 @@ export const toggleContact = (isContact) => ({
 
 export const toggleTerms = (isTerms) => ({
   type: TOGGLE_TERMS, isTerms,
+});
+
+export const toggleCredits = (isCredits) => ({
+  type: TOGGLE_CREDITS, isCredits,
 });
 
 export const showAlert = (alert) => ({
@@ -35,6 +41,8 @@ export default (state = initialState, action) => {
       return { ...state, isContact: action.isContact };
     case TOGGLE_TERMS:
       return { ...state, isTerms: action.isTerms };
+    case TOGGLE_CREDITS:
+      return { ...state, isCredits: action.isCredits };
     case SHOW_ALERT:
       return { ...state, alert: action.alert };
     default:
