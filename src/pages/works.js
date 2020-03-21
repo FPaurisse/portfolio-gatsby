@@ -11,7 +11,7 @@ import Footer from '../components/Footer';
 
 import { toggleLoad } from '../state/app';
 
-const Works = ({ location, isLoad, dispatch }) => {
+const Works = ({ location, dispatch }) => {
   const { edges } = useData();
   const currentCategory = location.state && location.state.currentCategory ? location.state.currentCategory : 'Web';
   const [category, setCategory] = useState(currentCategory);
