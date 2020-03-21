@@ -58,7 +58,7 @@ const Header = ({
             </button>
           </div>
         </div>
-        <button type="button" className={s.switchThemeButton} onClick={() => dispatch(toggleDarkMode(!darkMode))}>
+        <button type="button" title="Switch theme" className={s.switchThemeButton} onClick={() => dispatch(toggleDarkMode(!darkMode))}>
           <FontAwesomeIcon className={cx(s.switchThemeIcon, { [s.switchThemeIcon__dark]: darkMode })} icon={faAdjust} />
         </button>
       </div>
