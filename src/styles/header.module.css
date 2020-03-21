@@ -276,7 +276,7 @@
     }
 
     .switchThemeIcon {
-        color: var(--optional);
+        color: var(--background-primary);
     }
 
 }
