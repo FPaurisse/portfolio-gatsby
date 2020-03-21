@@ -81,9 +81,9 @@
 }
 
 .item::before {
-    content: "\2022";
+    content: "#";
     color: var(--primary-light);
-    font-weight: 800;
+    font-size: 0.6rem;
     width: 1em;
     margin-left: -1em;
   }
