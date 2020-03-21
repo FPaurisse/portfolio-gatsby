@@ -2,7 +2,7 @@
     height: auto;
     min-height: 175px;
     width: 100%;
-    background: var(--background-primary-light);
+    background: var(--background-primary);
     border-right: 0;
     display: flex;
     flex-direction: column-reverse;
@@ -35,7 +35,7 @@
 }
 
 .iconLogo {
-    background-color: var(--background-secondary-light);
+    background-color: var(--background-secondary);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,14 +50,14 @@
     font-size: 0.7rem;
     font-weight: 800;
     text-transform: uppercase;
-    color: var(--secondary-light);
+    color: var(--secondary);
     margin-top: 5px;
     margin-bottom: 15px;
 }
 
 .nav {
     display: flex;
-    background: var(--background-secondary-light);
+    background: var(--background-secondary);
     width: 100%;
 }
 
@@ -76,7 +76,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-right: 1px solid var(--lighter-light);
+    border-right: 1px solid var(--lighter);
     padding: 10px auto;
     width: 100%;
 }
@@ -91,7 +91,7 @@
     text-transform: uppercase;
     text-decoration: none;
     transition: color .5s ease;
-    color: var(--optional-light);
+    color: var(--optional);
     line-height: 3rem;
     display: flex;
     justify-content: center;
@@ -106,14 +106,14 @@
 }
 
 .linkActive {
-    color: var(--secondary-light);
+    color: var(--secondary);
 }
 
 .linkActive::before {
     content: "";
     width: 0.3rem;
     height: 0.3rem;
-    background-color: var(--primary-light);
+    background-color: var(--primary);
     border-radius: 100%;
     margin-right: 0.3rem;
 }
@@ -130,7 +130,7 @@
         min-height: auto;
         flex-direction: column;
         justify-content: space-between;
-        border-right: 1px solid var(--lighter-light);
+        border-right: 1px solid var(--lighter);
     }
 
     .logo {
@@ -165,7 +165,7 @@
     }
 
     .item:last-child {
-        border-right: 1px solid var(--lighter-light);
+        border-right: 1px solid var(--lighter);
     }
 
     .link {
@@ -173,14 +173,14 @@
     }
 
     .link:hover {
-        color: var(--secondary-light);
+        color: var(--secondary);
     }
 
     .link::after {
         content: "";
         width: 0;
         height: 2px;
-        background-color: var(--primary-light);
+        background-color: var(--primary);
         position: absolute;
         top: 1.2rem;
         left: 0;
@@ -201,7 +201,7 @@
     }
 
     .social {
-        background: var(--background-secondary-light);
+        background: var(--background-secondary);
         width: 100%;
         height: auto;
         padding: 20px;
@@ -218,7 +218,7 @@
         font-weight: 400;
         text-transform: uppercase;
         transition: color .5s ease;
-        color: var(--optional-light);
+        color: var(--optional);
         transform: rotate(-90deg);
         white-space: nowrap;
     }
@@ -238,14 +238,14 @@
         content: "";
         height: 20px;
         width: 1px;
-        background: var(--lighter-light);
+        background: var(--lighter);
         margin-bottom: 10px;
     }
 
     .social__link {
         padding: 5px;
         text-decoration: none;
-        color: var(--primary-light);
+        color: var(--primary);
     }
 
 }

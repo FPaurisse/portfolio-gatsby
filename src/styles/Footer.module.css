@@ -1,5 +1,5 @@
 .Footer {
-    border-top: 1px solid var(--lighter-light);
+    border-top: 1px solid var(--lighter);
     display: flex;
     justify-content: flex-end;
     margin: 0;
@@ -7,7 +7,7 @@
 }
 
 .text {
-    color: var(--optional-light);
+    color: var(--optional);
     font-size: 0.7rem;
     margin: 0;
     text-transform: uppercase;
@@ -16,7 +16,7 @@
 }
 
 .button {
-    color: var(--primary-light);
+    color: var(--primary);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,7 +29,7 @@
 }
 
 .buttonIcon {
-    color: var(--primary-light);
+    color: var(--primary);
     font-size: 13px;
     margin-left: 7px;
     margin-right: 2px;

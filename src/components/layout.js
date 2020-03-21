@@ -13,7 +13,7 @@ import favicon from '../images/favicon.ico';
 import { toggleLoad } from '../state/app';
 
 const Layout = ({
-  children, location, isContact, isCredits, alert, dispatch,
+  children, location, isContact, isCredits, darkMode, alert, dispatch,
 }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -32,7 +32,7 @@ const Layout = ({
   }, [dispatch]);
 
   return (
-    <div className={cx(s.Layout, { [s.Layout__contact]: isContact || isCredits })}>
+    <div className={cx('light', { dark: darkMode }, s.Layout, { [s.Layout__contact]: isContact || isCredits })}>
       <Helmet>
         <link rel="icon" href={favicon} />
       </Helmet>
@@ -53,5 +53,6 @@ export default connect((state) => ({
   isLoad: state.app.isLoad,
   isContact: state.app.isContact,
   isCredits: state.app.isCredits,
+  darkMode: state.app.darkMode,
   alert: state.app.alert,
 }), null)(Layout);

@@ -27,7 +27,7 @@
     outline: none;
     border: 0;
     cursor: pointer;
-    background-color: var(--background-secondary-light);
+    background-color: var(--background-secondary);
     border-radius: 100%;
     position: relative;
     display: flex;
@@ -48,7 +48,7 @@
 }
 
 .iconActionButton {
-    color: var(--optional-light);
+    color: var(--optional);
     font-size: 28px;
     position: absolute;
 }
@@ -62,7 +62,7 @@
     height: 100%;
     transition: 0.2s;
     margin: 0;
-    border: 20px solid var(--background-secondary-light);
+    border: 20px solid var(--background-secondary);
     background-size: cover;
     background-position: center center;
     background-blend-mode: saturation;
@@ -75,7 +75,7 @@
 }
 
 .workSlide__load {
-    background-color: var(--background-secondary-light);
+    background-color: var(--background-secondary);
 }
 
 .workSlideReduce {
@@ -86,7 +86,7 @@
 .navButton {
     position: absolute;
     z-index: 1;
-    background-color: var(--background-secondary-light);
+    background-color: var(--background-secondary);
     width: 42px; 
     height: 42px;
     transition: 0.2s;
@@ -94,7 +94,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--optional-light);
+    color: var(--optional);
 }
 
 .iconNavigation {
@@ -123,7 +123,7 @@
 }
 
 .wrapper__load {
-    border: 30px solid var(--background-primary-light);
+    border: 30px solid var(--background-primary);
 }
 
 .optionalBack {
@@ -133,7 +133,7 @@
 }
 
 .optionalBack__load {
-    background-color: var(--background-primary-light);
+    background-color: var(--background-primary);
     opacity: 0.8;
     animation: fading 1s infinite;
 }
@@ -145,7 +145,7 @@
 }
 
 .backGradient__load {
-    background-color: var(--background-primary-light);
+    background-color: var(--background-primary);
     opacity: 0.8;
     animation: fading 1s infinite;
 }
@@ -175,7 +175,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: var(--background-secondary-light);
+    color: var(--background-secondary);
     padding: 30px;
     height: 100%;
     position: relative;
@@ -197,7 +197,7 @@
 }
 
 .closeButton {
-    color: var(--background-secondary-light);
+    color: var(--background-secondary);
     font-size: 11px;
     text-transform: uppercase;
     text-decoration: none;
@@ -232,8 +232,8 @@
 
 .tool {
     margin: 0;
-    background-color: var(--background-primary-light);
-    color: var(--optional-light);
+    background-color: var(--background-primary);
+    color: var(--optional);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -278,7 +278,7 @@
     }
     
     .workSlide {
-        border: 30px solid var(--background-secondary-light);
+        border: 30px solid var(--background-secondary);
     }
 
     .actionButton {
@@ -308,7 +308,7 @@
     }
 
     .wrapper__load {
-        border: 40px solid var(--background-primary-light);
+        border: 40px solid var(--background-primary);
     }
 
     .content {

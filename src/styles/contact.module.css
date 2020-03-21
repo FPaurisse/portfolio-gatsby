@@ -7,7 +7,7 @@
     align-items: center;
     position: relative;
     transition: width .8s;
-    background-color: var(--background-secondary-light);
+    background-color: var(--background-secondary);
 }
 
 .Contact__hide {
@@ -27,14 +27,14 @@
     position: relative;
     padding: 0;
     margin: 20px 30px 0px auto;
-    color: var(--optional-light);
+    color: var(--optional);
     font-size: 10px;
     text-transform: uppercase;
     transition: 0.2s;
 }
 
 .closeContact:hover {
-    color: var(--secondary-light);
+    color: var(--secondary);
     transition: 0.2s;
 }
 
@@ -52,7 +52,7 @@
 
 .socialWrapper {
     margin: 0 4px;
-    background-color: var(--secondary-light);
+    background-color: var(--secondary);
     padding: 10px;
     border-radius: 100%;
     width: 33px;
@@ -66,12 +66,12 @@
 }
 
 .socialWrapper:hover {
-    background-color: var(--optional-light);
+    background-color: var(--optional);
     transition: 0.2s;
 }
 
 .socialIcon {
-    color: var(--background-secondary-light);
+    color: var(--background-secondary);
     font-size: 15px;
 }
 
@@ -84,14 +84,14 @@
     overflow-y: scroll;
     width: 100%;
     padding: 0 25px;
-    color: var(--secondary-light);
+    color: var(--secondary);
     height: auto;
 }
 
 .title {
     font-size: 1.3rem;
     margin: 30px 5px 15px 5px;
-    border-bottom: 1px dashed var(--lighter-light);
+    border-bottom: 1px dashed var(--lighter);
     padding-bottom: 15px;
 }
 
@@ -115,7 +115,7 @@
     flex-direction: column;
     justify-content: center;
     width: auto;
-    color: var(--secondary-light);
+    color: var(--secondary);
     font-size: 12px;
     margin:0px 5px 5px 5px;
     padding:0;
@@ -124,33 +124,33 @@
 
 .labelText {
     margin: 0 0 5px 0;
-    color: var(--optional-light);
+    color: var(--optional);
 }
 
 .required {
     margin:0 3px;
-    color: var(--primary-light);
+    color: var(--primary);
 }
 
 .input {
     display: flex;
     flex-direction: column;
     width: auto;
-    color: var(--secondary-light);
-    background-color: var(--background-primary-light);
+    color: var(--secondary);
+    background-color: var(--background-primary);
     padding: 10px;
     font-size: 12px;
     margin: 0;
     flex:1 1 auto;
     width: 100%;
     outline: none;
-    border: 1px solid var(--lighter-light);
+    border: 1px solid var(--lighter);
     border-radius: 2px;
 }
 
 .button {
-    background-color: var(--primary-light);
-    color: var(--background-secondary-light);
+    background-color: var(--primary);
+    color: var(--background-secondary);
     font-weight: 800;
     margin: 0px 5px 10px 5px;
     outline: none;
@@ -171,7 +171,7 @@
     margin: 0 5px;
     padding: 10px 0;
     font-size: 12px;
-    color: var(--optional-light);
+    color: var(--optional);
 }
 
 .checkbox {
@@ -179,7 +179,7 @@
 }
 
 .buttonTerms {
-    color: var(--primary-light);
+    color: var(--primary);
     margin-left: 5px;
     text-decoration: none;
     outline: none;
@@ -195,9 +195,9 @@
         height: 100vh;
         width: 50%;
         overflow-y: scroll;
-        border-left: 1px solid var(--lighter-light);
-        background-color: var(--background-primary-light);
-        background-image: linear-gradient(90deg, var(--background-primary-shadow-light) 3%, var(--background-primary-light) 70%);
+        border-left: 1px solid var(--lighter);
+        background-color: var(--background-primary);
+        background-image: linear-gradient(90deg, var(--background-primary-shadow) 3%, var(--background-primary) 70%);
     }
 
     .closeContact {
@@ -213,7 +213,7 @@
     }
 
     .input {
-        background-color: var(--background-secondary-light);
+        background-color: var(--background-secondary);
     }
 
 }

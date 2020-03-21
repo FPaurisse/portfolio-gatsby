@@ -8,7 +8,7 @@
     position: relative;
     transition: width .8s;
     font-size: 0.8rem;
-    background-color: var(--background-secondary-light);
+    background-color: var(--background-secondary);
 }
 
 .Credits__hide {
@@ -28,14 +28,14 @@
     position: relative;
     padding: 0;
     margin: 20px 30px 0px auto;
-    color: var(--optional-light);
+    color: var(--optional);
     font-size: 10px;
     text-transform: uppercase;
     transition: 0.2s;
 }
 
 .closeCredits:hover {
-    color: var(--secondary-light);
+    color: var(--secondary);
     transition: 0.2s;
 }
 
@@ -53,14 +53,14 @@
     overflow-y: scroll;
     width: 100%;
     padding: 0 25px;
-    color: var(--secondary-light);
+    color: var(--secondary);
     height: auto;
 }
 
 .title {
     font-size: 1.3rem;
     margin: 30px 5px 15px 5px;
-    border-bottom: 1px dashed var(--lighter-light);
+    border-bottom: 1px dashed var(--lighter);
     padding-bottom: 15px;
 }
 
@@ -77,14 +77,14 @@
 .item {
     margin: 5px 0;
     list-style: none;
-    color: var(--secondary-light);
+    color: var(--secondary);
     display: flex;
     align-items: center;
 }
 
 .item::before {
     content: "#";
-    color: var(--primary-light);
+    color: var(--primary);
     font-size: 0.6rem;
     width: 1em;
     margin-left: -1em;
@@ -92,13 +92,13 @@
 
 .link {
     text-decoration: none;
-    color: var(--primary-light);
+    color: var(--primary);
     margin-left: 10px;
     font-size: 0.7rem;
 }
 .link::before {
     content: "→";
-    color: var(--primary-light);
+    color: var(--primary);
     font-weight: 800;
     width: 10px;
     margin-left: 0px;
@@ -114,7 +114,7 @@
 
 .socialWrapper {
     margin: 0 4px;
-    background-color: var(--secondary-light);
+    background-color: var(--secondary);
     padding: 10px;
     border-radius: 100%;
     width: 33px;
@@ -128,12 +128,12 @@
 }
 
 .socialWrapper:hover {
-    background-color: var(--optional-light);
+    background-color: var(--optional);
     transition: 0.2s;
 }
 
 .socialIcon {
-    color: var(--background-secondary-light);
+    color: var(--background-secondary);
     font-size: 15px;
 }
 
@@ -143,9 +143,9 @@
         height: 100vh;
         width: 50%;
         overflow-y: scroll;
-        border-left: 1px solid var(--lighter-light);
-        background-color: var(--background-primary-light);
-        background-image: linear-gradient(90deg, var(--background-primary-shadow-light) 3%, var(--background-primary-light) 70%);
+        border-left: 1px solid var(--lighter);
+        background-color: var(--background-primary);
+        background-image: linear-gradient(90deg, var(--background-primary-shadow) 3%, var(--background-primary) 70%);
     }
 
     .closeCredits {

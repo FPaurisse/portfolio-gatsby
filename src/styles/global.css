@@ -2,14 +2,6 @@
     box-sizing: border-box;
 }
 
-html {
-    background-color: var(--background-secondary-light);
-}
-
-body {
-    background-color: var(--background-secondary-light);
-}
-
 .success {
     color: #155724;
     background-color: #d4edda;
