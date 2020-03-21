@@ -17,7 +17,7 @@ const Footer = ({ isCredits, dispatch }) => {
   return (
     <div className={s.Footer}>
       <p className={s.text}>
-        © Frédéric Paurisse
+        Frédéric Paurisse ©
         {' '}
         {new Date().getFullYear()}
         {' '}
