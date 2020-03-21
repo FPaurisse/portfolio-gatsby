@@ -1,5 +1,5 @@
 .Footer {
-    border-top: 1px solid var(--lighter-light);
+    border-top: 1px solid var(--background-primary-light);
     display: flex;
     justify-content: flex-end;
     margin: 0 20px;
