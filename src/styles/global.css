@@ -2,10 +2,6 @@
     box-sizing: border-box;
 }
 
-body, html {
-    background-color: var(--background-secondary);
-}
-
 .success {
     color: #155724;
     background-color: #d4edda;
