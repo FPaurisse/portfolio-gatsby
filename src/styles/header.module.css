@@ -279,7 +279,7 @@
 
     .switchThemeIcon {
         color: var(--secondary);
-        font-size: 1rem;
+        font-size: 0.9rem;
         transition: 0.2s;
     }
 
