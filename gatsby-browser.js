@@ -1,5 +1,5 @@
 import './src/styles/global.css';
-import './src/styles/variables-light.css';
+import './src/styles/variables.css';
 
 import 'normalize.css';
 

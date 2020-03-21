@@ -75,7 +75,7 @@
 }
 
 .workSlide__load {
-    background-color: #ffffff;
+    background-color: var(--background-secondary-light);
 }
 
 .workSlideReduce {
