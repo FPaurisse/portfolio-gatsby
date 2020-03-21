@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faStream,
+  faCaretSquareRight,
 } from '@fortawesome/free-solid-svg-icons';
 import s from '../styles/Footer.module.css';
 
@@ -21,7 +21,7 @@ const Footer = ({ isCredits, dispatch }) => {
         <button className={s.button} type="button" onClick={showCredits}>
           <FontAwesomeIcon
             className={cx(s.buttonIcon)}
-            icon={faStream}
+            icon={faCaretSquareRight}
           />
         </button>
       </p>
