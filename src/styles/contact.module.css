@@ -84,6 +84,7 @@
     padding: 0 25px;
     color: var(--secondary-light);
     height: auto;
+    overflow: hidden;
 }
 
 .title {
