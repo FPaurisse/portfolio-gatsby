@@ -130,7 +130,7 @@
         min-height: auto;
         flex-direction: column;
         justify-content: space-between;
-        border-right: 1px solid var(--background-primary-light);
+        border-right: 1px solid var(--lighter-light);
     }
 
     .logo {
