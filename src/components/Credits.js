@@ -20,9 +20,9 @@ const Credits = ({ dispatch, isCredits }) => (
     </button>
     <div className={s.wrapper}>
       <h1 className={s.title}>
-        Technologies
+        Credits
       </h1>
-      <h2 className={s.subTitle}>Credits</h2>
+      <h2 className={s.subTitle}>Medias</h2>
       <ul className={s.list}>
         <li className={s.item}>
           Font Awesome
