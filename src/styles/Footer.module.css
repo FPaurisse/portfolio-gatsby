@@ -16,18 +16,20 @@
 }
 
 .button {
-    color: var(--primary-light);
+    color: var(--optional-light);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     border: 0;
     outline: none;
     background-color: transparent;
-    padding: 0 0 0 6px;
+    text-transform: uppercase;
+    padding: 0 0 0 3px;
     cursor: pointer;
 }
 
 .buttonIcon {
+    color: var(--primary-light);
     font-size: 15px;
+    margin-left: 5px;
 }

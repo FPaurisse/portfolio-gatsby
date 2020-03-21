@@ -17,8 +17,9 @@ const Footer = ({ isCredits, dispatch }) => {
   return (
     <div className={s.Footer}>
       <p className={s.text}>
-        © Frédéric Paurisse 2020 - Built with
+        © Frédéric Paurisse 2020 -
         <button className={s.button} type="button" onClick={showCredits}>
+          Built with
           <FontAwesomeIcon
             className={cx(s.buttonIcon)}
             icon={faCaretSquareRight}
