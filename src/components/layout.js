@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import cx from 'classnames';
 import s from '../styles/layout.module.css';
 import Header from './header';
-import Footer from './Footer';
 import Contact from './Contact';
 import Credits from './Credits';
 import Alert from './Alert';
@@ -43,7 +42,6 @@ const Layout = ({
         {alert.status && (
           <Alert status={alert.status} statusText={alert.statusText} />
         )}
-        <Footer />
       </section>
       <Contact />
       <Credits />

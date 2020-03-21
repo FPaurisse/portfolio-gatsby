@@ -7,6 +7,7 @@ import Heading from '../components/heading';
 import Work from '../components/work';
 import SEO from '../components/seo';
 import useData from '../useData';
+import Footer from '../components/Footer';
 
 import { toggleLoad } from '../state/app';
 
@@ -39,6 +40,7 @@ const Works = ({ location, isLoad, dispatch }) => {
             <Work key={node.id} data={node} />
           ))}
       </div>
+      <Footer />
     </Layout>
   );
 };
