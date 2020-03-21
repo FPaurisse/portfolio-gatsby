@@ -14,7 +14,7 @@ import useData from '../useData';
 const baseURL = process.env.GATSBY_API_URL || '';
 
 const WorkPage = ({ data, location, isLoad }) => {
-  const [fullPage, setFullPage] = useState(true);
+  const [fullPage, setFullPage] = useState(false);
 
   const work = data.restApiApiV1Works;
   const worksData = useData();
