@@ -4,8 +4,19 @@
     height: auto;
     color: var(--secondary-light);
     font-size: 0.8rem;
-    overflow: hidden;
-    padding: 0 30px 0 30px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-left: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    padding: 0 25px;
+    color: var(--secondary-light);
+    height: auto;
 }
 
 .title {
@@ -29,6 +40,10 @@
     .Terms {
         height: 100%;
         overflow-y: scroll;
+    }
+
+    .wrapper {
+        margin-top: 0;
     }
 
     .title {

@@ -78,13 +78,14 @@
 .form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     border-left: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
     width: 100%;
     padding: 0 25px;
     color: var(--secondary-light);
     height: auto;
-    overflow: hidden;
 }
 
 .title {
