@@ -22,6 +22,17 @@ const Credits = ({ dispatch, isCredits }) => (
       <h1 className={s.title}>
         Technologies
       </h1>
+      <h2 className={s.subTitle}>Credits</h2>
+      <ul className={s.list}>
+        <li className={s.item}>
+          Font Awesome
+          <a className={s.link} target="_blank" rel="noopener noreferrer" href="https://fontawesome.com/">https://fontawesome.com/</a>
+        </li>
+        <li className={s.item}>
+          Pixabay
+          <a className={s.link} target="_blank" rel="noopener noreferrer" href="https://pixabay.com/">https://pixabay.com/</a>
+        </li>
+      </ul>
       <h2 className={s.subTitle}>Front</h2>
       <ul className={s.list}>
         <li className={s.item}>
@@ -74,18 +85,6 @@ const Credits = ({ dispatch, isCredits }) => (
           Nginx
           <a className={s.link} target="_blank" rel="noopener noreferrer" href="https://www.nginx.com/">https://www.nginx.com/</a>
         </li>
-      </ul>
-      <h2 className={s.subTitle}>Credits</h2>
-      <ul className={s.list}>
-        <li className={s.item}>
-          Font Awesome
-          <a className={s.link} target="_blank" rel="noopener noreferrer" href="https://fontawesome.com/">https://fontawesome.com/</a>
-        </li>
-        <li className={s.item}>
-          Pixabay
-          <a className={s.link} target="_blank" rel="noopener noreferrer" href="https://pixabay.com/">https://pixabay.com/</a>
-        </li>
-
       </ul>
     </div>
     <div className={s.social}>

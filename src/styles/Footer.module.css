@@ -16,7 +16,7 @@
 }
 
 .button {
-    color: var(--optional-light);
+    color: var(--primary-light);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,6 +30,7 @@
 
 .buttonIcon {
     color: var(--primary-light);
-    font-size: 13px;
+    font-size: 12px;
     margin-left: 7px;
+    margin-right: 2px;
 }
