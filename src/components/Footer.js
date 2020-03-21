@@ -17,7 +17,11 @@ const Footer = ({ isCredits, dispatch }) => {
   return (
     <div className={s.Footer}>
       <p className={s.text}>
-        © Frédéric Paurisse 2020 -
+        © Frédéric Paurisse
+        {' '}
+        {new Date().getFullYear()}
+        {' '}
+        -
         <button className={s.button} type="button" onClick={showCredits}>
           Built with
           <FontAwesomeIcon
