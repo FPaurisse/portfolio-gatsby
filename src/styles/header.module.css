@@ -264,7 +264,7 @@
     }
 
     .switchThemeButton {
-        background-color: var(--background-primary);
+        background-color: var(--lighter);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -272,11 +272,11 @@
         border: 0;
         cursor: pointer;
         width: 100%;
-        padding: 10px 0px;
+        padding: 15px 0px;
     }
 
     .switchThemeIcon {
-        color: var(--lighter);
+        color: var(--optional);
     }
 
 }
