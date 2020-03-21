@@ -48,13 +48,13 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    transition: 0.8s;
+    transition: 0.6s;
 }
 
 .Work:hover .link {
     border-left-width: 50px;
     border-bottom-width: 50px;
-    transition: 0.8s;
+    transition: 0.6s;
 }
 
 .iconlink {
@@ -63,7 +63,7 @@
     right: 0px;
     font-size: 12px;
     color: var(--optional-light);
-    transition: 0.8s;
+    transition: 0.6s;
 }
 
 .iconlink__load {
@@ -73,7 +73,7 @@
 .Work:hover .iconlink {
     top: 30px;
     right: 10px;
-    transition: 0.8s;
+    transition: 0.6s;
 }
 
 
