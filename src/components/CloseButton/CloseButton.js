@@ -16,33 +16,38 @@ const CloseButton = ({
   };
 
   return (
-    closeLink && closeLink.startsWith('/')
-      ? (
-        <Link
-          to={closeLink}
-          className={cx(
-            s.CloseButton,
-            { [s.CloseButton__hide]: vertical },
-            { [s.CloseButton__hide]: isAside !== 'work' },
-          )}
-          state={{ currentCategory }}
-        >
-          <FontAwesomeIcon className={s.icon} icon={faCaretSquareLeft} />
-          {closeTitle}
-        </Link>
-      )
-      : (
-        <button
-          type="button"
-          className={cx(
-            s.CloseButton,
-          )}
-          onClick={changeAside}
-        >
-          <FontAwesomeIcon className={s.icon} icon={faCaretSquareLeft} />
-          {closeTitle}
-        </button>
-      )
+    <div className={cx(
+      s.wrapper,
+      { [s.wrapper__hide]: vertical },
+      { [s.wrapper__full]: isAside === 'work' },
+    )}
+    >
+      {closeLink && closeLink.startsWith('/')
+        ? (
+          <Link
+            to={closeLink}
+            className={cx(
+              s.CloseButton,
+            )}
+            state={{ currentCategory }}
+          >
+            <FontAwesomeIcon className={s.icon} icon={faCaretSquareLeft} />
+            {closeTitle}
+          </Link>
+        )
+        : (
+          <button
+            type="button"
+            className={cx(
+              s.CloseButton,
+            )}
+            onClick={changeAside}
+          >
+            <FontAwesomeIcon className={s.icon} icon={faCaretSquareLeft} />
+            {closeTitle}
+          </button>
+        )}
+    </div>
   );
 };
 
