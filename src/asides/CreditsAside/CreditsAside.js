@@ -170,6 +170,17 @@ const CreditsAside = () => (
           https://fonts.google.com/
         </a>
       </li>
+      <li className={s.item}>
+        Favicon.io
+        <a
+          className={s.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://favicon.io/"
+        >
+          https://favicon.io/
+        </a>
+      </li>
     </ul>
   </AsideLayout>
 );
