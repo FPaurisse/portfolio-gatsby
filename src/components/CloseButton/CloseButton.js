@@ -12,7 +12,7 @@ const CloseButton = ({
   vertical, closeTitle, closeLink, currentCategory, isAside, dispatch,
 }) => {
   const changeAside = () => {
-    dispatch(toggleAside(null));
+    dispatch(toggleAside(closeLink || null));
   };
 
   return (
