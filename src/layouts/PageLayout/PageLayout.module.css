@@ -98,3 +98,16 @@
     }
 
 }
+
+/* MIN HEIGHT */
+
+@media (max-height: 560px) {
+
+    .wrapper__vertical {
+        flex-direction: column;
+    }
+
+    .container__reduce {
+        width: 100%;
+    }
+}

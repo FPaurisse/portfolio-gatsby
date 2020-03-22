@@ -136,8 +136,17 @@
 @media (max-height: 560px) {
 
     .AsideLayout__vertical {
+        width: 100%;
         max-height: auto;
-        height: auto;      
+        height: auto;    
+    }
+
+    .AsideLayout__full {
+        width: 100%;
+    }
+
+    .wrapper__vertical {
+        padding-top: 30px;
     }
 
 }

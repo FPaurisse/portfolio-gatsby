@@ -321,6 +321,10 @@
 @media screen and (min-width: 1024px) { 
     
     .WorkPage__hide {
+        display: none;
+    }
+
+    .WorkPage {
         display: flex;
     }
 
