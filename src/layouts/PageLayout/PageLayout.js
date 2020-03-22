@@ -3,7 +3,8 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import cx from 'classnames';
-import favicon from '../../images/favicon.ico';
+import faviconLight from '../../images/favicon-light.ico';
+import faviconDark from '../../images/favicon-dark.ico';
 import Alert from '../../components/Alert/Alert';
 import Header from '../../components/Header/Header';
 import ContactAside from '../../asides/ContactAside/ContactAside';
@@ -37,7 +38,7 @@ const PageLayout = ({
   return (
     <div className={cx('light', { dark: darkMode }, s.PageLayout)}>
       <Helmet>
-        <link rel="icon" href={favicon} />
+        <link rel="icon" href={darkMode ? faviconDark : faviconLight} />
       </Helmet>
       <Header location={location} siteTitle={data.site.siteMetadata.title} />
       <div className={cx(
