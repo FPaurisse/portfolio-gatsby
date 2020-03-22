@@ -44,7 +44,7 @@ const WorkPage = ({
 
   return (
     <>
-      <PageLayout location={location} work={work}>
+      <PageLayout location={location} work={work} currentCategory={currentCategory}>
         <SEO title={work.title} description={work.context} />
         <div className={s.WorkPage}>
           <div

@@ -15,7 +15,7 @@ import s from './PageLayout.module.css';
 import { toggleLoad, toggleAside } from '../../state/app';
 
 const PageLayout = ({
-  children, work, location, isAside, darkMode, alert, dispatch,
+  children, work, currentCategory, location, isAside, darkMode, alert, dispatch,
 }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -51,7 +51,7 @@ const PageLayout = ({
       {isAside === 'contact' && <ContactAside />}
       {isAside === 'terms' && <TermsAside />}
       {isAside === 'credits' && <CreditsAside />}
-      {isAside === 'work' && <WorkAside work={work} />}
+      {isAside === 'work' && <WorkAside work={work} currentCategory={currentCategory} />}
     </div>
   );
 };

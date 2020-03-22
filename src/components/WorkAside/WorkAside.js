@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import AsideLayout from '../AsideLayout/AsideLayout';
 import s from './WorkAside.module.css';
 
-const WorkAside = ({ work }) => (
-  <AsideLayout asideTitle={work && work.title} closeTitle="Close">
+const WorkAside = ({ work, currentCategory }) => (
+  <AsideLayout asideTitle={work && work.title} closeTitle="Close" closeLink="/works" currentCategory={currentCategory}>
     <p className={s.text}>
       {work && work.context}
     </p>
