@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'gatsby';
+import { v1 as uuidv1 } from 'uuid';
 import AsideLayout from '../../layouts/AsideLayout/AsideLayout';
 import s from './WorkAside.module.css';
 
@@ -11,9 +12,9 @@ const WorkAside = ({ work, currentCategory }) => (
     </p>
     <div className={s.categories}>
       {work
-        && work.categories.map((category, index) => (
+        && work.categories.map((category) => (
           <Link
-            key={index}
+            key={uuidv1()}
             className={s.link}
             to="/works"
             state={{ currentCategory }}
