@@ -22,7 +22,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return;
   }
 
-  const WorkPage = path.resolve('src/templates/WorkPage/WorkPage.js');
+  const WorkPage = path.resolve('src/templates/WorkPage.js');
   result.data.allRestApiApiV1Works.edges.forEach(({ node }) => {
     createPage({
       path: `works/${node.slug}`,

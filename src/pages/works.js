@@ -7,7 +7,7 @@ import CounterFilters from '../components/CounterFilter/CounterFilters';
 import WorkArticle from '../components/WorkArticle/WorkArticle';
 import SEO from '../components/SEO/SEO';
 import Footer from '../components/Footer/Footer';
-import s from '../styles/Works.module.css';
+import s from '../styles/home.module.css';
 
 import { toggleLoad } from '../state/app';
 

@@ -6,12 +6,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faTag, faInfoCircle, faChevronLeft, faChevronRight, faDotCircle,
 } from '@fortawesome/free-solid-svg-icons';
-import useData from '../../useData';
-import PageLayout from '../../components/PageLayout/PageLayout';
-import SEO from '../../components/SEO/SEO';
+import useData from '../useData';
+import PageLayout from '../components/PageLayout/PageLayout';
+import SEO from '../components/SEO/SEO';
 import s from './WorkPage.module.css';
 
-import { toggleWorkAside } from '../../state/app';
+import { toggleWorkAside } from '../state/app';
 
 const baseURL = process.env.GATSBY_API_URL || '';
 
