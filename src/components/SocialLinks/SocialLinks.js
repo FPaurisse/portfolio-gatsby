@@ -2,10 +2,10 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAt } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookMessenger, faDiscord } from '@fortawesome/free-brands-svg-icons';
-import s from './SocialAside.module.css';
+import s from './SocialLinks.module.css';
 
-const SocialAside = () => (
-  <div className={s.SocialAside}>
+const SocialLinks = () => (
+  <div className={s.SocialLinks}>
     <a aria-label="Messenger" title="Messenger" href="https://m.me/frederic.paurisse" rel="noopener noreferrer" target="_blank" className={s.iconWrapper}>
       <FontAwesomeIcon className={s.icon} icon={faFacebookMessenger} />
     </a>
@@ -18,4 +18,4 @@ const SocialAside = () => (
   </div>
 );
 
-export default SocialAside;
+export default SocialLinks;

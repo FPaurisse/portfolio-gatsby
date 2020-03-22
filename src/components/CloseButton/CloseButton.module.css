@@ -1,4 +1,4 @@
-.CloseAside {
+.CloseButton {
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -18,7 +18,7 @@
     text-decoration: none;
 }
 
-.CloseAside:hover {
+.CloseButton:hover {
     color: var(--secondary);
     transition: 0.2s;
 }
@@ -30,7 +30,7 @@
 
 @media (min-width: 640px) and (min-height: 560px) {
 
-    .CloseAside {
+    .CloseButton {
         display: flex;
     }
 
