@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { graphql, Link } from 'gatsby';
 import cx from 'classnames';
 import { connect } from 'react-redux';
+import { v1 as uuidv1 } from 'uuid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faTag, faInfoCircle, faChevronLeft, faChevronRight, faDotCircle,
+  faDesktop, faInfoCircle, faChevronLeft, faChevronRight, faDotCircle, faPalette,
 } from '@fortawesome/free-solid-svg-icons';
 import useData from '../useData';
 import PageLayout from '../layouts/PageLayout/PageLayout';
@@ -173,13 +174,15 @@ const WorkPage = ({
           { [s.detailsReduce]: fullPage },
         )}
         >
-          <div className={s.tools}>
-            {work.tools.map((tool, index) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <p key={index} className={s.tool}>
-                <FontAwesomeIcon className={s.iconTag} icon={faTag} />
-                {tool}
-              </p>
+          <div className={s.categories}>
+            {work.categories.map((category) => (
+              <div
+                key={uuidv1()}
+                className={s.category}
+              >
+                <FontAwesomeIcon className={s.iconTag} icon={category === 'Web' ? faDesktop : faPalette} />
+                {category}
+              </div>
             ))}
           </div>
         </div>

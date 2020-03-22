@@ -215,7 +215,7 @@
     overflow: hidden;
 }
 
-.tools {
+.categories {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
@@ -223,7 +223,7 @@
     overflow: hidden;
 }
 
-.tool {
+.category {
     margin: 0;
     background-color: var(--background-primary);
     color: var(--optional);
@@ -231,11 +231,15 @@
     justify-content: center;
     align-items: center;
     padding: 12px 15px;
+    outline: none;
+    border: 0;
+    cursor: pointer;
     font-size: 11px;
     text-transform: uppercase;
     border-radius: 3px;
     margin-right: 5px;
     margin-bottom: 5px;
+    text-decoration: none;
 }
 
 .iconTag {

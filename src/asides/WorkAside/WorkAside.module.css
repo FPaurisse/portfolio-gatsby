@@ -2,11 +2,38 @@
     margin: 5px;
 }
 
+.tools {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    overflow: hidden;
+}
+
+.tool {
+    margin: 0 5px;
+    background-color: var(--background-secondary);
+    color: var(--optional);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 15px;
+    font-size: 11px;
+    text-transform: uppercase;
+    border-radius: 3px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.iconTag {
+    margin-right: 10px;
+}
+
 .categories {
     display: flex;
     justify-content: flex-start;
     width: 100%;
-    margin: 20px 5px 15px 5px;
+    margin: 5px 5px 15px 5px;
     padding: 0;
 }
 
