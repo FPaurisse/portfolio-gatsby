@@ -36,8 +36,9 @@ const PageLayout = ({
   }, [dispatch]);
 
   return (
-    <div className={cx('light', { dark: darkMode }, s.PageLayout)}>
+    <div className={s.PageLayout}>
       <Helmet>
+        <html lang="fr" className={cx('light', { dark: darkMode })} />
         <link rel="icon" href={darkMode ? faviconDark : faviconLight} />
       </Helmet>
       <Header location={location} siteTitle={data.site.siteMetadata.title} />
