@@ -33,7 +33,7 @@ const WorkPage = ({
     && dataFilter[currentIndex - 1].node.slug;
 
   useEffect(() => {
-    if (isAside !== 'contact') {
+    if (isAside !== 'contact' && isAside !== 'terms') {
       dispatch(toggleAside('work'));
     }
   }, [dispatch, isAside]);
