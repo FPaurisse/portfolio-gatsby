@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import AsideLayout from '../AsideLayout/AsideLayout';
 import s from './TermsAside.module.css';
@@ -45,7 +46,9 @@ const TermsAside = () => (
       Your Content
     </h2>
     <p className={s.text}>
-      In these Website Standard Terms and Conditions, "Your Content" shall mean any audio, video text, images or other material you choose to display on this Website. By displaying Your Content, you grant Frédéric Paurisse a non-exclusive, worldwide irrevocable, sub licensable license to use, reproduce, adapt, publish, translate and distribute it in any and all media.
+      In these Website Standard Terms and Conditions,
+      {' "Your Content" '}
+      shall mean any audio, video text, images or other material you choose to display on this Website. By displaying Your Content, you grant Frédéric Paurisse a non-exclusive, worldwide irrevocable, sub licensable license to use, reproduce, adapt, publish, translate and distribute it in any and all media.
     </p>
     <p className={s.text}>
       Your Content must be your own and must not be invading any third-party’s rights. Frédéric Paurisse reserves the right to remove any of Your Content from this Website at any time without notice.
@@ -60,7 +63,9 @@ const TermsAside = () => (
       No warranties
     </h2>
     <p className={s.text}>
-      This Website is provided "as is," with all faults, and Frédéric Paurisse express no representations or warranties, of any kind related to this Website or the materials contained on this Website. Also, nothing contained on this Website shall be interpreted as advising you.
+      This Website is provided
+      {' "as is," '}
+      with all faults, and Frédéric Paurisse express no representations or warranties, of any kind related to this Website or the materials contained on this Website. Also, nothing contained on this Website shall be interpreted as advising you.
     </p>
     <h2 className={s.subTitle}>
       Limitation of liability
