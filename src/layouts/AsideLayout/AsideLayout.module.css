@@ -27,7 +27,7 @@
     overflow-x: hidden;
     overflow-y: scroll;
     width: 100%;
-    padding: 0 25px;
+    padding: 0 15px;
     color: var(--secondary);
     height: 100%;
     font-size: 0.8rem;
@@ -73,7 +73,7 @@
         flex-direction: row;
         border-top: 1px solid var(--lighter);
         border-left: 0;
-        height: 350px;
+        max-height: 230px;
         width: 100%;
         transition: 0s;
     }
@@ -87,6 +87,7 @@
 
     .wrapper {
         margin-top: 0;
+        padding: 0 25px;
     }
 
     .wrapper__vertical {
