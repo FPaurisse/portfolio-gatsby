@@ -38,53 +38,54 @@ const Header = ({
         </div>
         <h1 className={s.title}>Creative developer</h1>
       </Link>
-      <nav className={s.nav}>
-        <ul className={s.list}>
-          <li className={s.item}>
-            <Link
-              to="/"
-              onClick={() => closeModal()}
-              className={cx(s.link, { [s.linkActive]: isAside !== 'contact' })}
-            >
-              Works
-            </Link>
-          </li>
-          <li className={s.item}>
-            <button
-              type="button"
-              onClick={() => handleContact()}
-              className={cx(s.link, { [s.linkActive]: isAside === 'contact' })}
-            >
-              Contact
-            </button>
-          </li>
-        </ul>
-      </nav>
-
-      <div className={s.headerBottom}>
-        <div className={s.Linkedin}>
-          <div className={s.LinkedinText}>Follow me</div>
-          <div className={s.LinkedinWrapper}>
-            <button
-              className={s.LinkedinButton}
-              type="button"
-              onClick={() => dispatch(toggleDarkMode(!darkMode))}
-            >
-              <FontAwesomeIcon icon={faLinkedinIn} />
-            </button>
+      <div className={s.wrapper}>
+        <nav className={s.nav}>
+          <ul className={s.list}>
+            <li className={s.item}>
+              <Link
+                to="/"
+                onClick={() => closeModal()}
+                className={cx(s.link, { [s.linkActive]: isAside !== 'contact' })}
+              >
+                Works
+              </Link>
+            </li>
+            <li className={s.item}>
+              <button
+                type="button"
+                onClick={() => handleContact()}
+                className={cx(s.link, { [s.linkActive]: isAside === 'contact' })}
+              >
+                Contact
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <div className={s.headerBottom}>
+          <div className={s.Linkedin}>
+            <div className={s.LinkedinText}>Follow me</div>
+            <div className={s.LinkedinWrapper}>
+              <button
+                className={s.LinkedinButton}
+                type="button"
+                onClick={() => dispatch(toggleDarkMode(!darkMode))}
+              >
+                <FontAwesomeIcon icon={faLinkedinIn} />
+              </button>
+            </div>
           </div>
+          <button
+            type="button"
+            title="Switch theme"
+            className={s.switchThemeButton}
+            onClick={() => dispatch(toggleDarkMode(!darkMode))}
+          >
+            <FontAwesomeIcon
+              className={cx(s.switchThemeIcon, { [s.switchThemeIcon__dark]: darkMode })}
+              icon={darkMode ? faLightbulb : faMoon}
+            />
+          </button>
         </div>
-        <button
-          type="button"
-          title="Switch theme"
-          className={s.switchThemeButton}
-          onClick={() => dispatch(toggleDarkMode(!darkMode))}
-        >
-          <FontAwesomeIcon
-            className={cx(s.switchThemeIcon, { [s.switchThemeIcon__dark]: darkMode })}
-            icon={darkMode ? faLightbulb : faMoon}
-          />
-        </button>
       </div>
     </header>
   );
