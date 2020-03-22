@@ -72,20 +72,31 @@
         transition: 0s;
     }
 
+    .AsideLayout__full {
+        height: 100vh;
+        width: 100%;
+        transition: 0s;
+    }
+
     .wrapper {
         margin-top: 0;
     }
 
     .wrapper__vertical {
         overflow: visible;
+        width: 100%;
     }
 
     .title {
-        margin: 5px 5px 15px 5px;
+        margin: 0 5px 15px 5px;
     }
 
     .title__vertical {
         margin-top: 30px;
+    }
+
+    .title__full {
+        margin-top: 0;
     }
 
 }

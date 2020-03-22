@@ -275,6 +275,10 @@
     .WorkPage {
         height: 100vh;
     }
+
+    .WorkPage__vertical {
+        display: none;
+    }
     
     .workSlide {
         border: 30px solid var(--background-secondary);
@@ -316,6 +320,14 @@
 
     .mockup {
         background-size: contain;
+    }
+
+}
+
+@media screen and (min-width: 1024px) { 
+    
+    .WorkPage__vertical {
+        display: flex;
     }
 
 }

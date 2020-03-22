@@ -30,7 +30,7 @@ const Contact = ({ dispatch }) => {
   };
 
   return (
-    <AsideLayout asideTitle="Contact" closeTitle="Close">
+    <AsideLayout vertical asideTitle="Contact" closeTitle="Close">
       <form
         className={s.form}
         onSubmit={handleSubmit}

@@ -43,84 +43,82 @@ const WorkPage = ({
   };
 
   return (
-    <>
-      <PageLayout vertical location={location} work={work} currentCategory={currentCategory}>
-        <SEO title={work.title} description={work.context} />
-        <div className={s.WorkPage}>
-          <div
-            className={
-            cx(s.workSlide, { [s.workSlide__load]: isLoad, [s.workSlideReduce]: !fullPage })
-          }
-            style={{
-              backgroundImage: !isLoad && `linear-gradient(black, black), url(${work.image.includes(baseURL)
-                ? work.image
-                : baseURL + work.image})`,
-            }}
-          >
+    <PageLayout vertical location={location} work={work} currentCategory={currentCategory}>
+      <SEO title={work.title} description={work.context} />
+      <div className={cx(s.WorkPage, { [s.WorkPage__vertical]: isAside !== 'work' })}>
+        <div
+          className={
+                cx(s.workSlide, { [s.workSlide__load]: isLoad, [s.workSlideReduce]: !fullPage })
+              }
+          style={{
+            backgroundImage: !isLoad && `linear-gradient(black, black), url(${work.image.includes(baseURL)
+              ? work.image
+              : baseURL + work.image})`,
+          }}
+        >
 
-            {prevSlug
-            && (
-            <Link to={`/works/${prevSlug}`} state={{ fullPage }} aria-label="Previous" className={cx(!fullPage && s.navButtonReduce, s.navButton, s.navLeft)}>
-              <FontAwesomeIcon
-                className={cx(s.iconNavigation, { [s.icon__load]: isLoad })}
-                icon={faChevronLeft}
+          {prevSlug
+                && (
+                  <Link to={`/works/${prevSlug}`} state={{ fullPage }} aria-label="Previous" className={cx(!fullPage && s.navButtonReduce, s.navButton, s.navLeft)}>
+                    <FontAwesomeIcon
+                      className={cx(s.iconNavigation, { [s.icon__load]: isLoad })}
+                      icon={faChevronLeft}
+                    />
+                  </Link>
+                )}
+          <div className={cx(s.wrapper, { [s.wrapper__load]: isLoad, [s.wrapperReduce]: !fullPage })} style={{ borderImageSource: !isLoad && `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }}>
+            <div className={cx(s.optionalBack, { [s.optionalBack__load]: isLoad })} style={{ backgroundColor: !isLoad && `${work.optionalColor}` }}>
+              <div className={cx(s.backGradient, { [s.optionalBack__load]: isLoad })} style={{ backgroundImage: !isLoad && `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }} />
+            </div>
+          </div>
+          <div className={cx(s.view, { [s.view__load]: isLoad, [s.viewReduce]: !fullPage })}>
+            <div className={s.content}>
+              <div
+                className={cx(!fullPage && s.mockupReduce, s.mockup)}
+                style={{
+                  backgroundImage: `url(${work.mockup.includes(baseURL)
+                    ? work.mockup
+                    : baseURL + work.mockup})`,
+                  width: `${work.width}%`,
+                  height: `${work.height}%`,
+                }}
               />
-            </Link>
-            )}
-            <div className={cx(s.wrapper, { [s.wrapper__load]: isLoad, [s.wrapperReduce]: !fullPage })} style={{ borderImageSource: !isLoad && `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }}>
-              <div className={cx(s.optionalBack, { [s.optionalBack__load]: isLoad })} style={{ backgroundColor: !isLoad && `${work.optionalColor}` }}>
-                <div className={cx(s.backGradient, { [s.optionalBack__load]: isLoad })} style={{ backgroundImage: !isLoad && `linear-gradient(45deg, ${work.primaryColor} 15%, ${work.secondaryColor} 70%)` }} />
-              </div>
             </div>
-            <div className={cx(s.view, { [s.view__load]: isLoad, [s.viewReduce]: !fullPage })}>
-              <div className={s.content}>
-                <div
-                  className={cx(!fullPage && s.mockupReduce, s.mockup)}
-                  style={{
-                    backgroundImage: `url(${work.mockup.includes(baseURL)
-                      ? work.mockup
-                      : baseURL + work.mockup})`,
-                    width: `${work.width}%`,
-                    height: `${work.height}%`,
-                  }}
-                />
-              </div>
-            </div>
+          </div>
 
 
-            {nextSlug && (
+          {nextSlug && (
             <Link to={`/works/${nextSlug}`} state={{ fullPage }} aria-label="Next" className={cx(!fullPage && s.navButtonReduce, s.navButton, s.navRight)}>
               <FontAwesomeIcon
                 className={cx(s.iconNavigation, { [s.icon__load]: isLoad })}
                 icon={faChevronRight}
               />
             </Link>
-            )}
+          )}
 
-            <div className={cx(s.button, s.buttonBottom)}>
-              <button className={cx(s.actionButton, s.actionButtonBottom)} type="button" onClick={changeDisplay}>
-                <FontAwesomeIcon
-                  className={cx(s.iconActionButton, { [s.icon__load]: isLoad })}
-                  icon={!fullPage ? faDotCircle : faInfoCircle}
-                />
-              </button>
-            </div>
-
+          <div className={cx(s.button, s.buttonBottom)}>
+            <button className={cx(s.actionButton, s.actionButtonBottom)} type="button" onClick={changeDisplay}>
+              <FontAwesomeIcon
+                className={cx(s.iconActionButton, { [s.icon__load]: isLoad })}
+                icon={!fullPage ? faDotCircle : faInfoCircle}
+              />
+            </button>
           </div>
-          <div className={cx(fullPage && s.detailsReduce, s.details)}>
-            <div className={s.tools}>
-              {work.tools.map((tool, index) => (
+
+        </div>
+        <div className={cx(fullPage && s.detailsReduce, s.details)}>
+          <div className={s.tools}>
+            {work.tools.map((tool, index) => (
               // eslint-disable-next-line react/no-array-index-key
-                <p key={index} className={s.tool}>
-                  <FontAwesomeIcon className={s.iconTag} icon={faTag} />
-                  {tool}
-                </p>
-              ))}
-            </div>
+              <p key={index} className={s.tool}>
+                <FontAwesomeIcon className={s.iconTag} icon={faTag} />
+                {tool}
+              </p>
+            ))}
           </div>
         </div>
-      </PageLayout>
-    </>
+      </div>
+    </PageLayout>
   );
 };
 

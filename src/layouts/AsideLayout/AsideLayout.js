@@ -11,6 +11,7 @@ const AsideLayout = ({
   <div className={cx(
     { [s.AsideLayout]: isAside },
     { [s.AsideLayout__vertical]: vertical },
+    { [s.AsideLayout__full]: isAside !== 'work' },
     { [s.AsideLayout__hide]: !isAside },
   )}
   >
@@ -21,7 +22,12 @@ const AsideLayout = ({
       currentCategory={currentCategory}
     />
     <div className={cx(s.wrapper, { [s.wrapper__vertical]: vertical })}>
-      <h1 className={cx(s.title, { [s.title__vertical]: vertical })}>
+      <h1 className={cx(
+        s.title,
+        { [s.title__vertical]: vertical },
+        { [s.title__full]: isAside !== 'work' },
+      )}
+      >
         {asideTitle}
       </h1>
       {children}
