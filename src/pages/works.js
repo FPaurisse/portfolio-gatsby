@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
 import { connect } from 'react-redux';
 import useData from '../useData';
-import PageLayout from '../components/PageLayout/PageLayout';
+import PageLayout from '../layouts/PageLayout/PageLayout';
 import CounterFilters from '../components/CounterFilter/CounterFilters';
 import WorkArticle from '../components/WorkArticle/WorkArticle';
 import SEO from '../components/SEO/SEO';

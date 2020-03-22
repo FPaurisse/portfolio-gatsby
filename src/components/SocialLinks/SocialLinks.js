@@ -1,11 +1,12 @@
 import React from 'react';
+import cx from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAt } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookMessenger, faDiscord } from '@fortawesome/free-brands-svg-icons';
 import s from './SocialLinks.module.css';
 
-const SocialLinks = () => (
-  <div className={s.SocialLinks}>
+const SocialLinks = ({ vertical }) => (
+  <div className={cx(s.SocialLinks, { [s.SocialLinks__hide]: vertical })}>
     <a aria-label="Messenger" title="Messenger" href="https://m.me/frederic.paurisse" rel="noopener noreferrer" target="_blank" className={s.iconWrapper}>
       <FontAwesomeIcon className={s.icon} icon={faFacebookMessenger} />
     </a>

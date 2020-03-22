@@ -9,8 +9,19 @@
     background-color: var(--background-secondary);
 }
 
-.PageLayout__contact {
+.PageLayout__reduce {
     height: auto;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.wrapper__vertical {
+    flex-direction: column;
 }
 
 .container {
@@ -20,7 +31,7 @@
     height: 100%;
 }
 
-.containerReduce {
+.container__reduce {
     display: none;
     z-index: 1;
     position: relative;
@@ -41,22 +52,39 @@
         height: 100vh;
     }
 
+    .wrapper {
+        flex-direction: row;
+    }
+
+    .wrapper__vertical {
+        flex-direction: column;
+    }
+
     .container {
         overflow-y: scroll;
         height: 100vh;
     }
 
-    .containerReduce {
+    .container__reduce {
         display: flex;
         width: 50%;
         transition: 0.2s;
+    }
+
+    .container__vertical {
+        width: 100%;
+        height: auto;
     }
 
 }
 
 @media screen and (min-width: 1024px) { 
 
-    .containerReduce {
+    .wrapper__vertical {
+        flex-direction: row;
+    }
+    
+    .container__reduce {
         width: 65%;
         transition: 0.2s;
     }

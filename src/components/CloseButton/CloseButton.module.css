@@ -23,12 +23,28 @@
     transition: 0.2s;
 }
 
+.CloseButton__hide {
+    display: none;
+}
+
 .icon {
     font-size: 24px;
     margin-bottom: 5px;
 }
 
 @media (min-width: 640px) and (min-height: 560px) {
+
+    .CloseButton {
+        display: flex;
+    }
+
+    .CloseButton__hide {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 1024px) { 
 
     .CloseButton {
         display: flex;

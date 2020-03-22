@@ -15,7 +15,7 @@ import s from './PageLayout.module.css';
 import { toggleLoad, toggleAside } from '../../state/app';
 
 const PageLayout = ({
-  children, work, currentCategory, location, isAside, darkMode, alert, dispatch,
+  children, vertical, work, currentCategory, location, isAside, darkMode, alert, dispatch,
 }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -35,23 +35,27 @@ const PageLayout = ({
   }, [dispatch]);
 
   return (
-    <div className={cx('light', { dark: darkMode }, s.PageLayout, { [s.PageLayout__contact]: isAside })}>
+    <div className={cx('light', { dark: darkMode }, s.PageLayout)}>
       <Helmet>
         <link rel="icon" href={favicon} />
       </Helmet>
       <Header location={location} siteTitle={data.site.siteMetadata.title} />
-      <section
-        className={cx(s.container, { [s.containerReduce]: isAside })}
-      >
-        {children}
-        {alert.status && (
+      <div className={cx(s.wrapper, { [s.wrapper__reduce]: isAside }, { [s.wrapper__vertical]: vertical })}>
+        <section
+          className={cx(
+            s.container, { [s.container__reduce]: isAside }, { [s.container__vertical]: vertical },
+          )}
+        >
+          {children}
+          {alert.status && (
           <Alert status={alert.status} statusText={alert.statusText} />
-        )}
-      </section>
-      {isAside === 'contact' && <ContactAside />}
-      {isAside === 'terms' && <TermsAside />}
-      {isAside === 'credits' && <CreditsAside />}
-      {isAside === 'work' && <WorkAside work={work} currentCategory={currentCategory} />}
+          )}
+        </section>
+        {isAside === 'contact' && <ContactAside />}
+        {isAside === 'terms' && <TermsAside />}
+        {isAside === 'credits' && <CreditsAside />}
+        {isAside === 'work' && <WorkAside work={work} currentCategory={currentCategory} />}
+      </div>
     </div>
   );
 };

@@ -9,7 +9,7 @@ import s from './CloseButton.module.css';
 import { toggleAside } from '../../state/app';
 
 const CloseButton = ({
-  closeTitle, closeLink, currentCategory, dispatch,
+  vertical, closeTitle, closeLink, currentCategory, dispatch,
 }) => {
   const changeAside = () => {
     dispatch(toggleAside(closeLink));
@@ -20,7 +20,7 @@ const CloseButton = ({
       ? (
         <Link
           to={closeLink}
-          className={s.CloseButton}
+          className={cx(s.CloseButton, { [s.CloseButton__hide]: vertical })}
           state={{ currentCategory }}
         >
           <FontAwesomeIcon className={s.icon} icon={faCaretSquareLeft} />

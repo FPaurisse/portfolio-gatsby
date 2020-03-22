@@ -7,7 +7,7 @@ import {
   faTag, faInfoCircle, faChevronLeft, faChevronRight, faDotCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import useData from '../useData';
-import PageLayout from '../components/PageLayout/PageLayout';
+import PageLayout from '../layouts/PageLayout/PageLayout';
 import SEO from '../components/SEO/SEO';
 import s from './WorkPage.module.css';
 
@@ -44,7 +44,7 @@ const WorkPage = ({
 
   return (
     <>
-      <PageLayout location={location} work={work} currentCategory={currentCategory}>
+      <PageLayout vertical location={location} work={work} currentCategory={currentCategory}>
         <SEO title={work.title} description={work.context} />
         <div className={s.WorkPage}>
           <div

@@ -29,3 +29,23 @@
     color: var(--background-secondary);
     font-size: 15px;
 }
+
+@media (min-width: 640px) and (min-height: 560px) {
+
+    .SocialLinks {
+        display: flex;
+    }
+
+    .SocialLinks__hide {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width: 1024px) { 
+
+    .SocialLinks {
+        display: flex;
+    }
+
+}
