@@ -260,14 +260,6 @@
     }
   }
 
-@media screen and (max-height: 450px) {
-
-    .WorkPage {
-        height: 100vh;
-    }
-
-}
-
 /* TABLET */
 
 @media (min-width: 640px) and (min-height: 560px) {
