@@ -1,7 +1,7 @@
 const initialState = {
   isLoad: true,
   isAside: null,
-  darkMode: false,
+  darkMode: true,
   alert: { status: null, statusText: null },
 };
 

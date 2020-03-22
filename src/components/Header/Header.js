@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import { faAdjust } from '@fortawesome/free-solid-svg-icons';
+import { faLightbulb, faMoon } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import cx from 'classnames';
 import s from './Header.module.css';
@@ -82,7 +82,7 @@ const Header = ({
         >
           <FontAwesomeIcon
             className={cx(s.switchThemeIcon, { [s.switchThemeIcon__dark]: darkMode })}
-            icon={faAdjust}
+            icon={darkMode ? faLightbulb : faMoon}
           />
         </button>
       </div>
