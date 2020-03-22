@@ -33,11 +33,25 @@
 @media (min-width: 640px) and (min-height: 560px) {
 
     .SocialLinks {
-        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        padding: 30px 30px 30px 30px;
+    }
+    
+    .iconWrapper {
+        margin: 0 4px;
     }
 
-    .SocialLinks__hide {
-        display: none;
+    .SocialLinks__vertical {
+        flex-direction: column;
+        width: auto;
+        height: 100%;
+        padding: 30px 15px 30px 0;
+    }
+
+    .iconWrapper__vertical {
+        margin: 4px 0;
     }
 
 }
@@ -46,6 +60,17 @@
 
     .SocialLinks {
         display: flex;
+    }
+
+    .SocialLinks__vertical {
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        padding: 30px 30px 30px 30px;
+    }
+
+    .iconWrapper__vertical {
+        margin: 0 4px;
     }
 
 }
