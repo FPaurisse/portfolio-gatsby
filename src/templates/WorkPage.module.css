@@ -201,10 +201,9 @@
 }
 
 .details {
+    height: auto;
     width: 100%;
     margin: 0;
-    position: relative;
-    display: flex;
     transition: 0.2s;
     padding:0 15px 15px 15px;
 }
@@ -215,7 +214,6 @@
     transition: 0.2s;
     overflow: hidden;
 }
-
 
 .tools {
     display: flex;
