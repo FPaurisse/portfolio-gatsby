@@ -34,8 +34,6 @@ const PageLayout = ({
     }, 1500);
   }, [dispatch]);
 
-  console.log(isAside);
-
   return (
     <div className={cx('light', { dark: darkMode }, s.PageLayout)}>
       <Helmet>
