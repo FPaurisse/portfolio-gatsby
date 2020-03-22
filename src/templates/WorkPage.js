@@ -11,12 +11,12 @@ import PageLayout from '../components/PageLayout/PageLayout';
 import SEO from '../components/SEO/SEO';
 import s from './WorkPage.module.css';
 
-import { toggleWorkAside } from '../state/app';
+import { toggleAside } from '../state/app';
 
 const baseURL = process.env.GATSBY_API_URL || '';
 
 const WorkPage = ({
-  data, location, isLoad, isContact, dispatch,
+  data, location, isLoad, isAside, dispatch,
 }) => {
   const [fullPage, setFullPage] = useState(false);
 
@@ -33,10 +33,10 @@ const WorkPage = ({
     && dataFilter[currentIndex - 1].node.slug;
 
   useEffect(() => {
-    if (!isContact) {
-      dispatch(toggleWorkAside(true));
+    if (isAside !== 'contact') {
+      dispatch(toggleAside('work'));
     }
-  }, [dispatch, isContact]);
+  }, [dispatch, isAside]);
 
   const changeDisplay = () => {
     setFullPage(!fullPage);
@@ -126,8 +126,7 @@ const WorkPage = ({
 
 export default connect((state) => ({
   isLoad: state.app.isLoad,
-  isContact: state.app.isContact,
-  isWorkAside: state.app.isWorkAside,
+  isAside: state.app.isAside,
 }), null)(WorkPage);
 
 export const query = graphql`
