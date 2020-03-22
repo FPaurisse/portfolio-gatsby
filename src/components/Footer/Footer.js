@@ -5,12 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandPointRight } from '@fortawesome/free-solid-svg-icons';
 import s from './Footer.module.css';
 
-import { toggleCredits, toggleContact } from '../../state/app';
+import { toggleAside } from '../../state/app';
 
-const Footer = ({ isCredits, dispatch }) => {
+const Footer = ({ dispatch }) => {
   const showCredits = () => {
-    dispatch(toggleCredits(!isCredits));
-    dispatch(toggleContact(false));
+    dispatch(toggleAside('credits'));
   };
   return (
     <footer className={s.Footer}>
@@ -37,5 +36,5 @@ const Footer = ({ isCredits, dispatch }) => {
 };
 
 export default connect((state) => ({
-  isCredits: state.app.isCredits,
+  isAside: state.app.isAside,
 }), null)(Footer);

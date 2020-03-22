@@ -1,0 +1,41 @@
+
+.subTitle {
+    font-size: 0.9rem;
+    margin: 10px 5px;
+}
+
+.list {
+    margin: 0;
+    padding: 0 15px;
+}
+
+.item {
+    margin: 5px 0;
+    list-style: none;
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+}
+
+.item::before {
+    content: "#";
+    color: var(--primary);
+    font-size: 0.6rem;
+    width: 1em;
+    margin-left: -1em;
+  }
+
+.link {
+    text-decoration: none;
+    color: var(--primary);
+    margin-left: 10px;
+    font-size: 0.7rem;
+}
+.link::before {
+    content: "→";
+    color: var(--primary);
+    font-weight: 800;
+    width: 10px;
+    margin-left: 0px;
+    margin-right: 10px;
+  }

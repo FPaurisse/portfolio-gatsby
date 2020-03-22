@@ -6,9 +6,9 @@ import cx from 'classnames';
 import favicon from '../../images/favicon.ico';
 import Alert from '../Alert/Alert';
 import Header from '../Header/Header';
-import Contact from '../Contact/Contact';
+import ContactAside from '../ContactAside/ContactAside';
 import TermsAside from '../TermsAside/TermsAside';
-import Credits from '../Credits/Credits';
+import CreditsAside from '../CreditsAside/CreditsAside';
 import WorkAside from '../WorkAside/WorkAside';
 import s from './PageLayout.module.css';
 
@@ -48,9 +48,9 @@ const PageLayout = ({
           <Alert status={alert.status} statusText={alert.statusText} />
         )}
       </section>
-      {isAside === 'contact' && <Contact />}
+      {isAside === 'contact' && <ContactAside />}
       {isAside === 'terms' && <TermsAside />}
-      {isAside === 'credits' && <Credits />}
+      {isAside === 'credits' && <CreditsAside />}
       {isAside === 'work' && <WorkAside work={work} />}
     </div>
   );

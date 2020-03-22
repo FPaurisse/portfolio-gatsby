@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { api } from '../../api';
 import AsideLayout from '../AsideLayout/AsideLayout';
-import s from './Contact.module.css';
+import s from './ContactAside.module.css';
 
 import { toggleAside, showAlert } from '../../state/app';
 
