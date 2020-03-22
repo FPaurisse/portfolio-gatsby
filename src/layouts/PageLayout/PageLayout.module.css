@@ -68,7 +68,7 @@
 
     .container__reduce {
         display: flex;
-        width: 50%;
+        min-width: 50%;
         transition: 0.2s;
     }
 

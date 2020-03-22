@@ -18,8 +18,9 @@
     transition: 0.2s;
 }
 
-@media (min-width: 640px) and (min-height: 560px) {
+/* TABLET */
 
+@media (min-width: 640px) and (min-height: 560px) {
 
     .wrapper__hide {
         display: flex;
@@ -29,5 +30,13 @@
     .works {
         padding: 0 15px;
     }
+
+}
+
+/* DESKTOP */
+
+@media screen and (min-width: 1024px) { 
+    
+    
 
 }
