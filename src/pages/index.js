@@ -1,6 +1,6 @@
 import React from 'react';
 import { Router } from '@reach/router';
-import SEO from '../components/seo';
+import SEO from '../components/SEO/SEO';
 import Works from './works';
 
 export default () => (

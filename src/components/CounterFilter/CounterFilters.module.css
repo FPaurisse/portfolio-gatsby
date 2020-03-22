@@ -1,4 +1,4 @@
-.Heading {
+.CounterFilters {
     padding: 40px 30px;
     color: var(--secondary);
     display: flex;
@@ -6,16 +6,16 @@
     align-items: center;
 }
 
-.HeadingTitle {
+.Counter {
     display: none;
 }
 
-.HeadingCount {
+.CounterCount {
     color: var(--primary);
     margin-right: 5px;
 }
 
-.HeadingFilters {
+.Filters {
     font-weight: 400;
     font-size: 0.75rem;
     text-transform: uppercase;
@@ -52,11 +52,11 @@
 
 @media (min-width: 640px) and (min-height: 560px) {
 
-    .Heading {
+    .CounterFilters {
         justify-content: space-between;
     }
 
-    .HeadingTitle {
+    .Counter {
         display: block;
         font-weight: 800;
         font-size: 0.9rem;

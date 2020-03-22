@@ -6,12 +6,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faTag, faInfoCircle, faChevronLeft, faChevronRight, faDotCircle,
 } from '@fortawesome/free-solid-svg-icons';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import s from '../styles/WorkPage.module.css';
-import useData from '../useData';
+import useData from '../../useData';
+import PageLayout from '../../components/PageLayout/PageLayout';
+import SEO from '../../components/SEO/SEO';
+import s from './WorkPage.module.css';
 
-import { toggleWorkDetails } from '../state/app';
+import { toggleWorkAside } from '../../state/app';
 
 const baseURL = process.env.GATSBY_API_URL || '';
 
@@ -34,7 +34,7 @@ const WorkPage = ({
 
   useEffect(() => {
     if (!isContact) {
-      dispatch(toggleWorkDetails(true));
+      dispatch(toggleWorkAside(true));
     }
   }, [dispatch, isContact]);
 
@@ -44,7 +44,7 @@ const WorkPage = ({
 
   return (
     <>
-      <Layout location={location} work={work}>
+      <PageLayout location={location} work={work}>
         <SEO title={work.title} description={work.context} />
         <div className={s.WorkPage}>
           <div
@@ -119,7 +119,7 @@ const WorkPage = ({
             </div>
           </div>
         </div>
-      </Layout>
+      </PageLayout>
     </>
   );
 };
@@ -127,7 +127,7 @@ const WorkPage = ({
 export default connect((state) => ({
   isLoad: state.app.isLoad,
   isContact: state.app.isContact,
-  isWorkDetails: state.app.isWorkDetails,
+  isWorkAside: state.app.isWorkAside,
 }), null)(WorkPage);
 
 export const query = graphql`

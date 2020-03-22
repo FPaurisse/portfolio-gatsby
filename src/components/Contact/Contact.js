@@ -2,17 +2,13 @@ import React from 'react';
 import cx from 'classnames';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faPaperPlane, faAt, faCaretSquareLeft,
-} from '@fortawesome/free-solid-svg-icons';
-import {
-  faFacebookMessenger, faDiscord,
-} from '@fortawesome/free-brands-svg-icons';
-import { api } from '../api';
-import s from '../styles/contact.module.css';
-import Terms from './Terms';
+import { faPaperPlane, faAt, faCaretSquareLeft } from '@fortawesome/free-solid-svg-icons';
+import { faFacebookMessenger, faDiscord } from '@fortawesome/free-brands-svg-icons';
+import { api } from '../../api';
+import Terms from '../Terms/Terms';
+import s from './Contact.module.css';
 
-import { toggleContact, toggleTerms, showAlert } from '../state/app';
+import { toggleContact, toggleTerms, showAlert } from '../../state/app';
 
 const Contact = ({ isContact, isTerms, dispatch }) => {
   const handleSubmit = (e) => {
@@ -38,7 +34,11 @@ const Contact = ({ isContact, isTerms, dispatch }) => {
     <div className={cx({ [s.Contact]: isContact, [s.Contact__hide]: !isContact })}>
       {!isTerms ? (
         <>
-          <button type="button" className={s.closeContact} onClick={() => dispatch(toggleContact(false))}>
+          <button
+            type="button"
+            className={s.closeContact}
+            onClick={() => dispatch(toggleContact(false))}
+          >
             <FontAwesomeIcon className={s.iconCloseContact} icon={faCaretSquareLeft} />
             Close
           </button>
@@ -55,14 +55,28 @@ const Contact = ({ isContact, isTerms, dispatch }) => {
                   Firstname
                   <span className={s.required}>*</span>
                 </p>
-                <input placeholder="…" required className={s.input} type="text" id="firstname" name="firstname" />
+                <input
+                  placeholder="…"
+                  required
+                  className={s.input}
+                  type="text"
+                  id="firstname"
+                  name="firstname"
+                />
               </label>
               <label className={s.label} htmlFor="lastname">
                 <p className={s.labelText}>
                   Lastname
                   <span className={s.required}>*</span>
                 </p>
-                <input placeholder="…" required className={s.input} type="text" id="lastname" name="lastname" />
+                <input
+                  placeholder="…"
+                  required
+                  className={s.input}
+                  type="text"
+                  id="lastname"
+                  name="lastname"
+                />
               </label>
             </div>
             <div className={s.inputSimple}>
@@ -71,7 +85,14 @@ const Contact = ({ isContact, isTerms, dispatch }) => {
                   Subject
                   <span className={s.required}>*</span>
                 </p>
-                <input placeholder="…" required className={s.input} type="text" id="subject" name="subject" />
+                <input
+                  placeholder="…"
+                  required
+                  className={s.input}
+                  type="text"
+                  id="subject"
+                  name="subject"
+                />
               </label>
             </div>
             <div className={s.inputSimple}>
@@ -80,7 +101,15 @@ const Contact = ({ isContact, isTerms, dispatch }) => {
                   Message
                   <span className={s.required}>*</span>
                 </p>
-                <textarea placeholder="…" required className={s.input} cols="30" rows="10" id="message" name="message" />
+                <textarea
+                  placeholder="…"
+                  required
+                  className={s.input}
+                  cols="30"
+                  rows="10"
+                  id="message"
+                  name="message"
+                />
               </label>
             </div>
             <div className={s.inputSimple}>
@@ -89,14 +118,32 @@ const Contact = ({ isContact, isTerms, dispatch }) => {
                   Email
                   <span className={s.required}>*</span>
                 </p>
-                <input placeholder="…" required className={s.input} type="text" id="email" name="email" />
+                <input
+                  placeholder="…"
+                  required
+                  className={s.input}
+                  type="text"
+                  id="email"
+                  name="email"
+                />
               </label>
             </div>
             <div className="inputSimple">
               <label className={s.labelCheckbox} htmlFor="checkTerms">
-                <input required className={s.checkbox} type="checkbox" id="checkTerms" />
+                <input
+                  required
+                  className={s.checkbox}
+                  type="checkbox"
+                  id="checkTerms"
+                />
                 I accept the
-                <button type="button" className={s.buttonTerms} onClick={() => dispatch(toggleTerms(true))}>{' Terms & Conditions'}</button>
+                <button
+                  type="button"
+                  className={s.buttonTerms}
+                  onClick={() => dispatch(toggleTerms(true))}
+                >
+                  {' Terms & Conditions'}
+                </button>
               </label>
             </div>
             <div className={s.inputSimple}>
@@ -109,7 +156,11 @@ const Contact = ({ isContact, isTerms, dispatch }) => {
         </>
       ) : (
         <>
-          <button type="button" className={s.closeContact} onClick={() => dispatch(toggleTerms(false))}>
+          <button
+            type="button"
+            className={s.closeContact}
+            onClick={() => dispatch(toggleTerms(false))}
+          >
             <FontAwesomeIcon className={s.iconCloseContact} icon={faCaretSquareLeft} />
             Return
           </button>

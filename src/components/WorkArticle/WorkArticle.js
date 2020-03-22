@@ -3,18 +3,16 @@ import { Link } from 'gatsby';
 import { connect } from 'react-redux';
 import cx from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faArrowRight,
-} from '@fortawesome/free-solid-svg-icons';
-import s from '../styles/work.module.css';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import s from './WorkArticle.module.css';
 
 import {
   toggleLoad, toggleContact, toggleTerms, toggleCredits,
-} from '../state/app';
+} from '../../state/app';
 
 const baseURL = process.env.GATSBY_API_URL || '';
 
-const Work = ({
+const WorkArticle = ({
   data, isContact, isCredits, isLoad, dispatch,
 }) => {
   const closeModal = () => {
@@ -25,8 +23,13 @@ const Work = ({
   };
 
   return (
-    <Link onClick={closeModal} key={data.endpointId} to={`/works/${data.slug}`} className={cx(s.Work, { [s.WorkReduce]: isContact || isCredits, [s.Work__load]: isLoad })}>
-      <div className={cx(s.workItem, { [s.workItem__load]: isLoad })}>
+    <Link
+      onClick={closeModal}
+      key={data.endpointId}
+      to={`/works/${data.slug}`}
+      className={cx(s.WorkArticle, { [s.WorkArticleReduce]: isContact || isCredits, [s.WorkArticle__load]: isLoad })}
+    >
+      <article className={cx(s.WorkArticleItem, { [s.WorkArticleItem__load]: isLoad })}>
         <div
           className={s.image}
           style={{
@@ -36,7 +39,10 @@ const Work = ({
           }}
         />
         <div className={s.back} style={{ backgroundColor: `${data.optionalColor}` }} />
-        <div className={s.backGradient} style={{ backgroundImage: `linear-gradient(45deg, ${data.primaryColor} 15%, ${data.secondaryColor} 70%)` }} />
+        <div
+          className={s.backGradient}
+          style={{ backgroundImage: `linear-gradient(45deg, ${data.primaryColor} 15%, ${data.secondaryColor} 70%)` }}
+        />
         <h1
           className={s.title}
           style={{
@@ -58,7 +64,7 @@ const Work = ({
             height: `${data.height}%`,
           }}
         />
-      </div>
+      </article>
       <div className={s.link}>
         <FontAwesomeIcon
           className={cx(s.iconlink, { [s.iconlink__load]: isLoad })}
@@ -73,4 +79,4 @@ export default connect((state) => ({
   isLoad: state.app.isLoad,
   isContact: state.app.isContact,
   isCredits: state.app.isCredits,
-}), null)(Work);
+}), null)(WorkArticle);

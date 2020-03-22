@@ -2,21 +2,21 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import { faAdjust, faLightbulb } from '@fortawesome/free-solid-svg-icons';
+import { faAdjust } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import cx from 'classnames';
-import s from '../styles/header.module.css';
-import Logo from './logo';
+import s from './Header.module.css';
+import Logo from '../Logo/Logo';
 
 import {
-  toggleContact, toggleTerms, toggleLoad, toggleWorkDetails, toggleDarkMode, toggleCredits,
-} from '../state/app';
+  toggleContact, toggleTerms, toggleLoad, toggleWorkAside, toggleDarkMode, toggleCredits,
+} from '../../state/app';
 
 const Header = ({
   isContact, darkMode, dispatch, siteTitle,
 }) => {
   const closeModal = () => {
-    dispatch(toggleWorkDetails(false));
+    dispatch(toggleWorkAside(false));
     dispatch(toggleContact(false));
     dispatch(toggleTerms(false));
     dispatch(toggleCredits(false));
@@ -25,14 +25,18 @@ const Header = ({
     }
   };
   const handleContact = () => {
-    dispatch(toggleWorkDetails(false));
+    dispatch(toggleWorkAside(false));
     dispatch(toggleContact(!isContact));
     dispatch(toggleTerms(false));
     dispatch(toggleCredits(false));
   };
   return (
     <header className={s.Header}>
-      <Link className={s.logoWrapper} to="/" onClick={() => closeModal()}>
+      <Link
+        className={s.logoWrapper}
+        to="/"
+        onClick={() => closeModal()}
+      >
         <div className={s.logo} title={siteTitle}>
           <div className={s.iconLogo}>
             <Logo />
@@ -43,10 +47,22 @@ const Header = ({
       <nav className={s.nav}>
         <ul className={s.list}>
           <li className={s.item}>
-            <Link to="/" onClick={() => closeModal()} className={cx(s.link, { [s.linkActive]: !isContact })}>Works</Link>
+            <Link
+              to="/"
+              onClick={() => closeModal()}
+              className={cx(s.link, { [s.linkActive]: !isContact })}
+            >
+              Works
+            </Link>
           </li>
           <li className={s.item}>
-            <button type="button" onClick={() => handleContact()} className={cx(s.link, { [s.linkActive]: isContact })}>Contact</button>
+            <button
+              type="button"
+              onClick={() => handleContact()}
+              className={cx(s.link, { [s.linkActive]: isContact })}
+            >
+              Contact
+            </button>
           </li>
         </ul>
       </nav>
@@ -55,13 +71,25 @@ const Header = ({
         <div className={s.Linkedin}>
           <div className={s.LinkedinText}>Follow me</div>
           <div className={s.LinkedinWrapper}>
-            <button className={s.LinkedinButton} type="button" onClick={() => dispatch(toggleDarkMode(!darkMode))}>
+            <button
+              className={s.LinkedinButton}
+              type="button"
+              onClick={() => dispatch(toggleDarkMode(!darkMode))}
+            >
               <FontAwesomeIcon icon={faLinkedinIn} />
             </button>
           </div>
         </div>
-        <button type="button" title="Switch theme" className={s.switchThemeButton} onClick={() => dispatch(toggleDarkMode(!darkMode))}>
-          <FontAwesomeIcon className={cx(s.switchThemeIcon, { [s.switchThemeIcon__dark]: darkMode })} icon={faAdjust} />
+        <button
+          type="button"
+          title="Switch theme"
+          className={s.switchThemeButton}
+          onClick={() => dispatch(toggleDarkMode(!darkMode))}
+        >
+          <FontAwesomeIcon
+            className={cx(s.switchThemeIcon, { [s.switchThemeIcon__dark]: darkMode })}
+            icon={faAdjust}
+          />
         </button>
       </div>
     </header>

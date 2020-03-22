@@ -2,12 +2,10 @@ import React from 'react';
 import cx from 'classnames';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faHandPointRight,
-} from '@fortawesome/free-solid-svg-icons';
-import s from '../styles/Footer.module.css';
+import { faHandPointRight } from '@fortawesome/free-solid-svg-icons';
+import s from './Footer.module.css';
 
-import { toggleCredits, toggleContact } from '../state/app';
+import { toggleCredits, toggleContact } from '../../state/app';
 
 const Footer = ({ isCredits, dispatch }) => {
   const showCredits = () => {
@@ -15,14 +13,18 @@ const Footer = ({ isCredits, dispatch }) => {
     dispatch(toggleContact(false));
   };
   return (
-    <div className={s.Footer}>
+    <footer className={s.Footer}>
       <p className={s.text}>
         Frédéric Paurisse ©
         {' '}
         {new Date().getFullYear()}
         {' '}
         -
-        <button className={s.button} type="button" onClick={showCredits}>
+        <button
+          className={s.button}
+          type="button"
+          onClick={showCredits}
+        >
           Built with
           <FontAwesomeIcon
             className={cx(s.buttonIcon)}
@@ -30,7 +32,7 @@ const Footer = ({ isCredits, dispatch }) => {
           />
         </button>
       </p>
-    </div>
+    </footer>
   );
 };
 

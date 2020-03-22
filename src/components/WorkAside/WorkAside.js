@@ -3,20 +3,21 @@ import cx from 'classnames';
 import { Link } from 'gatsby';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faAt, faCaretSquareLeft,
-} from '@fortawesome/free-solid-svg-icons';
-import {
-  faFacebookMessenger, faDiscord,
-} from '@fortawesome/free-brands-svg-icons';
-import s from '../styles/WorkDetails.module.css';
+import { faAt, faCaretSquareLeft } from '@fortawesome/free-solid-svg-icons';
+import { faFacebookMessenger, faDiscord } from '@fortawesome/free-brands-svg-icons';
+import s from './WorkAside.module.css';
 
-import { toggleWorkDetails } from '../state/app';
+import { toggleWorkAside } from '../../state/app';
 
-const WorkDetails = ({ dispatch, isWorkDetails, work }) => (
-  <div className={cx({ [s.WorkDetails]: isWorkDetails, [s.WorkDetails__hide]: !isWorkDetails })}>
-    <Link to="/works" onClick={() => dispatch(toggleWorkDetails(false))} state={{ currentCategory: work && work.categories[0] }} className={cx(s.closeWorkDetails)}>
-      <FontAwesomeIcon className={s.iconCloseWorkDetails} icon={faCaretSquareLeft} />
+const WorkAside = ({ dispatch, isWorkAside, work }) => (
+  <div className={cx({ [s.WorkAside]: isWorkAside, [s.WorkAside__hide]: !isWorkAside })}>
+    <Link
+      to="/works"
+      onClick={() => dispatch(toggleWorkAside(false))}
+      state={{ currentCategory: work && work.categories[0] }}
+      className={cx(s.closeWorkAside)}
+    >
+      <FontAwesomeIcon className={s.iconCloseWorkAside} icon={faCaretSquareLeft} />
       Close
     </Link>
     <div className={s.wrapper}>
@@ -45,5 +46,5 @@ const WorkDetails = ({ dispatch, isWorkDetails, work }) => (
 );
 
 export default connect((state) => ({
-  isWorkDetails: state.app.isWorkDetails,
-}), null)(WorkDetails);
+  isWorkAside: state.app.isWorkAside,
+}), null)(WorkAside);
