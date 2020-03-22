@@ -1,3 +1,7 @@
+.wrapper__hide {
+    display: none;
+}
+
 .works {
     margin: 0;
     display: flex;
@@ -14,11 +18,13 @@
     transition: 0.2s;
 }
 
-.wrapper__hide {
-    display: none;
-}
-
 @media (min-width: 640px) and (min-height: 560px) {
+
+
+    .wrapper__hide {
+        display: flex;
+        flex-direction: column;
+    }
 
     .works {
         padding: 0 15px;
