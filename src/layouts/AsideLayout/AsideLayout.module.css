@@ -69,6 +69,7 @@
         border-left: 0;
         height: 350px;
         width: 100%;
+        transition: 0s;
     }
 
     .wrapper {
@@ -96,7 +97,8 @@
     }
     
     .AsideLayout__vertical {
-        height: 100vh;       
+        height: 100vh;      
+        border-left: 1px solid var(--lighter);
     }
 
 }
