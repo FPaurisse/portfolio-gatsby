@@ -3,6 +3,7 @@ const initialState = {
   isContact: false,
   isTerms: false,
   isCredits: false,
+  isWorkDetails: false,
   darkMode: false,
   alert: { status: null, statusText: null },
 };
@@ -11,6 +12,7 @@ const TOGGLE_LOAD = 'TOGGLE_LOAD';
 const TOGGLE_CONTACT = 'TOGGLE_CONTACT';
 const TOGGLE_TERMS = 'TOGGLE_TERMS';
 const TOGGLE_CREDITS = 'TOGGLE_CREDITS';
+const TOGGLE_WORK_DETAILS = 'TOGGLE_WORK_DETAILS';
 const TOGGLE_DARK_MODE = 'TOGGLE_DARK_MODE';
 const SHOW_ALERT = 'SHOW_ALERT';
 
@@ -28,6 +30,10 @@ export const toggleTerms = (isTerms) => ({
 
 export const toggleCredits = (isCredits) => ({
   type: TOGGLE_CREDITS, isCredits,
+});
+
+export const toggleWorkDetails = (isWorkDetails) => ({
+  type: TOGGLE_WORK_DETAILS, isWorkDetails,
 });
 
 export const toggleDarkMode = (darkMode) => ({
@@ -49,6 +55,8 @@ export default (state = initialState, action) => {
       return { ...state, isTerms: action.isTerms };
     case TOGGLE_CREDITS:
       return { ...state, isCredits: action.isCredits };
+    case TOGGLE_WORK_DETAILS:
+      return { ...state, isWorkDetails: action.isWorkDetails };
     case TOGGLE_DARK_MODE:
       return { ...state, darkMode: action.darkMode };
     case SHOW_ALERT:

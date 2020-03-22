@@ -8,55 +8,66 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import s from '../styles/work.module.css';
 
-import { toggleLoad } from '../state/app';
+import {
+  toggleLoad, toggleContact, toggleTerms, toggleCredits,
+} from '../state/app';
 
 const baseURL = process.env.GATSBY_API_URL || '';
 
 const Work = ({
   data, isContact, isCredits, isLoad, dispatch,
-}) => (
-  <Link onClick={() => dispatch(toggleLoad(true))} key={data.endpointId} to={`/works/${data.slug}`} className={cx(s.Work, { [s.WorkReduce]: isContact || isCredits, [s.Work__load]: isLoad })}>
-    <div className={cx(s.workItem, { [s.workItem__load]: isLoad })}>
-      <div
-        className={s.image}
-        style={{
-          backgroundImage: `url(${data.image.includes(baseURL)
-            ? data.image
-            : baseURL + data.image})`,
-        }}
-      />
-      <div className={s.back} style={{ backgroundColor: `${data.optionalColor}` }} />
-      <div className={s.backGradient} style={{ backgroundImage: `linear-gradient(45deg, ${data.primaryColor} 15%, ${data.secondaryColor} 70%)` }} />
-      <h1
-        className={s.title}
-        style={{
-          backgroundImage: `url(${data.image.includes(baseURL)
-            ? data.image
-            : baseURL + data.image})`,
-        }}
-      >
-        {data.title}
+}) => {
+  const closeModal = () => {
+    dispatch(toggleContact(false));
+    dispatch(toggleTerms(false));
+    dispatch(toggleCredits(false));
+    dispatch(toggleLoad(true));
+  };
 
-      </h1>
-      <div
-        className={s.mockup}
-        style={{
-          backgroundImage: `url(${data.mockup.includes(baseURL)
-            ? data.mockup
-            : baseURL + data.mockup})`,
-          width: `${data.width}%`,
-          height: `${data.height}%`,
-        }}
-      />
-    </div>
-    <div className={s.link}>
-      <FontAwesomeIcon
-        className={cx(s.iconlink, { [s.iconlink__load]: isLoad })}
-        icon={faArrowRight}
-      />
-    </div>
-  </Link>
-);
+  return (
+    <Link onClick={closeModal} key={data.endpointId} to={`/works/${data.slug}`} className={cx(s.Work, { [s.WorkReduce]: isContact || isCredits, [s.Work__load]: isLoad })}>
+      <div className={cx(s.workItem, { [s.workItem__load]: isLoad })}>
+        <div
+          className={s.image}
+          style={{
+            backgroundImage: `url(${data.image.includes(baseURL)
+              ? data.image
+              : baseURL + data.image})`,
+          }}
+        />
+        <div className={s.back} style={{ backgroundColor: `${data.optionalColor}` }} />
+        <div className={s.backGradient} style={{ backgroundImage: `linear-gradient(45deg, ${data.primaryColor} 15%, ${data.secondaryColor} 70%)` }} />
+        <h1
+          className={s.title}
+          style={{
+            backgroundImage: `url(${data.image.includes(baseURL)
+              ? data.image
+              : baseURL + data.image})`,
+          }}
+        >
+          {data.title}
+
+        </h1>
+        <div
+          className={s.mockup}
+          style={{
+            backgroundImage: `url(${data.mockup.includes(baseURL)
+              ? data.mockup
+              : baseURL + data.mockup})`,
+            width: `${data.width}%`,
+            height: `${data.height}%`,
+          }}
+        />
+      </div>
+      <div className={s.link}>
+        <FontAwesomeIcon
+          className={cx(s.iconlink, { [s.iconlink__load]: isLoad })}
+          icon={faArrowRight}
+        />
+      </div>
+    </Link>
+  );
+};
 
 export default connect((state) => ({
   isLoad: state.app.isLoad,

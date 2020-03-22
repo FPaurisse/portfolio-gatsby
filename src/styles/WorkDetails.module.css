@@ -1,4 +1,4 @@
-.Credits {
+.WorkDetails {
     width: 100%;
     height: 100%;
     display: flex;
@@ -11,11 +11,11 @@
     background-color: var(--background-secondary);
 }
 
-.Credits__hide {
+.WorkDetails__hide {
     display: none;
 }
 
-.closeCredits {
+.closeWorkDetails {
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -32,14 +32,15 @@
     font-size: 10px;
     text-transform: uppercase;
     transition: 0.2s;
+    text-decoration: none;
 }
 
-.closeCredits:hover {
+.closeWorkDetails:hover {
     color: var(--secondary);
     transition: 0.2s;
 }
 
-.iconCloseCredits {
+.iconCloseWorkDetails {
     font-size: 24px;
     margin-bottom: 5px;
 }
@@ -55,6 +56,7 @@
     padding: 0 25px;
     color: var(--secondary);
     height: 100%;
+    font-size: 0.8rem;
 }
 
 .title {
@@ -64,46 +66,22 @@
     padding-bottom: 15px;
 }
 
-.subTitle {
-    font-size: 0.9rem;
-    margin: 10px 5px;
+.text {
+    margin: 5px;
 }
 
 .list {
-    margin: 0;
-    padding: 0 15px;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 15px 5px;
+    padding: 0;
 }
 
 .item {
-    margin: 5px 0;
+    color: var(--primary);
     list-style: none;
-    color: var(--secondary);
-    display: flex;
-    align-items: center;
 }
-
-.item::before {
-    content: "#";
-    color: var(--primary);
-    font-size: 0.6rem;
-    width: 1em;
-    margin-left: -1em;
-  }
-
-.link {
-    text-decoration: none;
-    color: var(--primary);
-    margin-left: 10px;
-    font-size: 0.7rem;
-}
-.link::before {
-    content: "→";
-    color: var(--primary);
-    font-weight: 800;
-    width: 10px;
-    margin-left: 0px;
-    margin-right: 10px;
-  }
 
 .social {
     display: flex;
@@ -139,7 +117,7 @@
 
 @media (min-width: 640px) and (min-height: 560px) {
 
-    .Credits {
+    .WorkDetails {
         height: 100vh;
         width: 50%;
         overflow-y: scroll;
@@ -148,7 +126,7 @@
         background-image: linear-gradient(90deg, var(--background-primary-shadow) 3%, var(--background-primary) 70%);
     }
 
-    .closeCredits {
+    .closeWorkDetails {
         display: flex;
     }
 
@@ -164,7 +142,7 @@
 
 @media screen and (min-width: 1024px) { 
 
-    .Credits {
+    .WorkDetails {
         width: 35%;
     }
 
@@ -172,7 +150,7 @@
 
 @media screen and (max-height: 560px) {
 
-    .Credits {
+    .WorkDetails {
         width: 100%;
     }
 

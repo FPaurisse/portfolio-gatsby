@@ -16,12 +16,12 @@
     width: 100%;
     padding: 0 25px;
     color: var(--secondary);
-    height: auto;
+    height: 100%;
 }
 
 .title {
     font-size: 1.3rem;
-    margin: 30px 0 10px 0;
+    margin: 30px 5px 10px 5px;
     border-bottom: 1px dashed var(--lighter);
     padding-bottom: 15px;
 }

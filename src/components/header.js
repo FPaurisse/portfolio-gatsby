@@ -9,13 +9,14 @@ import s from '../styles/header.module.css';
 import Logo from './logo';
 
 import {
-  toggleContact, toggleTerms, toggleLoad, toggleDarkMode, toggleCredits,
+  toggleContact, toggleTerms, toggleLoad, toggleWorkDetails, toggleDarkMode, toggleCredits,
 } from '../state/app';
 
 const Header = ({
   isContact, darkMode, dispatch, siteTitle,
 }) => {
   const closeModal = () => {
+    dispatch(toggleWorkDetails(false));
     dispatch(toggleContact(false));
     dispatch(toggleTerms(false));
     dispatch(toggleCredits(false));
@@ -24,6 +25,7 @@ const Header = ({
     }
   };
   const handleContact = () => {
+    dispatch(toggleWorkDetails(false));
     dispatch(toggleContact(!isContact));
     dispatch(toggleTerms(false));
     dispatch(toggleCredits(false));
@@ -68,5 +70,6 @@ const Header = ({
 
 export default connect((state) => ({
   isContact: state.app.isContact,
+  isWorkDetails: state.app.isWorkDetails,
   darkMode: state.app.darkMode,
 }), null)(Header);
