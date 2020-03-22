@@ -4,12 +4,12 @@ import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import cx from 'classnames';
 import favicon from '../../images/favicon.ico';
-import Alert from '../Alert/Alert';
-import Header from '../Header/Header';
-import ContactAside from '../ContactAside/ContactAside';
-import TermsAside from '../TermsAside/TermsAside';
-import CreditsAside from '../CreditsAside/CreditsAside';
-import WorkAside from '../WorkAside/WorkAside';
+import Alert from '../../components/Alert/Alert';
+import Header from '../../components/Header/Header';
+import ContactAside from '../../asides/ContactAside/ContactAside';
+import TermsAside from '../../asides/TermsAside/TermsAside';
+import CreditsAside from '../../asides/CreditsAside/CreditsAside';
+import WorkAside from '../../asides/WorkAside/WorkAside';
 import s from './PageLayout.module.css';
 
 import { toggleLoad, toggleAside } from '../../state/app';

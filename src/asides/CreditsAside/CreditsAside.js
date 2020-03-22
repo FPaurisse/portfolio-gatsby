@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import AsideLayout from '../AsideLayout/AsideLayout';
+import AsideLayout from '../../layouts/AsideLayout/AsideLayout';
 import s from './CreditsAside.module.css';
 
 const CreditsAside = () => (

@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
-import AsideLayout from '../AsideLayout/AsideLayout';
+import AsideLayout from '../../layouts/AsideLayout/AsideLayout';
 import s from './TermsAside.module.css';
 
 const TermsAside = () => (

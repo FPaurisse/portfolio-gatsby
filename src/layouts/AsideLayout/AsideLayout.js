@@ -1,8 +1,8 @@
 import React from 'react';
 import cx from 'classnames';
 import { connect } from 'react-redux';
-import CloseButton from '../CloseButton/CloseButton';
-import SocialLinks from '../SocialLinks/SocialLinks';
+import CloseButton from '../../components/CloseButton/CloseButton';
+import SocialLinks from '../../components/SocialLinks/SocialLinks';
 import s from './AsideLayout.module.css';
 
 const AsideLayout = ({
