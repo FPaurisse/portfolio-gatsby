@@ -40,10 +40,17 @@ const PageLayout = ({
         <link rel="icon" href={favicon} />
       </Helmet>
       <Header location={location} siteTitle={data.site.siteMetadata.title} />
-      <div className={cx(s.wrapper, { [s.wrapper__reduce]: isAside }, { [s.wrapper__vertical]: vertical })}>
+      <div className={cx(
+        s.wrapper,
+        { [s.wrapper__reduce]: isAside },
+        { [s.wrapper__vertical]: vertical },
+      )}
+      >
         <section
           className={cx(
-            s.container, { [s.container__reduce]: isAside }, { [s.container__vertical]: vertical },
+            s.container,
+            { [s.container__reduce]: isAside },
+            { [s.container__vertical]: vertical },
           )}
         >
           {children}
