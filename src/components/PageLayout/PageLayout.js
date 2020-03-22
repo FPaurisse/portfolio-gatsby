@@ -4,17 +4,18 @@ import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 import cx from 'classnames';
 import favicon from '../../images/favicon.ico';
-import s from './PageLayout.module.css';
 import Alert from '../Alert/Alert';
 import Header from '../Header/Header';
 import Contact from '../Contact/Contact';
+import TermsAside from '../TermsAside/TermsAside';
 import Credits from '../Credits/Credits';
 import WorkAside from '../WorkAside/WorkAside';
+import s from './PageLayout.module.css';
 
-import { toggleLoad, toggleWorkAside } from '../../state/app';
+import { toggleLoad, toggleAside } from '../../state/app';
 
 const PageLayout = ({
-  children, work, location, isContact, isCredits, isWorkAside, darkMode, alert, dispatch,
+  children, work, location, isAside, darkMode, alert, dispatch,
 }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -27,36 +28,37 @@ const PageLayout = ({
   `);
 
   useEffect(() => {
-    dispatch(toggleWorkAside(false));
+    dispatch(toggleAside(false));
     setInterval(() => {
       dispatch(toggleLoad(false));
     }, 1500);
   }, [dispatch]);
 
   return (
-    <div className={cx('light', { dark: darkMode }, s.PageLayout, { [s.PageLayout__contact]: isContact || isCredits || isWorkAside })}>
+    <div className={cx('light', { dark: darkMode }, s.PageLayout, { [s.PageLayout__contact]: isAside })}>
       <Helmet>
         <link rel="icon" href={favicon} />
       </Helmet>
       <Header location={location} siteTitle={data.site.siteMetadata.title} />
-      <section className={cx(s.container, { [s.containerReduce]: isContact || isCredits || isWorkAside })}>
+      <section
+        className={cx(s.container, { [s.containerReduce]: isAside })}
+      >
         {children}
         {alert.status && (
           <Alert status={alert.status} statusText={alert.statusText} />
         )}
       </section>
-      <Contact />
-      <Credits />
-      <WorkAside work={work} />
+      {isAside === 'contact' && <Contact />}
+      {isAside === 'terms' && <TermsAside />}
+      {isAside === 'credits' && <Credits />}
+      {isAside === 'work' && <WorkAside work={work} />}
     </div>
   );
 };
 
 export default connect((state) => ({
   isLoad: state.app.isLoad,
-  isContact: state.app.isContact,
-  isCredits: state.app.isCredits,
-  isWorkAside: state.app.isWorkAside,
+  isAside: state.app.isAside,
   darkMode: state.app.darkMode,
   alert: state.app.alert,
 }), null)(PageLayout);

@@ -1,0 +1,31 @@
+.SocialAside {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 30px 30px 30px 30px;
+}
+
+.iconWrapper {
+    margin: 0 4px;
+    background-color: var(--secondary);
+    padding: 10px;
+    border-radius: 100%;
+    width: 33px;
+    height: 33px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.iconWrapper:hover {
+    background-color: var(--optional);
+    transition: 0.2s;
+}
+
+.icon {
+    color: var(--background-secondary);
+    font-size: 15px;
+}

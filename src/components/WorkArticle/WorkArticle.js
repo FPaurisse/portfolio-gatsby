@@ -7,18 +7,16 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import s from './WorkArticle.module.css';
 
 import {
-  toggleLoad, toggleContact, toggleTerms, toggleCredits,
+  toggleLoad, toggleAside,
 } from '../../state/app';
 
 const baseURL = process.env.GATSBY_API_URL || '';
 
 const WorkArticle = ({
-  data, isContact, isCredits, isLoad, dispatch,
+  data, isAside, isLoad, dispatch,
 }) => {
   const closeModal = () => {
-    dispatch(toggleContact(false));
-    dispatch(toggleTerms(false));
-    dispatch(toggleCredits(false));
+    dispatch(toggleAside(null));
     dispatch(toggleLoad(true));
   };
 
@@ -27,7 +25,9 @@ const WorkArticle = ({
       onClick={closeModal}
       key={data.endpointId}
       to={`/works/${data.slug}`}
-      className={cx(s.WorkArticle, { [s.WorkArticleReduce]: isContact || isCredits, [s.WorkArticle__load]: isLoad })}
+      className={cx(
+        s.WorkArticle, { [s.WorkArticleReduce]: isAside, [s.WorkArticle__load]: isLoad },
+      )}
     >
       <article className={cx(s.WorkArticleItem, { [s.WorkArticleItem__load]: isLoad })}>
         <div
@@ -77,6 +77,5 @@ const WorkArticle = ({
 
 export default connect((state) => ({
   isLoad: state.app.isLoad,
-  isContact: state.app.isContact,
-  isCredits: state.app.isCredits,
+  isAside: state.app.isAside,
 }), null)(WorkArticle);

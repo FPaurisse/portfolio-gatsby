@@ -9,26 +9,20 @@ import s from './Header.module.css';
 import Logo from '../Logo/Logo';
 
 import {
-  toggleContact, toggleTerms, toggleLoad, toggleWorkAside, toggleDarkMode, toggleCredits,
+  toggleLoad, toggleAside, toggleDarkMode,
 } from '../../state/app';
 
 const Header = ({
-  isContact, darkMode, dispatch, siteTitle,
+  isAside, darkMode, dispatch, siteTitle,
 }) => {
   const closeModal = () => {
-    dispatch(toggleWorkAside(false));
-    dispatch(toggleContact(false));
-    dispatch(toggleTerms(false));
-    dispatch(toggleCredits(false));
-    if (!isContact) {
+    dispatch(toggleAside(null));
+    if (isAside !== 'contact') {
       dispatch(toggleLoad(true));
     }
   };
   const handleContact = () => {
-    dispatch(toggleWorkAside(false));
-    dispatch(toggleContact(!isContact));
-    dispatch(toggleTerms(false));
-    dispatch(toggleCredits(false));
+    dispatch(toggleAside('contact'));
   };
   return (
     <header className={s.Header}>
@@ -50,7 +44,7 @@ const Header = ({
             <Link
               to="/"
               onClick={() => closeModal()}
-              className={cx(s.link, { [s.linkActive]: !isContact })}
+              className={cx(s.link, { [s.linkActive]: isAside !== 'contact' })}
             >
               Works
             </Link>
@@ -59,7 +53,7 @@ const Header = ({
             <button
               type="button"
               onClick={() => handleContact()}
-              className={cx(s.link, { [s.linkActive]: isContact })}
+              className={cx(s.link, { [s.linkActive]: isAside === 'contact' })}
             >
               Contact
             </button>
@@ -97,7 +91,6 @@ const Header = ({
 };
 
 export default connect((state) => ({
-  isContact: state.app.isContact,
-  isWorkDetails: state.app.isWorkDetails,
+  isAside: state.app.isAside,
   darkMode: state.app.darkMode,
 }), null)(Header);

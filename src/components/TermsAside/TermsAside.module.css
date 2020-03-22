@@ -1,4 +1,4 @@
-.Terms {
+.TermsAside {
     display: flex;
     flex-direction: column;
     height: auto;
@@ -37,7 +37,7 @@
 
 @media (min-width: 640px) and (min-height: 560px) {
 
-    .Terms {
+    .TermsAside {
         height: 100%;
         overflow-y: scroll;
     }

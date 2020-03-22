@@ -1,90 +1,8 @@
-.Contact {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    transition: width .8s;
-    background-color: var(--background-secondary);
-}
-
-.Contact__hide {
-    display: none;
-}
-
-.closeContact {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    outline: none;
-    border: 0;
-    cursor: pointer;
-    background-color: transparent;
-    border-radius: 100%;
-    position: relative;
-    padding: 0;
-    margin: 20px 30px 0px auto;
-    color: var(--optional);
-    font-size: 10px;
-    text-transform: uppercase;
-    transition: 0.2s;
-}
-
-.closeContact:hover {
-    color: var(--secondary);
-    transition: 0.2s;
-}
-
-.iconCloseContact {
-    font-size: 24px;
-    margin-bottom: 5px;
-}
-
-.social {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 30px 30px 30px 30px;
-}
-
-.socialWrapper {
-    margin: 0 4px;
-    background-color: var(--secondary);
-    padding: 10px;
-    border-radius: 100%;
-    width: 33px;
-    height: 33px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.socialWrapper:hover {
-    background-color: var(--optional);
-    transition: 0.2s;
-}
-
-.socialIcon {
-    color: var(--background-secondary);
-    font-size: 15px;
-}
-
 .form {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    border-left: 0;
-    overflow-x: hidden;
-    overflow-y: scroll;
     width: 100%;
-    padding: 0 25px;
-    color: var(--secondary);
+    padding: 0;
     height: 100%;
 }
 
@@ -191,45 +109,12 @@
 
 @media (min-width: 640px) and (min-height: 560px) {
 
-    .Contact {
-        height: 100vh;
-        width: 50%;
-        overflow-y: scroll;
-        border-left: 1px solid var(--lighter);
-        background-color: var(--background-primary);
-        background-image: linear-gradient(90deg, var(--background-primary-shadow) 3%, var(--background-primary) 70%);
-    }
-
-    .closeContact {
-        display: flex;
-    }
-
     .form {
         margin-top: 0;
     }
 
-    .title {
-        margin-top: 0px;
-    }
-
     .input {
         background-color: var(--background-secondary);
-    }
-
-}
-
-@media screen and (min-width: 1024px) { 
-
-    .Contact {
-        width: 35%;
-    }
-
-}
-
-@media screen and (max-height: 560px) {
-
-    .Contact {
-        width: 100%;
     }
 
 }
