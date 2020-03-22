@@ -48,7 +48,7 @@
     flex-direction: column;
     width: auto;
     color: var(--secondary);
-    background-color: var(--background-primary);
+    background-color: var(--background-secondary);
     padding: 10px;
     font-size: 12px;
     margin: 0;

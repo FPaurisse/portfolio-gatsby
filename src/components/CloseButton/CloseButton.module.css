@@ -1,16 +1,15 @@
 .CloseButton {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     outline: none;
     border: 0;
     cursor: pointer;
-    background-color: transparent;
-    border-radius: 100%;
+    background-color: var(--background-secondary);
+    width: 100%;
     position: relative;
-    padding: 0;
-    margin: 20px 30px 5px auto;
+    padding: 20px 30px 20px 0;
     color: var(--optional);
     font-size: 10px;
     text-transform: uppercase;
@@ -23,19 +22,20 @@
     transition: 0.2s;
 }
 
-.CloseButton__hide {
-    display: none;
-}
-
 .icon {
     font-size: 24px;
     margin-bottom: 5px;
 }
 
+.CloseButton__hide {
+    display: none;
+}
+
 @media (min-width: 640px) and (min-height: 560px) {
 
     .CloseButton {
-        display: flex;
+        background-color: var(--background-primary);
+        padding: 20px 30px 5px 0;
     }
 
     .CloseButton__hide {

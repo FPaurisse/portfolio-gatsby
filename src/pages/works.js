@@ -11,7 +11,7 @@ import s from '../styles/homePage.module.css';
 
 import { toggleLoad } from '../state/app';
 
-const Works = ({ location, dispatch }) => {
+const Works = ({ location, isAside, dispatch }) => {
   const { edges } = useData();
   const currentCategory = location.state && location.state.currentCategory ? location.state.currentCategory : 'Web';
   const [category, setCategory] = useState(currentCategory);
@@ -29,22 +29,29 @@ const Works = ({ location, dispatch }) => {
         title={category}
         description="Développeur web et webdesigner freelance à Tours (37), je développe pour vous tout type de projets web et print : sites internet, applications web, identités visuelles et chartes graphiques."
       />
-      <CounterFilters
-        counter={data.length}
-        changeCategory={(choice) => setCategory(choice)}
-        category={category}
-      />
-      <div className={cx(s.works)}>
-        {data
-          .map(({ node }) => (
-            <WorkArticle key={node.id} data={node} />
-          ))}
+      <div className={cx(
+        s.wrapper,
+        { [s.wrapper__hide]: isAside !== null },
+      )}
+      >
+        <CounterFilters
+          counter={data.length}
+          changeCategory={(choice) => setCategory(choice)}
+          category={category}
+        />
+        <div className={cx(s.works)}>
+          {data
+            .map(({ node }) => (
+              <WorkArticle key={node.id} data={node} />
+            ))}
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </PageLayout>
   );
 };
 
 export default connect((state) => ({
+  isAside: state.app.isAside,
   isLoad: state.app.isLoad,
 }), null)(Works);

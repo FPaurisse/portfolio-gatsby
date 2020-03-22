@@ -9,7 +9,7 @@ const WorkAside = ({ work, currentCategory }) => (
       {work && work.context}
     </p>
     <ul className={s.list}>
-      {work && work.categories.map((category) => <li className={s.item}>{category}</li>)}
+      {work && work.categories.map((category, index) => <li key={index} className={s.item}>{category}</li>)}
     </ul>
   </AsideLayout>
 );

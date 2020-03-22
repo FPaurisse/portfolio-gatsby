@@ -28,11 +28,13 @@ const PageLayout = ({
   `);
 
   useEffect(() => {
-    dispatch(toggleAside(false));
+    dispatch(toggleAside(null));
     setInterval(() => {
       dispatch(toggleLoad(false));
     }, 1500);
   }, [dispatch]);
+
+  console.log(isAside);
 
   return (
     <div className={cx('light', { dark: darkMode }, s.PageLayout)}>

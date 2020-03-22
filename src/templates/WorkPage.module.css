@@ -6,6 +6,10 @@
     overflow: hidden;
 }
 
+.WorkPage__hide {
+    display: none;
+}
+
 .button {
     display: flex;
     flex-direction: column;
@@ -13,10 +17,6 @@
     align-items: flex-end;
     position: absolute;
     z-index: 10;
-}
-
-.buttonTop {
-    top: 0px
 }
 
 .buttonBottom {
@@ -37,10 +37,6 @@
     right: -20px;
     width: 50px; 
     height: 50px;
-}
-
-.actionButtonTop {
-    top: -20px;
 }
 
 .actionButtonBottom {
@@ -210,7 +206,7 @@
     position: relative;
     display: flex;
     transition: 0.2s;
-    padding:0 15px 10px 15px;
+    padding:0 15px 15px 15px;
 }
 
 .detailsReduce {
@@ -270,13 +266,15 @@
 
 }
 
+/* TABLET */
+
 @media (min-width: 640px) and (min-height: 560px) {
 
     .WorkPage {
         height: 100vh;
     }
 
-    .WorkPage__vertical {
+    .WorkPage__hide {
         display: none;
     }
     
@@ -324,9 +322,11 @@
 
 }
 
+/* DESKTOP */
+
 @media screen and (min-width: 1024px) { 
     
-    .WorkPage__vertical {
+    .WorkPage__hide {
         display: flex;
     }
 

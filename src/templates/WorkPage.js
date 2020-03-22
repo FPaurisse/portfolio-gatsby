@@ -47,7 +47,7 @@ const WorkPage = ({
       <SEO title={work.title} description={work.context} />
       <div className={cx(
         s.WorkPage,
-        { [s.WorkPage__vertical]: isAside !== 'work' },
+        { [s.WorkPage__hide]: isAside !== 'work' },
       )}
       >
         <div

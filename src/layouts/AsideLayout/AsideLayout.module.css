@@ -8,11 +8,15 @@
     position: relative;
     transition: width .8s;
     font-size: 0.8rem;
-    background-color: var(--background-secondary);
+    background-color: var(--background-primary);
 }
 
 .AsideLayout__hide {
     display: none;
+}
+
+.AsideLayout__full {
+    height: auto;
 }
 
 .wrapper {
@@ -88,6 +92,7 @@
     .wrapper__vertical {
         overflow: visible;
         width: 100%;
+        height: 100%;
     }
 
     .title {
