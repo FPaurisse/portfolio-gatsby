@@ -16,7 +16,7 @@ import s from './PageLayout.module.css';
 import { toggleLoad, toggleAside } from '../../state/app';
 
 const PageLayout = ({
-  children, vertical, work, currentCategory, location, isAside, darkMode, alert, dispatch,
+  children, vertical, work, currentCategory, location, isLoad, isAside, darkMode, alert, dispatch,
 }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -36,7 +36,7 @@ const PageLayout = ({
   }, [dispatch]);
 
   return (
-    <div className={s.PageLayout}>
+    <div className={cx(s.PageLayout, { PageLayout__load: isLoad })}>
       <Helmet>
         <html lang="fr" className={cx('light', { dark: darkMode })} />
         <link rel="icon" href={darkMode ? faviconDark : faviconLight} />

@@ -6,6 +6,10 @@ body, html {
     background-color: var(--background-secondary);
 }
 
+.PageLayout__load svg {
+    color: transparent;
+}
+
 .success {
     color: #155724;
     background-color: #d4edda;
