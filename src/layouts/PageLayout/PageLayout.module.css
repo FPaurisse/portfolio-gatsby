@@ -65,7 +65,6 @@
     .container__reduce {
         display: flex;
         min-width: 50%;
-        transition: 0.2s;
     }
 
     .container__vertical {
