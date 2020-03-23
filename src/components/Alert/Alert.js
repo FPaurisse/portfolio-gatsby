@@ -8,6 +8,7 @@ import s from './Alert.module.css';
 import { showAlert } from '../../state/app';
 
 const Alert = ({ status, statusText, dispatch }) => {
+  // eslint-disable-next-line consistent-return
   const switchAlert = () => {
     switch (status) {
       case 'success':
