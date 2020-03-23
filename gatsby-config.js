@@ -1,5 +1,4 @@
 require('dotenv').config();
-const autoprefixer = require('autoprefixer');
 
 module.exports = {
   siteMetadata: {
@@ -8,14 +7,7 @@ module.exports = {
     author: 'Frédéric Paurisse',
   },
   plugins: [
-    {
-      resolve: 'gatsby-plugin-postcss',
-      options: {
-        postCssPlugins: [
-          autoprefixer({ grid: 'autoplace' }),
-        ],
-      },
-    },
+    'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-plugin-prefetch-google-fonts',
       options: {

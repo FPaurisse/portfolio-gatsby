@@ -47,13 +47,13 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    transition: right 0.6s, border-width 0.6s;
+    transition: right .6s, border-width .6s;
 }
 
 .WorkArticle:hover .link {
     border-left-width: 50px;
     border-bottom-width: 50px;
-    transition: right 0.6s, border-width 0.6s;
+    transition: right .6s, border-width .6s;
 }
 
 .iconlink {
@@ -62,7 +62,7 @@
     right: 0px;
     font-size: 12px;
     color: var(--optional);
-    transition: right 0.6s, top 0.6s;
+    transition: right .6s, top .6s;
 }
 
 .iconlink__load {
@@ -72,7 +72,7 @@
 .WorkArticle:hover .iconlink {
     top: 30px;
     right: 10px;
-    transition: right 0.6s, top 0.6s;
+    transition: right .6s, top .6s;
 }
 
 
