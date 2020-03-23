@@ -2,9 +2,6 @@ import React from 'react';
 
 const Logo = () => (
   <svg
-    id="Calque_1"
-    data-name="Calque 1"
-    xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 240 232.23"
   >
     <polygon
