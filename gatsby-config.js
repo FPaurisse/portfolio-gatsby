@@ -1,4 +1,5 @@
 require('dotenv').config();
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
   siteMetadata: {
@@ -7,18 +8,11 @@ module.exports = {
     author: 'Frédéric Paurisse',
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-postcss',
       options: {
         postCssPlugins: [
-          // eslint-disable-next-line global-require
-          require('postcss-preset-env')({
-            autoprefixer: { grid: true },
-            features: {
-              'nesting-rules': true,
-            },
-          }),
+          autoprefixer({ grid: 'autoplace' }),
         ],
       },
     },
@@ -33,6 +27,7 @@ module.exports = {
         ],
       },
     },
+    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-rest-api',
       options: {
