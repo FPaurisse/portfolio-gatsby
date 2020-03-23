@@ -46,7 +46,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    transition: right .6s, border-width .6s;
+    transition: right .4s, border-width .4s;
 }
 
 .WorkArticle:hover .link {
