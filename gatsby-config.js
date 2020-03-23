@@ -7,6 +7,21 @@ module.exports = {
     author: 'Frédéric Paurisse',
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postCssPlugins: [
+          // eslint-disable-next-line global-require
+          require('postcss-preset-env')({
+            autoprefixer: { grid: true },
+            features: {
+              'nesting-rules': true,
+            },
+          }),
+        ],
+      },
+    },
     {
       resolve: 'gatsby-plugin-prefetch-google-fonts',
       options: {
@@ -18,7 +33,6 @@ module.exports = {
         ],
       },
     },
-    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-rest-api',
       options: {
