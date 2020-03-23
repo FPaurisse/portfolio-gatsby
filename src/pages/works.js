@@ -26,7 +26,7 @@ const Works = ({ location, isAside, dispatch }) => {
   return (
     <PageLayout location={location}>
       <SEO
-        title={category}
+        title="Frédéric Paurisse | Creative developer"
         description="Développeur web et webdesigner freelance à Tours (37), je développe pour vous tout type de projets web et print : sites internet, applications web, identités visuelles et chartes graphiques."
       />
       <div className={cx(
