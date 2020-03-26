@@ -13,6 +13,7 @@ import { toggleLoad } from '../state/app';
 
 const Works = ({ location, isAside, dispatch }) => {
   const { edges } = useData();
+  console.log(location.state && location.state.currentCategory);
   const currentCategory = location.state && location.state.currentCategory ? location.state.currentCategory : 'Web';
   const [category, setCategory] = useState(currentCategory);
   const data = edges.filter((work) => work.node.categories.includes(`${category}`));

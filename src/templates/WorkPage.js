@@ -176,13 +176,15 @@ const WorkPage = ({
         >
           <div className={s.categories}>
             {work.categories.map((category) => (
-              <div
+              <Link
                 key={uuidv1()}
                 className={s.category}
+                to="/works"
+                state={{ currentCategory }}
               >
                 <FontAwesomeIcon className={s.iconTag} icon={category === 'Web' ? faDesktop : faPalette} />
                 {category}
-              </div>
+              </Link>
             ))}
           </div>
         </div>
