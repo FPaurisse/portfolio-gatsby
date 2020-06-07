@@ -40,7 +40,7 @@ const SocialLinks = ({ vertical }) => (
     <a
       aria-label="Email"
       title="Email"
-      href="mailto:contact@fredericpaurisse.fr"
+      href="mailto:contact@fpdev.fr"
       rel="noopener noreferrer"
       target="_blank"
       className={cx(
